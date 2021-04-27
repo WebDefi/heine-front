@@ -15,36 +15,45 @@ import Slider from './components/Slider/Slider'
 import Footer from './components/Footer/Footer'
 import {
   BrowserRouter as Router,
+  Switch,
   Route,
-  Link
+  Link,
 } from "react-router-dom";
+
 import Contacts from './pages/Contacts/Contacts'
 import HeineForm from './common/HeineForm/HeineForm'
 import News from './pages/News/News'
 import NewsDetails from './pages/News/components/NewsDetails/NewsDetails'
+import SubMenu from './components/Header/components/SubMenu/SubMenu'
 import ListProducts from './pages/ListProducts/ListProducts'
     const App =()=>  (
         <ThemeProvider theme={theme}>
             <CssBaseline />
                 <Header />
-                <TopGrid />
+                {/* <TopGrid /> */}
                 {/* <Service /> */}
-                <Products />
+                {/* <Products />
                 <News />
                 <NewsDetails />
                 <ListProducts /> 
-                <Contacts />
-                 {/* <Router>
+                <Contacts /> */}
+                {/* <SubMenu />  */}
+                 <Router>
                    
-                    <Switch>
-                      <Route path="/Products" component={Products}/>
-                      <Route exact path="/" component={TopGrid}/>
-                    
-                    </Switch>
+                     
+                  <Switch>
+                    <Route exact path="/" component={TopGrid}/>
+                    <Route path="/products" component={Products}/>
+                    <Route path="/news" component={News}/>
+                    <Route path="/contacts" component={Contacts}/>
+                    <Route path="/newsDetail" component={NewsDetails} />
+                    <Route path="/service" component={Service} />
+                  </Switch>
+                     
                     
                   
 
-                </Router> */}
+                </Router>
                 <Footer />
         </ThemeProvider>
       );
