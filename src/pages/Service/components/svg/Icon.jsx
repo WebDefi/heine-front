@@ -2,13 +2,13 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-  svgi: {
-    fill:"#fff",
-    "&:hover": {
-      fill:"#111",
+  // svgi: {
+  //   fill:"#fff",
+  //   "&:hover": {
+  //     fill:"#111",
 
-    },
-  }
+  //   },
+  // }
 }))
 
 const Icon = () => {
