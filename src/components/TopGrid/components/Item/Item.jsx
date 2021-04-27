@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
         justifyContent:"center",
         alignItems: "center",
         height:"auto",
-        bottom:0,
+         
       },
        
     
@@ -53,6 +53,7 @@ export default function Item({
   imageCenter,
   contrastTitle,
   slideImg,
+  justify = "center"
   })  {
   const classes = useStyles();
   return (

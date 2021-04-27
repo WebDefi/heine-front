@@ -31,13 +31,13 @@ export default function TopGrid()  {
 
     <Grid container spacing={1} style={{marginTop:"70px"}}>
     <Slider />
-    <Item size={8} title="This is fourth item" image={dermatoscopes} text="some">
+    <Item size={8} title="1111" image={dermatoscopes} text="some">
           <ul>
             <li>Item 1.1</li>
             <li>Item 1.2</li>
             <li>Item 1.3</li>
           </ul>
-          <OrangeBtn buttonText="Подробнее"></OrangeBtn>
+          <OrangeBtn link="/products" buttonText="Подробнее"></OrangeBtn>
     </Item>
     <Item size={4} title="This is fourth item" image={oftalmolog} text="some">
     
@@ -131,7 +131,7 @@ export default function TopGrid()  {
     </Item>
     <HeineForm />
     <Item size={4} bigTitle="Новости" subtitle="Новинки и интересные факты от HEINE." image={map} text="some" bgcolor="#EE5F22">
-        <LightOutlineBtn buttonText="something" />
+        <LightOutlineBtn link="/news" buttonText="something" />
     </Item>
     <Item size={4} title="О НАС" imageCenter={aboutUs} text="some" subtitle="Кое-что интересное о прошлом, настоящем и будущем." contrast="#444">
         <DarkOutlineBtn buttonText="something" />
@@ -140,7 +140,7 @@ export default function TopGrid()  {
       <LightOutlineBtn buttonText="something" />
     </Item>
     <Item size={4}  title="СЕРВИСЫ" image={services} text="some" gridheight="300px">
-      <DarkOutlineBtn buttonText="something" />
+      <DarkOutlineBtn link="/service" buttonText="something" />
     </Item>
     <Item size={4} image={warrantyBg}  contrastTitle="Гарантия 5 лет" text="some" bgcolor="#EE5F22" gridheight="300px" subtitle="HEINE является мировым лидером в производстве инструментов для первичной диагностики с более чем 500 сотрудниками.
 Более 70 лет компания находится в 100% семейном владении и управлении" >

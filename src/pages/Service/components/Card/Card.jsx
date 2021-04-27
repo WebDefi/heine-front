@@ -4,11 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
  
 const useStyles = makeStyles(theme => ({
    cardContent: {
-        position: "absolute",
-        bottom: 0,
-        zIndex: 3,
+        
         background: '#f1f1f1',
-         
+        paddingTop:50,
+        height:200,
         "&:hover": {
             borderTop:"1px solid #EE5F22",
 
@@ -16,10 +15,12 @@ const useStyles = makeStyles(theme => ({
    },
    categoryBlock: {
         borderRadius: "0 20px 0 0",
-        height:250,
+        height:230,
         position: "relative",
         display:"flex",
-        justifyContent:"flex-start",
+        justifyContent:"center",
+        alignItems: "center",
+        
         overflow: "hidden",
         marginTop: theme.spacing(1),
         background:"#444",
@@ -32,7 +33,8 @@ const useStyles = makeStyles(theme => ({
    },
     
    categoryContentText: {
-        margin:"25px 40px",
+        margin:"10px 20px",
+        
    }
   
 
@@ -44,6 +46,7 @@ export default function Card({
   children, 
   subtitle,
   image,
+  article,
   link,
   })  {
   const classes = useStyles();
@@ -53,9 +56,14 @@ export default function Card({
         <Grid item xs={size}>
             <Link to="{link}" href="{link}">
                 <Paper className={classes.categoryBlock}>
-                <Typography variant="h2" style={{position:"absolute",top:"15%",  }}>{title}</Typography>
                 {children}
+                <Typography variant="h2" style={{position:"absolute",color:"#fff" }}>{title}</Typography>
                 </Paper>
+                <div style={{border:"1px solid #444"}}>
+                  <Typography variant="subtitle1" className={classes.categoryContentText}>{title}</Typography>
+                  <Typography variant="body2" className={classes.categoryContentText}>{subtitle}</Typography>
+                </div>
+                
             </Link>
         </Grid>
   ); 

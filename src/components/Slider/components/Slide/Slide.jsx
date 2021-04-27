@@ -11,12 +11,13 @@ const useStyles = makeStyles(theme => ({
         alignItems: "flex-end",
         overflow: "hidden",
         height: 500,
-        background:"#E0E3E2",
+        
         
   },
   imgSlide: {
         backgroundPosition: "center",
-        display:"block"
+        display:"block",
+        
   }
     
   
@@ -28,9 +29,9 @@ export default function Slide({
   })  {
   const classes = useStyles();
   return (
-    <Paper className={classes.slide}>
+    <Paper className={classes.slide}  >
         <img src={image} className={classes.imgSlide}></img>
-        <div className={classes.gridContent}>
+        <div>
             <Typography variant="h5">{title}</Typography>
             <Typography variant="body2" style={{color:contrast,paddingTop:5}}>{subtitle}</Typography>
         </div>

@@ -6,28 +6,35 @@ import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import DarkOutlineBtn from '../../common/Btns/DarkOutlineBtn'
 import Item from '../TopGrid/components/Item/Item'
+import { TrainRounded } from "@material-ui/icons";
+import { makeStyles } from '@material-ui/core/styles';
 
+ 
 export default class SimpleSlider extends Component {
-  render(size=12) {
+  
+  render() {
+  
     const settings = {
       arrows: false,
-      dots: false,
+      dots: true,
       autoplay: true,
       infinite: true,
-      speed: 500,
+      speed: 400,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      
     };
+   
     return (
       <Grid item xs={12}>
         <Slider {...settings}>
-            <Item size={12} title="Title1" subtitle="Subtitle1" contrast="#444" imageCenter={slide}>
+            <Item size={12} gridheight="500px" bgcolor="#E2E4E3" title="Title1" subtitle="Subtitle1" contrast="#444" imageCenter={slide} >
                 <DarkOutlineBtn buttonText="something"></DarkOutlineBtn>
             </Item>
-            <Item size={12} title="Title2" subtitle="Subtitle2" contrast="#444" imageCenter={slide}>
+            <Item size={12} gridheight="500px" bgcolor="#E2E4E3" title="Title2" subtitle="Subtitle2" contrast="#444" imageCenter={slide}>
                 <DarkOutlineBtn buttonText="something"></DarkOutlineBtn>
             </Item>
-            <Item size={12} title="Title3" subtitle="Subtitle3" contrast="#444" imageCenter={slide}>
+            <Item size={12} gridheight="500px" bgcolor="#E2E4E3" title="Title3" subtitle="Subtitle3" contrast="#444" imageCenter={slide}>
                 <DarkOutlineBtn buttonText="something"></DarkOutlineBtn>
             </Item>
         </Slider>
