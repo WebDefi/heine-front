@@ -8,14 +8,15 @@ const useStyles = makeStyles((theme) => ({
       height:"100%",
       position:'absolute',
       top:0
+      
     }, 
   }));
 
 export default function Logo () {
     const classes = useStyles();
     return (
-        <Link href="/">
-            <img className={classes.logoStyles} src={logo}></img>
-        </Link>
+         
+            <a href="/"><img className={classes.logoStyles} src={logo}></img></a>
+       
     );
 } 

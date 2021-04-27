@@ -45,7 +45,7 @@ export default function Form({
   const classes = useStyles();
   return (
     <Grid item xs={size}>
-        <Typography variant="subtitle2" style={{color:primary}}>{title}</Typography>
+        <Typography variant="subtitle2" style={{color:primary, fontSize:18}}>{title}</Typography>
           {children}
     </Grid>
   );

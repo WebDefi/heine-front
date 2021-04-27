@@ -3,7 +3,7 @@ import { Grid, Button, Typography, Paper,Container, TextField,InputLabel,Select,
 import { makeStyles } from '@material-ui/core/styles';
 import Form from '../HeineForm/form/Form'
 import Content from '../HeineForm/content/Content'
-
+import heineDistr from '../../assets/images/heineDistr.png'
 import HEINE from '../../assets/images/heinedistr.svg'
 import OrangeBtn from '../../common/Btns/OrangeBtn'
 import LightOutlineBtn from '../../common/Btns/LightOutlineBtn'
@@ -40,15 +40,19 @@ export default function HeineForm()  {
   
   return (
         <Grid item xs={12}>
+        
           <Paper className={classes.heineForm}>
+            
             <Container className={classes.findDistr}>
-            <Grid container justify="space-between">
+            <Grid container justify="space-between" >
               <Form size={5} 
+                
                 title="Найти дистибьютора"
                 subtitle1="Вы заинтересованы в одном из наших продуктов?"
                 subtitle2="Найдите ближайшего к вам дистрибьютора быстро и легко.">
                 <form>
                   <TextField  
+                  style={{paddingTop:20}}
                   placeholder='Введите свою страну'
                   color="primary" 
                   size="small"
@@ -61,10 +65,10 @@ export default function HeineForm()  {
                    />
                   
               
-                <FormControl variant="outlined" size="small"   className={classes.formControl} fullWidth>
+                <FormControl variant="outlined" size="small" className={classes.formControl} fullWidth style={{paddingTop:10}}>
                 <Select
+                
                     native
-                     
                     value={age}
                     onChange={handleChange}>
                     <option value="asdasd"   />
@@ -72,7 +76,7 @@ export default function HeineForm()  {
                     <option value={20}>Twenty</option>
                     <option value={30}>Thirty</option>
                 </Select>
-                    <OrangeBtn buttonText="Поиск"/>
+                    <OrangeBtn buttonText="Поиск" width="100%" height="40px" />
                 </FormControl>
                 </form>        
                   </Form>
@@ -83,9 +87,15 @@ export default function HeineForm()  {
                   </Typography>
                   
                 </Content>
+                
             </Grid>
-
+            
           </Container>
+              <Grid container justify="flex-end" style={{position:"relative", bottom:100, right:0}}>
+                    <Grid item>
+                      <a href="#"><img style={{width:"100vh",  }}  src={heineDistr}></img></a>
+                    </Grid>
+                  </Grid>
         </Paper>
         </Grid>
   );
