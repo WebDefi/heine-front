@@ -22,8 +22,10 @@ export default function Header(props) {
     const classes = useStyles();
   
     return (
-        <Button outlined className={classes.btnControl} component='a'>
+        <a href={props.link}>
+        <Button outlined className={classes.btnControl}>
             {props.buttonText}
         </Button>
+        </a>
     );
   }
