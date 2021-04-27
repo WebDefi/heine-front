@@ -23,7 +23,7 @@ export default function SocialItem({
   const classes = useStyles();
   return (
     <Grid item>
-        <Link to={link} href={link} className={classes.headerLink}>{children}</Link>
+        <a href={link} className={classes.headerLink}>{children}</a>
     </Grid>
   );
 };

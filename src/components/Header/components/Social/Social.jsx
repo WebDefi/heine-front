@@ -11,15 +11,15 @@ export default function Social()  {
        <Grid container alignItems="center" spacing={2}>
             <Grid item>
                 <Grid container alignItems="center">
-                  <SocialItem link="/">
+                   
                     <Instagram style={{ fontSize: 23 }} />
-                  </SocialItem>
-                  <SocialItem link="/">
+                
+              
                     <Facebook style={{ fontSize: 23, margin:"0 5px" }} />
-                  </SocialItem>
-                  <SocialItem link="/">
+                
+                 
                     <YouTube style={{ fontSize: 30 }} />
-                  </SocialItem>
+             
                     {/* <a href="/"><Instagram style={{ fontSize: 23 }}/></a>
                     <a href="/"><Facebook style={{ fontSize: 23, margin:"0 5px" }}/></a>
                     <a href="/"><YouTube style={{ fontSize: 30 }}/></a> */}
