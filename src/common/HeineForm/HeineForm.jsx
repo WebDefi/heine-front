@@ -91,7 +91,7 @@ export default function HeineForm()  {
             </Grid>
             
           </Container>
-              <Grid container justify="flex-end" style={{position:"relative", bottom:100, right:0}}>
+              <Grid container justify="flex-end" style={{position:"relative", bottom:160, right:0}}>
                     <Grid item>
                       <a href="#"><img style={{width:"100vh",  }}  src={heineDistr}></img></a>
                     </Grid>

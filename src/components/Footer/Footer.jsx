@@ -3,6 +3,8 @@ import { Grid, TextField, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Col from './Col/Col'
 import Form from './Form/Form'
+import medigranLogo from '../../assets/images/medigranLogo.png'
+
 import { Palette } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
@@ -32,7 +34,7 @@ export default function Footer() {
   return (
     <footer className={classes.footer}>
         <Grid container spacing={1} justify="space-around">
-            <Form size="3" title="Нужна помощь в подборе оборудования?" >
+            <Form size="3" title="Нужна помощь в подборе оборудования?">
                 <TextField />
             </Form>
             <Col size="2" title="Продукция">
@@ -79,6 +81,20 @@ export default function Footer() {
                 </ul>
                 
             </Col>
+           <Grid container justify="center" style={{margin:"50px 0 20px 0"}}>
+                <Col size="2">
+                    <Typography variant="body2" style={{color:"#fff"}}>Terms & Conditions</Typography>
+                </Col>
+                <Col size="2">
+                    <Typography variant="body2" style={{color:"#fff"}}>Privacy Policy</Typography>
+                </Col>
+                <Col size="3">
+                    <Typography variant="body2" style={{color:"#fff"}}>Официальный представитель Heine в Украине</Typography>
+                </Col>
+                <Col size="1">
+                     <img src={medigranLogo}></img>
+                </Col>
+           </Grid>
              
         </Grid>
     </footer> 

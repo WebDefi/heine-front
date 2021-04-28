@@ -47,7 +47,7 @@ export function Privacy({
     <Grid item xs={size}>
       <div className={classes.gridContent}>
         <Typography variant="h6" style={{color:contrast}}>{title}</Typography>
-          {children}
+        
       </div>
     </Grid>
   );

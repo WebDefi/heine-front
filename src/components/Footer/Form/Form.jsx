@@ -14,7 +14,7 @@ export default function Form({
  
   return (
     <Grid item xs={size}>
-        <Typography variant="h6" style={{color:contrast}}>{title}</Typography>
+        <Typography variant="h6" style={{color:contrast,marginBottom:"30px"}}>{title}</Typography>
          <Input placeholder="Ваш Е-мейл"/>
     </Grid>
   );
