@@ -30,12 +30,13 @@ import ListProducts from './pages/ListProducts/ListProducts'
         <ThemeProvider theme={theme}>
             <CssBaseline />
                 <Header />
+                {/* <ListProducts />  */}
                 {/* <TopGrid /> */}
                 {/* <Service /> */}
                 {/* <Products />
                 <News />
                 <NewsDetails />
-                <ListProducts /> 
+                
                 <Contacts /> */}
                 {/* <SubMenu />  */}
                  <Router>
@@ -48,6 +49,7 @@ import ListProducts from './pages/ListProducts/ListProducts'
                     <Route path="/contacts" component={Contacts}/>
                     <Route path="/newsDetail" component={NewsDetails} />
                     <Route path="/service" component={Service} />
+                    <Route path="/listProducts" component={ListProducts} />
                   </Switch>
                      
                     
