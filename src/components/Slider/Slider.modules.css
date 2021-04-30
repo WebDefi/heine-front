@@ -1,0 +1,44 @@
+.slick-dots {
+  width: 200px;
+  top:340px;
+  bottom: 40px;
+  right: 40px;
+  
+  border-bottom: 3px solid #444;
+  
+}
+.slick-dots li button:before{
+  display: flex;
+  justify-content:center ;
+  
+  top:10px;
+  content:'';
+  width:35px;
+  height:35px;
+  border-radius: 100%;
+  border:7px solid #EB7A48;
+  
+   
+}
+
+.slick-dots li.slick-active button:before{
+ 
+  top:0;
+  height:53px;
+  width: 53px;
+  border:9px solid #343434;
+ 
+}
+.slick-dots li{
+  padding-left: 40px;
+   
+}
+.slick-dots li.slick-active {
+  padding-right:20px;
+}
+/* .slick-dots li button{
+  padding: 100px;
+  display: flex;
+  justify-content: space-around;
+} */
+/*# sourceMappingURL=Slider.modules.css.map */
