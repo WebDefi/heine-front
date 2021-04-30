@@ -11,7 +11,9 @@ import Local from './components/Local/Local'
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    borderBottom:'8px solid #F1F1F1',
+    borderBottom:'12px solid #F1F1F1',
+    height:121,
+    background: "#393939",
   },    
 }));
 

@@ -19,11 +19,12 @@ const useStyles = makeStyles(theme => ({
 export default function SocialItem({ 
   children, 
   link,
+  height
   })  {
   const classes = useStyles();
   return (
-    <Grid item>
-        <a href={link} className={classes.headerLink}>{children}</a>
+    <Grid item style={{height:height}}>
+        <a href={link}  className={classes.headerLink}>{children}</a>
     </Grid>
   );
 };

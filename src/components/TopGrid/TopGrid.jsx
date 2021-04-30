@@ -29,7 +29,7 @@ import Slider from '../Slider/Slider'
 export default function TopGrid()  {
   return (
 
-    <Grid container spacing={1} style={{marginTop:"70px"}}>
+    <Grid container spacing={2} style={{marginTop:"70px"}}>
     <Slider />
     <Item size={8} title="1111" image={dermatoscopes} text="some">
           <ul>

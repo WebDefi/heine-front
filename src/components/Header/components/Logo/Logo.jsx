@@ -6,8 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     logoStyles: {
       height:"100%",
-      position:'absolute',
-      top:0
+      position:'relative',
+      top:3,
       
     }, 
   }));

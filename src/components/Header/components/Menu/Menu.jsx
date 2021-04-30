@@ -16,7 +16,7 @@ import {
 export default function Menu(){
   return(
     <Grid item>
-      <Grid container justify="center" spacing={1}>
+      <Grid container justify="center" spacing={2}>
             <Router>
               <MenuLink link="/products" text="Продукция"/>
               <MenuLink link="/" text="Аксессуары"/>

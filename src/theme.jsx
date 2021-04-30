@@ -113,7 +113,7 @@ export const theme = createMuiTheme({
         },
         body2: {
             fontFamily: 'Raleway',
-            fontSize: '1rem',
+            fontSize: '0.875rem',
             fontWeight: '400',
             color:"#444444",
         },
@@ -128,11 +128,13 @@ export const theme = createMuiTheme({
             fontSize: '1rem',
             fontWeight: '400',
             color:"#444444",
-        }
+        },
+      
         
 
 
     },
+    spacing: 6,
     shape: {
         borderRadius: 0,
     },

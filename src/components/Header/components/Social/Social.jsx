@@ -10,15 +10,19 @@ export default function Social()  {
     <Grid item>
        <Grid container alignItems="center" spacing={2}>
             <Grid item>
-                <Grid container alignItems="center">
-                   
+                <Grid container alignItems="center" justify="center">
+                   <SocialItem height="23px">
                     <Instagram style={{ fontSize: 23 }} />
-                
-              
-                    <Facebook style={{ fontSize: 23, margin:"0 5px" }} />
+                   </SocialItem>
+                    <SocialItem height="23px">
+                      <Facebook style={{ fontSize: 23, margin:"0 5px" }} /> 
+                    </SocialItem>
+                    <SocialItem height="30px">
+                      <YouTube style={{ fontSize: 30 }} />
+                    </SocialItem>
                 
                  
-                    <YouTube style={{ fontSize: 30 }} />
+                    
              
                     {/* <a href="/"><Instagram style={{ fontSize: 23 }}/></a>
                     <a href="/"><Facebook style={{ fontSize: 23, margin:"0 5px" }}/></a>

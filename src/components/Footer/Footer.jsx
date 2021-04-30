@@ -10,8 +10,8 @@ import { Palette } from '@material-ui/icons';
 const useStyles = makeStyles(theme => ({
   footer: {
       marginTop: 12,
-      paddingTop: 60,
-      background:theme.palette.secondary.main,
+      paddingTop: 80,
+      background:"#393939",
     
   },
   link: {
@@ -23,6 +23,12 @@ const useStyles = makeStyles(theme => ({
           background:"#2D2D2D",
           borderRadius:"7px"
       }
+  },
+  privacyLink: {
+    color:"#fff",
+        "&:hover": {
+            color:theme.palette.primary.main,
+        }
   }
     
   
@@ -33,7 +39,7 @@ export default function Footer() {
   const classes = useStyles();
   return (
     <footer className={classes.footer}>
-        <Grid container spacing={1} justify="space-around">
+        <Grid container spacing={1} justify="space-around" style={{borderTop:"1px solid #4D4D4D",paddingTop:40}}>
             <Form size="3" title="Нужна помощь в подборе оборудования?">
                 <TextField />
             </Form>
@@ -83,17 +89,17 @@ export default function Footer() {
             </Col>
            <Grid container justify="center" style={{margin:"50px 0 20px 0"}}>
                 <Col size="2">
-                    <Typography variant="body2" style={{color:"#fff"}}>Terms & Conditions</Typography>
+                    <a href="#"><Typography variant="body2" className={classes.privacyLink}>Terms & Conditions</Typography></a>
                 </Col>
                 <Col size="2">
-                    <Typography variant="body2" style={{color:"#fff"}}>Privacy Policy</Typography>
+                    <a href="#"> <Typography variant="body2" className={classes.privacyLink}>Privacy Policy</Typography></a>
                 </Col>
                 <Col size="3">
-                    <Typography variant="body2" style={{color:"#fff"}}>Официальный представитель Heine в Украине</Typography>
+                    <a href="#"><Typography variant="body2" className={classes.privacyLink}>Официальный представитель Heine в Украине</Typography></a>
                 </Col>
-                <Col size="1">
+                {/* <Col size="1">
                      <img src={medigranLogo}></img>
-                </Col>
+                </Col> */}
            </Grid>
              
         </Grid>

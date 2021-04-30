@@ -18,7 +18,7 @@ export default function Header(props) {
     const classes = useStyles();
   
     return (
-        <a href={props.link}><Button className={classes.btnControl} style={{width:props.width, height:props.height}}>{props.buttonText}</Button></a>
+        <a href={props.link}><Button className={classes.btnControl} style={{width:props.width, padding:props.padding}}>{props.buttonText}</Button></a>
     );
   }
 

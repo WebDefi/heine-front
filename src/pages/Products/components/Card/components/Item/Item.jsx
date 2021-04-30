@@ -48,7 +48,8 @@ export default function Item({
   title, 
   subtitle,
   image,
-  display
+  display,
+  link
 
   })  {
   const classes = useStyles();
@@ -56,7 +57,7 @@ export default function Item({
  
  
         <Grid item xs={size}>
-            <Link to="{link}" href="{link}">
+            <a href={link}>
                 <Paper className={classes.categoryBlock}>
                 <img className={classes.cardImage} src={image}></img>
                 <Grid container className={classes.cardContent}>
@@ -73,7 +74,7 @@ export default function Item({
                     </Grid> 
                 </Grid>
             </Paper>
-            </Link>
+            </a>
     </Grid>
    
   

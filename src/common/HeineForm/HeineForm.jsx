@@ -45,6 +45,7 @@ export default function HeineForm()  {
             
             <Container className={classes.findDistr}>
             <Grid container justify="space-between" >
+            
               <Form size={5} 
                 
                 title="Найти дистибьютора"
@@ -76,13 +77,17 @@ export default function HeineForm()  {
                     <option value={20}>Twenty</option>
                     <option value={30}>Thirty</option>
                 </Select>
-                    <OrangeBtn buttonText="Поиск" width="100%" height="40px" />
+                 
                 </FormControl>
-                </form>        
+                
+                </form>   
+                <OrangeBtn buttonText="Поиск" width="100%" padding="10px"/>
+                
+                     
                   </Form>
                 <Content size={6} 
                   image={HEINE}>
-                  <Typography variant="body2" component="p" style={{color:'#fff'}}>
+                  <Typography variant="body2" component="p" style={{color:'#fff',paddingTop:10}}>
                     HEINE Optotechnik является мировым лидером в производстве инструментов для первичной диагностики с более чем 500 сотрудниками. На протяжении более 70 лет компания HEINE Optotechnik находится в 100% семейном владении и управлении. Мы продолжаем разрабатывать и производить инструменты HEINE на наших предприятиях в Германии, где мы сочетаем многолетний опыт и мастерство с самыми современными производственными технологиями.
                   </Typography>
                   
@@ -91,9 +96,9 @@ export default function HeineForm()  {
             </Grid>
             
           </Container>
-              <Grid container justify="flex-end" style={{position:"relative", bottom:160, right:0}}>
-                    <Grid item>
-                      <a href="#"><img style={{width:"100vh",  }}  src={heineDistr}></img></a>
+              <Grid container justify="flex-end" style={{position:"absolute"}}>
+                    <Grid item style={{position:"relative", bottom:140, right:0}}>
+                      <a href="#"><img style={{ width:"105vh" }}  src={heineDistr}></img></a>
                     </Grid>
                   </Grid>
         </Paper>

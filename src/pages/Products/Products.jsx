@@ -16,12 +16,12 @@ export default function Products()  {
       <div style={{ background: "#fff", padding:"70px 0"}}>
           <Container fluid  >
               <Grid container justify="space-around" spacing={6}>
-                  <Item link="/" size={6} image={dermatologyCategory} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification." />
-                  <Item size={6} image={dermatologyCategory} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification."/>
-                  <Item size={6} image={dermatologyCategory} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification." />
-                  <Item size={6} image={dermatologyCategory} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification."/>
-                  <Item size={6} image={dermatologyCategory} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification." />
-                  <Item size={6} image={dermatologyCategory} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification."/>
+                  <Item link="/listProducts" size={6} image={dermatologyCategory} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification." />
+                  <Item link="/listProducts" size={6} image={dermatologyCategory} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification."/>
+                  <Item link="/listProducts" size={6} image={dermatologyCategory} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification." />
+                  <Item link="/listProducts" size={6} image={dermatologyCategory} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification."/>
+                  <Item link="/listProducts" size={6} image={dermatologyCategory} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification." />
+                  <Item link="/listProducts" size={6} image={dermatologyCategory} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification."/>
               </Grid>
           </Container>
       </div>
