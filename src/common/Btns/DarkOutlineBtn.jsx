@@ -6,7 +6,7 @@ const useStyles = makeStyles(theme => ({
     btnControl: {
         padding: "8px 15px",
         marginTop:theme.spacing(2),
-        border: '1px solid #444444',
+        border: theme.palette.outlinedBtnDark.main,
         textTransform:"capitalize",
         background: 'none',
         color: theme.palette.secondary.main,

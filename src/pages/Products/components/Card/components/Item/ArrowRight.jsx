@@ -7,7 +7,7 @@ import arrowRight from '../../../../../../assets/images/arrowRight.svg'
 const useStyles = makeStyles(theme => ({
     arrowRight: {
         "&:hover": {
-            stroke:"#F84F06"
+            stroke:theme.palette.primary.main
         }
     }
     

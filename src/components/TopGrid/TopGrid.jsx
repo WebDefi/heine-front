@@ -28,10 +28,10 @@ import Slider from '../Slider/Slider'
 
 export default function TopGrid()  {
   return (
-
     <Grid container spacing={2} style={{marginTop:"70px"}}>
     <Slider />
     <Item size={8} title="1111" image={dermatoscopes} text="some">
+      
           <ul>
             <li>Item 1.1</li>
             <li>Item 1.2</li>
@@ -134,7 +134,7 @@ export default function TopGrid()  {
         <LightOutlineBtn link="/news" buttonText="something" />
     </Item>
     <Item size={4} title="О НАС" imageCenter={aboutUs} text="some" subtitle="Кое-что интересное о прошлом, настоящем и будущем." contrast="#444">
-        <DarkOutlineBtn buttonText="something" />
+        <DarkOutlineBtn link="/about" buttonText="something" />
     </Item>
     <Item size={4}  bigTitle="HEINE" subtitle="Станьте частью нас!" image={heine} text="some" bgcolor="#EE5F22" >
       <LightOutlineBtn buttonText="something" />
@@ -147,7 +147,7 @@ export default function TopGrid()  {
       <LightOutlineBtn buttonText="something" />
     </Item>
     <Item size={4}  title="Свяжитесь с нами" image={contacts} text="some" gridheight="300px">
-      <DarkOutlineBtn buttonText="something" />
+      <DarkOutlineBtn link="/contacts" buttonText="something" />
     </Item>
   </Grid>
   );

@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Button, Typography, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import OrangeBtn from '../../../../common/Btns/OrangeBtn'
+import theme from '../../../theme';
 
 const useStyles = makeStyles(theme => ({
   gridContent: {
@@ -40,7 +41,7 @@ export function Privacy({
   size = 12, 
   title, 
   children, 
-  contrast="#fff",
+  contrast = theme.pallete.secondary.contrastText,
   })  {
   const classes = useStyles();
   return (

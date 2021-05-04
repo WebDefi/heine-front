@@ -6,7 +6,7 @@ import { Palette } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
     headerLink: {
-        color:"#fff",
+        color:theme.palette.secondary.contrastText,
         "&:hover": {
             color:theme.palette.primary.main
         }

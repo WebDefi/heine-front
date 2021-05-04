@@ -4,7 +4,7 @@
   bottom: 40px;
   right: 40px;
   
-  border-bottom: 3px solid #444;
+  border-bottom: 3px solid #595959;
   
 }
 .slick-dots li button:before{
@@ -36,9 +36,3 @@
 .slick-dots li.slick-active {
   padding-right:20px;
 }
-/* .slick-dots li button{
-  padding: 100px;
-  display: flex;
-  justify-content: space-around;
-} */
-/*# sourceMappingURL=Slider.modules.css.map */
