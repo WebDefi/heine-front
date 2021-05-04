@@ -7,13 +7,20 @@ import dermatologyCategory from '../../assets/images/category1.jpg'
 import dermatoscopesCategory from '../../assets/images/category2.jpg'
 import SubHeader from '../../common/SubHeader/SubHeader'
 
+const useStyles = makeStyles(theme => ({
+  productsSection: {
+    background:theme.palette.white.main,
+    padding:"70px 0"
+  }
+
+}));
 
 export default function Products()  {
-  
+  const classes = useStyles();
   return (
     <div>
       <SubHeader /> 
-      <div style={{ background: "#fff", padding:"70px 0"}}>
+      <div className={classes.productsSection}>
           <Container fluid  >
               <Grid container justify="space-around" spacing={6}>
                   <Item link="/listProducts" size={6} image={dermatologyCategory} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification." />

@@ -48,7 +48,8 @@ export const theme = createMuiTheme({
         },
         secondary: {
             main: "#444",
-            contrastText: "#fff"
+            contrastText: "#fff",
+            secondaryBorder:"1px solid #444"
             
         },
         lightGray: {
@@ -57,7 +58,40 @@ export const theme = createMuiTheme({
         
         mainBg: {
             main: "#F1F1F1",
+        },
+        borderMain: {
+            main: "1px solid #C1C4C5"
+        },
+        mainBtnBorder: {
+            main: "1px solid #EE5F22"
+        },
+        outlinedBtnLight: {
+            main: "1px solid #FFFFFF"
+        },
+        outlinedBtnDark: {
+            main: "1px solid #444444"
+        },
+        footerBorder: {
+            main:"1px solid #4D4D4D"
+        },
+        headerBorder: {
+            main: "12px solid #F1F1F1"
+        },
+        footerLinkHover: {
+            main:"#2D2D2D"
+        },
+        newsCaption: {
+            main:"#F2D1C2"
+        },
+        darkerText: {
+            main:"#262626"
+        },
+        cardBlur: {
+            main:"rgba(196, 196, 196, 0.03)"
         }
+       
+      
+        
     },
     
     typography: {
@@ -129,7 +163,8 @@ export const theme = createMuiTheme({
             fontWeight: '400',
             color:"#444444",
         },
-      
+        
+        
         
 
 

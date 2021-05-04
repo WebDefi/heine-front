@@ -26,6 +26,11 @@ const useStyles = makeStyles(theme => ({
         alignItems: "center",
         height: 500,
         backgroundColor: theme.palette.primary.main,
+    },
+    contentText: {
+      color:theme.palette.primary.contrastText,
+      paddingTop:13,
+      lineHeight: 1.8,
     }
     
   
@@ -87,7 +92,7 @@ export default function HeineForm()  {
                   </Form>
                 <Content size={6} 
                   image={HEINE}>
-                  <Typography variant="body2" component="p" style={{color:'#fff',paddingTop:10}}>
+                  <Typography variant="body2" component="p" className={classes.contentText}>
                     HEINE Optotechnik является мировым лидером в производстве инструментов для первичной диагностики с более чем 500 сотрудниками. На протяжении более 70 лет компания HEINE Optotechnik находится в 100% семейном владении и управлении. Мы продолжаем разрабатывать и производить инструменты HEINE на наших предприятиях в Германии, где мы сочетаем многолетний опыт и мастерство с самыми современными производственными технологиями.
                   </Typography>
                   
@@ -97,7 +102,7 @@ export default function HeineForm()  {
             
           </Container>
               <Grid container justify="flex-end" style={{position:"absolute"}}>
-                    <Grid item style={{position:"relative", bottom:140, right:0}}>
+                    <Grid item style={{position:"relative", bottom:155, right:0}}>
                       <a href="#"><img style={{ width:"105vh" }}  src={heineDistr}></img></a>
                     </Grid>
                   </Grid>

@@ -5,6 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from './theme'
 import { ThemeProvider } from "@material-ui/core/styles";
 // import GridComponents from './components/Grid/GridComponents'
+import NameForm from './common/FooterInput/NameForm'
 import styles from './styles/styles.module.css'
 // import Footer from './components/Footer/Footer'
 // import Products from './components/Products/Products'
@@ -13,19 +14,21 @@ import Service from './pages/Service/Service'
 import TopGrid from './components/TopGrid/TopGrid'
 import Slider from './components/Slider/Slider'
 import Footer from './components/Footer/Footer'
+import ProductItems from './components/TopGrid/components/ProductItems'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
 } from "react-router-dom";
-
+import About from './pages/About/About'
 import Contacts from './pages/Contacts/Contacts'
 import HeineForm from './common/HeineForm/HeineForm'
 import News from './pages/News/News'
 import NewsDetails from './pages/News/components/NewsDetails/NewsDetails'
 import SubMenu from './components/Header/components/SubMenu/SubMenu'
 import ListProducts from './pages/ListProducts/ListProducts'
+import ProductList from './components/TopGrid/components/ProductItems';
     const App =()=>  (
         <ThemeProvider theme={theme}>
             <CssBaseline />
@@ -50,6 +53,7 @@ import ListProducts from './pages/ListProducts/ListProducts'
                     <Route path="/newsDetail" component={NewsDetails} />
                     <Route path="/service" component={Service} />
                     <Route path="/listProducts" component={ListProducts} />
+                    <Route path="/about" component={About} />
                   </Switch>
                      
                     
