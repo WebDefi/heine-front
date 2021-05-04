@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-export default function Form({
+export default function Form({ 
   size = 2, 
   title, 
   children, 

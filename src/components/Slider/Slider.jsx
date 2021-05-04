@@ -7,7 +7,7 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import DarkOutlineBtn from '../../common/Btns/DarkOutlineBtn'
 import Item from '../TopGrid/components/Item/Item'
 import { TrainRounded } from "@material-ui/icons";
-import "./Slider.css"
+import "./Slider.modules.css"
 
 export default class SimpleSlider extends Component {
   

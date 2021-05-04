@@ -18,9 +18,6 @@ const useStyles = makeStyles(theme => ({
         bottom:0,
         right:0,
     },
-    serviceSection: {
-        background:theme.palette.white.main
-    }
  }));
 
 export default function Products()  {
@@ -28,7 +25,7 @@ const classes = useStyles();
   return (
     <div>
     <SubHeader />
-        <div className={classes.serviceSection}>
+        <div style={{background:"#fff"}}>
         <Container fluid  >
         <Typography variant="h6" style={{fontWeight:"500", paddingTop: 50}} >Мы стремимся предоставить вам самые лучшие продукты и услуги.</Typography>
         <Typography variant="body1" style={{paddingTop: 10,paddingBottom: 50}}>Наше стремление поставлять продукцию высокого качества также включает в себя исключительный уровень обслуживания и поддержки. Предоставление надежных советов и несложной помощи - это то, что ценят наши клиенты во всем мире.</Typography>

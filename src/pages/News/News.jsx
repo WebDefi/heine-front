@@ -3,7 +3,7 @@ import { Grid, Link, Container } from '@material-ui/core';
 import NewsItem from './components/NewsItem'
 import SubHeader from '../../common/SubHeader/SubHeader'
 
-export default function News()  {
+export default function Products()  {
  
   return (
       <div style={{background:"#fff"}}>

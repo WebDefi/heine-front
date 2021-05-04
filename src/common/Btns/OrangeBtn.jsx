@@ -7,7 +7,7 @@ const useStyles = makeStyles(theme => ({
         padding: "4px 15px",
         marginTop:theme.spacing(2),
         textTransform:"capitalize",
-        backgroundColor:theme.palette.primary.main,
+        backgroundColor:"#EE5F22",
         '&:hover': {
             background: theme.palette.secondary.main,
           }

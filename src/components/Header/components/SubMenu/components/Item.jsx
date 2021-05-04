@@ -14,7 +14,7 @@ import {
 
 const useStyles = makeStyles(theme => ({
     menuLink: {
-        color:theme.palette.secondary.contrastText,
+        color:"#fff",
         padding:0,
         textTransform:"uppercase",
         "&:hover": {

@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
         paddingTop:50,
         height:200,
         "&:hover": {
-            borderTop:theme.palette.primary.main,
+            borderTop:"1px solid #EE5F22",
 
           },
    },
@@ -23,12 +23,12 @@ const useStyles = makeStyles(theme => ({
         
         overflow: "hidden",
         marginTop: theme.spacing(1),
-        background:theme.palette.secondary.main,
+        background:"#444",
         
-        border:theme.palette.secondary.secondaryBorder,
+        border:"1px solid #444",
         "&:hover": {
-            border:theme.palette.mainBtnBorder.main,
-            background:theme.palette.mainBtnBorder.main,
+            border:"1px solid #EE5F22",
+            background:"#EE5F22",
           }
    },
     

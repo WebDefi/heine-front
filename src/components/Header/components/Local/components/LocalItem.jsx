@@ -7,7 +7,7 @@ import transitions from '@material-ui/core/styles/transitions';
 
 const useStyles = makeStyles(theme => ({
     localBtn: {
-        color:theme.palette.secondary.contrastText,
+        color:"#fff",
         padding:0,
         "&:hover": {
             color:theme.palette.primary.main,

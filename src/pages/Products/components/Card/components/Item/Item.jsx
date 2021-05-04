@@ -6,14 +6,14 @@ import ArrowRight from  './ArrowRight'
 
 const useStyles = makeStyles(theme => ({
    cardContent: {
-        borderTop:theme.palette.borderMain.main,
+        borderTop:"1px solid #C1C4C5",
         position: "absolute",
         bottom: 0,
         zIndex: 3,
-        background: theme.palette.cardBlur.main,
+        background: 'rgba(196, 196, 196, 0.03)',
         backdropFilter:' blur(41px)',
         "&:hover": {
-            borderTop:theme.palette.mainBtnBorder.main,
+            borderTop:"1px solid #EE5F22",
           },
    },
    categoryBlock: {
@@ -23,9 +23,9 @@ const useStyles = makeStyles(theme => ({
         justifyContent:"flex-start",
         overflow: "hidden",
         marginTop: theme.spacing(1),
-        outline:theme.palette.borderMain.main,
+        outline:"1px solid #C1C4C5",
         "&:hover": {
-            outline:theme.palette.mainBtnBorder.main,
+            outline:"1px solid #EE5F22",
              
           }
    },

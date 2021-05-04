@@ -4,35 +4,31 @@ import { makeStyles } from '@material-ui/core/styles';
 import Col from './Col/Col'
 import Form from './Form/Form'
 import medigranLogo from '../../assets/images/medigranLogo.png'
-import NameForm from '../../common/FooterInput/NameForm'
+
 import { Palette } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
   footer: {
       marginTop: 12,
       paddingTop: 80,
-      background:theme.palette.local.main,
+      background:"#393939",
     
   },
   link: {
-      color:theme.palette.secondary.contrastText,
+      color:"#fff",
       padding:"5px",
       
       "&:hover": {
           width:"100%",
-          background:theme.palette.footerLinkHover.main,
+          background:"#2D2D2D",
           borderRadius:"7px"
       }
   },
   privacyLink: {
-    color:theme.palette.secondary.contrastText,
+    color:"#fff",
         "&:hover": {
             color:theme.palette.primary.main,
         }
-  },
-  footerContent: {
-    borderTop:theme.palette.footerBorder.main,
-    paddingTop:40
   }
     
   
@@ -43,8 +39,10 @@ export default function Footer() {
   const classes = useStyles();
   return (
     <footer className={classes.footer}>
-        <Grid container spacing={1} justify="space-around" className={classes.footerContent}>
-            <Form size="3" title="Нужна помощь в подборе оборудования?"/>
+        <Grid container spacing={1} justify="space-around" style={{borderTop:"1px solid #4D4D4D",paddingTop:40}}>
+            <Form size="3" title="Нужна помощь в подборе оборудования?">
+                <TextField />
+            </Form>
             <Col size="2" title="Продукция">
                 <ul>
                     <Typography className={classes.link} variant="body2">Сфигмоманометры и стетоскопы</Typography>
@@ -99,6 +97,9 @@ export default function Footer() {
                 <Col size="3">
                     <a href="#"><Typography variant="body2" className={classes.privacyLink}>Официальный представитель Heine в Украине</Typography></a>
                 </Col>
+                {/* <Col size="1">
+                     <img src={medigranLogo}></img>
+                </Col> */}
            </Grid>
              
         </Grid>

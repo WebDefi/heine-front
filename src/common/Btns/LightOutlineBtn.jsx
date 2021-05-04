@@ -5,11 +5,11 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles(theme => ({
     btnControl: {
         padding: "8px 15px",
-        border: theme.palette.outlinedBtnLight.main,
+        border: '1px solid #fff',
         marginTop:theme.spacing(2),
         textTransform:"capitalize",
         background: 'none',
-        color: theme.palette.secondary.contrastText,
+        color: "#fff",
         '&:hover': {
             background: theme.palette.secondary.contrastText,
             color: theme.palette.secondary.main,

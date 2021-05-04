@@ -16,7 +16,7 @@ export default function DetailsItem({
         
                 <Grid container direction="column" justify="center" alignItems="center">
                     <Grid item>
-                    <a href="/newsDetail"><img src={newsDetail}></img></a>
+                    <a href="/"><img src={newsDetail}></img></a>
                         <Typography variant="h6">{title}</Typography>
                         <Typography variant="body2" style={{padding:"15px 0 30px 0"}}>{subtitle}</Typography>
                     </Grid>
