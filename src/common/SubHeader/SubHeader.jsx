@@ -5,7 +5,7 @@ import Item from './components/Item/Item'
 
 const useStyles = makeStyles(theme => ({
   subHeaderContainer: {
-      background:theme.palette.secondary.contrastText,
+      background:theme.palette.mainBg.main,
       marginTop:80,
       padding:"50px 0",
       borderBottom:theme.palette.borderMain.main
