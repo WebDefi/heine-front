@@ -6,7 +6,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from './components/Select'
 import NativeSelect from '@material-ui/core/NativeSelect';
-
+import Nultiline from './components/Multiline'
+import Multiline from './components/Multiline';
 
 export default function Form({ 
   size = 6, 
@@ -31,6 +32,8 @@ export default function Form({
           <Select article="Cпециальность"/>
           <Select article="Функция"/>
           <Input placeholder="Тема" article="Тема"/> 
+          <Multiline article="Сообщение" />
+          
         </Grid>
       </form> 
          {children}
