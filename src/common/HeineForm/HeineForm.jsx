@@ -8,7 +8,7 @@ import HEINE from '../../assets/images/heinedistr.svg'
 import OrangeBtn from '../../common/Btns/OrangeBtn'
 import LightOutlineBtn from '../../common/Btns/LightOutlineBtn'
 import DarkOutlineBtn from '../../common/Btns/DarkOutlineBtn'
-
+import HeinePartner from '../HeinePartner/HeinePartner'
 const useStyles = makeStyles(theme => ({
   heineForm: {
     // display:"flex",
@@ -103,7 +103,7 @@ export default function HeineForm()  {
           </Container>
               <Grid container justify="flex-end" style={{position:"absolute"}}>
                     <Grid item style={{position:"relative", bottom:155, right:0}}>
-                      <a href="#"><img style={{ width:"105vh" }}  src={heineDistr}></img></a>
+                      <HeinePartner/> 
                     </Grid>
                   </Grid>
         </Paper>
