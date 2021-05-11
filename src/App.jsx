@@ -15,6 +15,8 @@ import TopGrid from './components/TopGrid/TopGrid'
 import Slider from './components/Slider/Slider'
 import Footer from './components/Footer/Footer'
 import ProductItems from './components/TopGrid/components/ProductItems'
+import FAQ from './pages/FAQ/FAQ'
+import HeinePartner from './common/HeinePartner/HeinePartner'
 import {
   BrowserRouter as Router,
   Switch,
@@ -54,6 +56,7 @@ import ProductList from './components/TopGrid/components/ProductItems';
                     <Route path="/service" component={Service} />
                     <Route path="/listProducts" component={ListProducts} />
                     <Route path="/about" component={About} />
+                    <Route path="/faq" component={FAQ} />
                   </Switch>
                      
                     
@@ -61,6 +64,7 @@ import ProductList from './components/TopGrid/components/ProductItems';
 
                 </Router>
                 <Footer />
+                <HeinePartner />
         </ThemeProvider>
       );
 
