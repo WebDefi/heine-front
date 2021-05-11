@@ -17,6 +17,7 @@ export default function Multiline({
             <Typography variant="subtitle2">{article}</Typography>
             <FormControl variant="outlined"  size="small" fullWidth >
             <TextField
+            size="small"
             id="outlined-multiline-static"
             article="asdasd"
             multiline
