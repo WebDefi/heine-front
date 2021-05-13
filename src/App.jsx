@@ -64,7 +64,6 @@ import ProductList from './components/TopGrid/components/ProductItems';
 
                 </Router>
                 <Footer />
-                <HeinePartner />
         </ThemeProvider>
       );
 
