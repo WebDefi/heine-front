@@ -9,7 +9,6 @@ import { Palette } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
   footer: {
-      marginTop: 12,
       paddingTop: 80,
       background:theme.palette.local.main,
     
@@ -43,7 +42,7 @@ export default function Footer() {
   const classes = useStyles();
   return (
     <footer className={classes.footer}>
-        <Grid container spacing={1} justify="space-around" className={classes.footerContent}>
+        <Grid container spacing={4} justify="center" className={classes.footerContent}>
             <Form size="3" title="Нужна помощь в подборе оборудования?"/>
             <Col size="2" title="Продукция">
                 <ul>

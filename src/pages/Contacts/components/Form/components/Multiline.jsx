@@ -7,7 +7,7 @@ export default function Multiline({
     size = 6, 
     article
     })  {
-        const [value, setValue] = React.useState('Controlled');
+        const [value, setValue] = React.useState();
         const handleChange = (event) => {
             setValue(event.target.value);
           };
@@ -17,12 +17,12 @@ export default function Multiline({
             <Typography variant="subtitle2">{article}</Typography>
             <FormControl variant="outlined"  size="small" fullWidth >
             <TextField
-            size="small"
+            size="medium"
             id="outlined-multiline-static"
-            article="asdasd"
+            placeholder="type.."
             multiline
             variant="outlined"
-            rowsMax={4}
+            rowsMax={6}
             value={value}
             onChange={handleChange}/>
           </FormControl>

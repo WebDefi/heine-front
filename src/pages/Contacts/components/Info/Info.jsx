@@ -17,7 +17,7 @@ export default function Info({
   })  {
   const classes = useStyles();
   return (
-    <Grid item xs={size}>
+    <Grid item xs={size} style={{paddingTop:50}}>
       <div>
         <Typography variant="body1">{subtitle1}</Typography>
         <Typography variant="body1">{subtitle2}</Typography>

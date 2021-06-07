@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {Button,Link} from '@material-ui/core';
+import {Button,Link,Grid} from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     btnControl: {
@@ -18,7 +18,7 @@ export default function Header(props) {
     const classes = useStyles();
   
     return (
-        <a href={props.link}><Button className={classes.btnControl} style={{width:props.width, padding:props.padding}}>{props.buttonText}</Button></a>
+            <a href={props.link}><Button className={classes.btnControl} type="submit" style={{width:props.width, padding:props.padding}}>{props.buttonText}</Button></a>
     );
   }
 

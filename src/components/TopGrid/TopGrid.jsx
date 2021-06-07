@@ -24,11 +24,11 @@ import map from '../../assets/images/MAP.svg'
 import aboutUs from '../../assets/images/aboutUs.png'
 import liDecoration from '../../assets/images/liPolygon.png'
 import Slider from '../Slider/Slider'
- 
+import BottomGrid from '../TopGrid/components/Item/BottomGrid'
 
 export default function TopGrid()  {
   return (
-    <Grid container spacing={2} style={{marginTop:"70px"}}>
+    <Grid container spacing={2} style={{marginTop:"70px" ,marginBottom:'6px'}}>
     <Slider />
     <Item size={8} title="1111" image={dermatoscopes} text="some">
       
@@ -139,16 +139,16 @@ export default function TopGrid()  {
     <Item size={4}  bigTitle="HEINE" subtitle="Станьте частью нас!" image={heine} text="some" bgcolor="#EE5F22" >
       <LightOutlineBtn buttonText="something" />
     </Item>
-    <Item size={4}  title="СЕРВИСЫ" image={services} text="some" gridheight="300px">
+    <BottomGrid size={4}  title="СЕРВИСЫ" image={services} text="some" gridheight="300px">
       <DarkOutlineBtn link="/service" buttonText="something" />
-    </Item>
-    <Item size={4} image={warrantyBg}  contrastTitle="Гарантия 5 лет" text="some" bgcolor="#EE5F22" gridheight="300px" subtitle="HEINE является мировым лидером в производстве инструментов для первичной диагностики с более чем 500 сотрудниками.
+    </BottomGrid>
+    <BottomGrid size={4} image={warrantyBg}  contrastTitle="Гарантия 5 лет" text="some" bgcolor="#EE5F22" gridheight="300px" subtitle="HEINE является мировым лидером в производстве инструментов для первичной диагностики с более чем 500 сотрудниками.
 Более 70 лет компания находится в 100% семейном владении и управлении" >
       <LightOutlineBtn buttonText="something" />
-    </Item>
-    <Item size={4}  title="Свяжитесь с нами" image={contacts} text="some" gridheight="300px">
+    </BottomGrid>
+    <BottomGrid size={4}  title="Свяжитесь с нами" image={contacts} text="some" gridheight="300px">
       <DarkOutlineBtn link="/contacts" buttonText="something" />
-    </Item>
+    </BottomGrid>
   </Grid>
   );
 };

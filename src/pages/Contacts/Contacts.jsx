@@ -5,14 +5,15 @@ import Info from './components/Info/Info'
 import Adress from './components/Info/components/Adress/Adress'
 import SubHeader from '../../common/SubHeader/SubHeader'
 import Form from '../Contacts/components/Form/Form'
-import News from './components/News/News'
-export default function Products()  {
+
+
+export default function Contacts()  {
  
   return (
     <div>
         <SubHeader /> 
         <Container fluid  >
-            <Grid container justify="space-around"   spacing={6}>
+            <Grid container justify="space-around" spacing={6}>
                 <Info size={6} subtitle1="У вас есть вопросы, предложения, хотите что-то заказать или отправить нам предложение? Тогда напишите нам!" subtitle2="sadasdasd"></Info>
                 <Adress size={6}>
                     <ul>
@@ -21,7 +22,6 @@ export default function Products()  {
                     </ul>
                 </Adress>
                 <Form title="Adasdasdasd" size={12}/>
-                <News size="12" title="asdasd"/>
             </Grid>
 
         </Container>

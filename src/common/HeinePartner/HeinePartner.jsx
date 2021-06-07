@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
   blue:{
     
     right:3,
-    top:43,
+    top:45,
     position:"absolute",
      
     height: 49,
@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
   yellow:{
      
     right:3,
-    top:55,
+    top:53,
     position:"relative",
      
     height: 49,
@@ -48,10 +48,10 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-export default function ProductDetails({blueSize="806px",whiteSize="800px",yellowSize="806px"})  {
+export default function HeinePartner({blueSize="52rem",whiteSize="52rem",yellowSize="51.789rem"})  {
   const classes = useStyles();
   return (
-    <Grid item>
+    <Grid item style={{position:"relative", bottom:125, right:0}}>
       <div className={classes.wrapper}>
         <div className={classes.blue} style={{width:blueSize}}></div>
         <div className={classes.yellow} style={{width:whiteSize}}></div>

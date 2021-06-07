@@ -1,0 +1,165 @@
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.e-menu__drop {
+    z-index: 20;
+}
+
+.e-short-news__note a {
+    color: #ffffff;
+}
+
+.e-short-news__rumor a {
+    color: #777777;
+}
+
+.e-short-news__rumor a:hover {
+    color: #999;
+}
+
+.e-short-news__date a {
+    color: #b3b3b3;
+}
+
+.e-short-news__date a:hover {
+    color: #cecece;
+}
+
+.e-device__modest {
+    min-height: 98px;
+}
+
+.e-brand__station {
+    max-width: 100%;
+    height: auto;
+    max-height: 57px;
+    line-height: 100%;
+}
+
+.b-parthers > .row {
+    min-height: 120px
+}
+
+.b-parthers__image {
+    max-width: 290px;
+    height: auto;
+    max-height: 70px;
+}
+
+.b-sort__btn {
+    text-transform: capitalize;
+}
+
+.b-specific.open .b-specific__note:after {
+    height: 46px;
+}
+
+
+.e-service__query, .e-pack__query {
+    transition: all .25s;
+}
+.e-service:hover .e-service__query, .e-pack:hover .e-pack__query {
+    filter: invert(2) brightness(1.2);
+}
+
+#swiper-order .swiper-wrapper {
+    justify-content: center;
+}
+
+.drop.open .e-mmenu__drop {
+    display: block;
+}
+
+.e-list--include  .e-made__value {
+    font-size: 1em;
+}
+
+
+
+.garant__item {
+    margin-bottom: 1.80em;
+}
+
+
+.garant__station {
+    margin-right: 0.90em;
+}
+
+.e-slip__lead {
+    text-transform: none;
+}
+
+/* alerts */
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.e-slip-info__rack {
+    position: relative;
+    padding-right: 6.10em;
+}
+
+.e-slip-info__rack .e-device__query {
+    max-width: 6.60em;
+}
+
+/* footer */
+.b-footer__title a {
+    color: #fff;
+}
+
+.dev-company {
+    position: relative;
+    z-index: 1;
+    padding: 15px 0 10px 0;
+
+}
+
+.dev-company a {
+    color: #047CCD;
+}
+
+@media (max-width: 575px){
+    body.loading {
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+    .b-sort__btn + .b-sort__btn {
+        margin-left: 0;
+    }
+}
+
+/* table responsive */
+.table-responsive {
+    overflow-x: auto;
+    min-height: 0.01%;
+}
+
+@media screen and (max-width: 767px) {
+    .table-responsive {
+        width: 100%;
+        margin-bottom: 13.5px;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: 1px solid #ddd;
+    }
+}
+

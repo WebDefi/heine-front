@@ -1,0 +1,47 @@
+
+.call-widget {
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+    display: flex;
+    flex-flow: row-reverse;
+    width: 4em;
+    height: 4em;
+    align-items: center;
+    justify-content: center;
+    background-color: #EE5F22;
+    border-radius: 3em;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s width;
+    box-shadow: 0 0 5px #EE5F22, 0 0 10px #EE5F22, 0 0 15px #EE5F22;
+    font-family: 'Montserrat';
+  }
+  .call-widget a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .call-widget > strong {
+    margin-right: 2em;
+    opacity: 0;
+  }
+  .call-widget i {
+    position: fixed;
+    right: 1.6em;
+    color: #fff;
+    font-size: 1.4em;
+    transition: 0.4s transform;
+  }
+  .call-widget:hover {
+    width: 14em;
+  }
+  .call-widget:hover > i {
+    transform: rotateZ(360deg);
+  }
+  .call-widget:hover > strong {
+    opacity: 1;
+    transition: 0.4s opacity 0.4s;
+  }
+  .call-widget > strong:hover {
+    text-decoration: underline;
+  }

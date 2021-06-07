@@ -5,6 +5,8 @@ import AboutLeft from '../../../assets/images/AboutLeft.jpg'
 import AboutRight from '../../../assets/images/AboutRight.jpg'
 import medigranAbout from '../../../assets/images/medigranAbout.png'
 import medigranPartner from '../../../assets/images/medigranPartner.png'
+
+
 const useStyles = makeStyles(theme => ({
   aboutWrap: {
     position: "relative",

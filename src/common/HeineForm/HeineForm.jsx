@@ -11,10 +11,7 @@ import DarkOutlineBtn from '../../common/Btns/DarkOutlineBtn'
 import HeinePartner from '../HeinePartner/HeinePartner'
 const useStyles = makeStyles(theme => ({
   heineForm: {
-    // display:"flex",
-    // justifyContent:"start",
-    // alignItems: "center",
-    height: 500,
+    height: 400,
     backgroundColor: theme.palette.primary.main,
     },
     input: {
@@ -24,7 +21,7 @@ const useStyles = makeStyles(theme => ({
       display:"flex",
         justifyContent:"start",
         alignItems: "center",
-        height: 500,
+        height: 400,
         backgroundColor: theme.palette.primary.main,
     },
     contentText: {
@@ -69,30 +66,30 @@ export default function HeineForm()  {
                   // }}
                   // className={classes.formControl}
                    />
-                  
+                  <TextField  
+                  style={{paddingTop:10}}
+                  placeholder='Введите c'
+                  color="primary" 
+                  size="small"
+                  variant="outlined"
+                  fullWidth
+                  // inputProps={{
+                  //     className: classes.input
+                  // }}
+                  // className={classes.formControl}
+                   />
               
-                <FormControl variant="outlined" size="small" className={classes.formControl} fullWidth style={{paddingTop:10}}>
-                <Select
                 
-                    native
-                    value={age}
-                    onChange={handleChange}>
-                    <option value="asdasd"   />
-                    <option value={10}>Ten</option>
-                    <option value={20}>Twenty</option>
-                    <option value={30}>Thirty</option>
-                </Select>
-                 
-                </FormControl>
                 
                 </form>   
                 <OrangeBtn buttonText="Поиск" width="100%" padding="10px"/>
                 
                      
                   </Form>
-                <Content size={6} 
+                  
+                <Content size={6}  
                   image={HEINE}>
-                  <Typography variant="body2" component="p" className={classes.contentText}>
+                  <Typography variant="body1" component="p" className={classes.contentText}>
                     HEINE Optotechnik является мировым лидером в производстве инструментов для первичной диагностики с более чем 500 сотрудниками. На протяжении более 70 лет компания HEINE Optotechnik находится в 100% семейном владении и управлении. Мы продолжаем разрабатывать и производить инструменты HEINE на наших предприятиях в Германии, где мы сочетаем многолетний опыт и мастерство с самыми современными производственными технологиями.
                   </Typography>
                   
@@ -101,12 +98,10 @@ export default function HeineForm()  {
             </Grid>
             
           </Container>
-              <Grid container justify="flex-end" style={{position:"absolute"}}>
-                    <Grid item style={{position:"relative", bottom:155, right:0}}>
-                      <HeinePartner/> 
-                    </Grid>
-                  </Grid>
+          <HeinePartner/> 
         </Paper>
+        
         </Grid>
   );
 };
+ 

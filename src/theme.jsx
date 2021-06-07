@@ -3,8 +3,6 @@ import { createMuiTheme } from '@material-ui/core/styles';
 // import RalewayRegular from './fonts/Raleway-Regular.ttf';
 // import RalewayMeduim from './fonts/Raleway-Medium.ttf';
 
- 
-
 // const ralewayRegular = {
 //     fontFamily: 'Raleway',
 //     fontStyle: 'normal',
@@ -136,7 +134,7 @@ export const theme = createMuiTheme({
         h6: {
             fontFamily: 'Montserrat',
             fontSize: '1.375rem',
-            fontWeight: '400',
+            fontWeight: '500',
             color:"#444444",
         },
         body1: {
@@ -191,6 +189,7 @@ export const theme = createMuiTheme({
                     fontWeight: "400",
                     fontSize: 16,
                     color: '#444',    
+                    overflowX: 'hidden',
                 },
                  
                 a: {

@@ -63,7 +63,7 @@ export default function Item({
         <Typography variant="h5">{title}</Typography>
         <Typography variant="h5" style={{color:contrast}}>{contrastTitle}</Typography>
         <Typography variant="h2" style={{color:contrast}}>{bigTitle}</Typography>
-        <Typography variant="body2" style={{color:contrast,paddingTop:5}}>{subtitle}</Typography>
+        <Typography variant="body1" style={{color:contrast,paddingTop:5}}>{subtitle}</Typography>
           {children}
       </div>
       <img className={classes.imgRight} src={image}/>

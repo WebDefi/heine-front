@@ -1,0 +1,30 @@
+﻿.form {
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    input{
+        
+        margin: 0 20px;
+        font: inherit;
+        color: #111;
+        width: 100%;
+        border: 0;
+        height: 1.1876em;
+        margin: 0;
+        display: block;
+        padding: 6px 14px;
+        min-width: 0;
+        background: none;
+        box-sizing: content-box;
+        letter-spacing: inherit;
+        animation-duration: 10ms;
+        -webkit-tap-highlight-color: transparent;
+        outline: 1px solid #111;
+        &:hover{
+            outline: 2px solid #111;
+        }
+        &:focus{
+            outline: 2px solid #EE5F22;
+        }
+    }
+}
