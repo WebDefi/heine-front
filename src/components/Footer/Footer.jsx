@@ -18,6 +18,7 @@ const useStyles = makeStyles(theme => ({
       padding:"5px",
       
       "&:hover": {
+          transition: "all 0.3s ease",
           width:"100%",
           background:theme.palette.footerLinkHover.main,
           borderRadius:"7px"
@@ -26,10 +27,12 @@ const useStyles = makeStyles(theme => ({
   privacyLink: {
     color:theme.palette.secondary.contrastText,
         "&:hover": {
+            transition: "all 0.3s ease",
             color:theme.palette.primary.main,
         }
   },
   footerContent: {
+    transition: "all 0.3s ease",
     borderTop:theme.palette.footerBorder.main,
     paddingTop:40
   }

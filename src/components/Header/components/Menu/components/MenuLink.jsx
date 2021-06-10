@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Palette } from '@material-ui/icons';
 import transitions from '@material-ui/core/styles/transitions';
 import {NavLink} from 'react-router-dom' 
+import { useState } from "react";
 
 import {
   BrowserRouter as Router,
@@ -20,7 +21,9 @@ const useStyles = makeStyles(theme => ({
         color:theme.palette.secondary.contrastText,
         padding:0,
         textTransform:"uppercase",
+        
         "&:hover": {
+            transition: "all 0.3s ease",
             color:theme.palette.primary.main,
         },
 
@@ -39,9 +42,14 @@ export default function MenuLink({
   const handleClick = (event) => {
     console.log('asdasdasd');
   }
+  const [menuOpened, setMenuOpened] = useState(false);
+  const [levelsSatate, setLevelsSatate] = useState({
+    catOpened: false,
+    cat: null,
+    subCatOpened: false,
+    subCat: null
+  });
   return (
-    <Grid item>
-        <Link to={link} className={classes.menuLink} onClick={handleClick} underline="none" component="a">{text}</Link>
-    </Grid>
+        <button className={classes.menuLink}>{text}</button>
   );
 };

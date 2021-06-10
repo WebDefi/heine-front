@@ -10,6 +10,7 @@ const useStyles = makeStyles(theme => ({
         color:theme.palette.secondary.contrastText,
         padding:0,
         "&:hover": {
+            transition: "all 0.3s ease",
             color:theme.palette.primary.main,
         },
 

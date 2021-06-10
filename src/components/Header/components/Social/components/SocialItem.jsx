@@ -8,6 +8,7 @@ const useStyles = makeStyles(theme => ({
     headerLink: {
         color:theme.palette.secondary.contrastText,
         "&:hover": {
+            transition: "all 0.3s ease",
             color:theme.palette.primary.main
         }
     }
