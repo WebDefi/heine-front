@@ -15,9 +15,9 @@ export default function ListProducts( )  {
         <SubHeader/>
           <Container fluid>
               <Grid container justify="space-around" spacing={6} style={{padding:"65px 0"}}>
-                  <Item link="/" size={4} display="none" image={listProducts} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification." />
-                  <Item link="/" size={4} display="none" title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification." />
-                  <Item link="/" size={4} display="none" title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification." />
+                  <Item link="/productDetail" size={4} display="none" image={listProducts} title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification." />
+                  <Item link="/productDetail" size={4} display="none" title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification." />
+                  <Item link="/productDetail" size={4} display="none" title="Дерматоскопы" subtitle="Better illumination. Higher colour rendering. More magnification." />
               </Grid>
               
           </Container>
