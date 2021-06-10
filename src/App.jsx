@@ -21,12 +21,19 @@ import NewsDetails from './pages/News/components/NewsDetails/NewsDetails'
 import ListProducts from './pages/ListProducts/ListProducts'
 import Phone from './common/Phone/Phone'
 import PopUp from './common/PopUp/PopUp'
- 
+import ProductSlider from './pages/ProductDetails/ProductSlider' 
+import ProductInfo from './pages/ProductDetails/ProductInfo'
+import ProductDetails from './pages/ProductDetails/ProductDetails'
+import MainMenu from './common/Menu/MainMenu'
+
     const App =()=>  (
         <ThemeProvider theme={theme}>
+        
             <CssBaseline />
-             
+            
                 <Header />
+                {/* <MainMenu /> */}
+                
                  <Router>
                   <Switch>
                     <Route exact path="/" component={TopGrid}/>
@@ -38,13 +45,16 @@ import PopUp from './common/PopUp/PopUp'
                     <Route path="/listProducts" component={ListProducts} />
                     <Route path="/about" component={About} />
                     <Route path="/faq" component={FAQ} />
+                    <Route path="/productDetail" component={ProductDetails} />
                   </Switch>
                 </Router>
+
+                
                 <Footer />
                 
                 <Phone />
-                <PopUp />
                 
+                <PopUp />
         </ThemeProvider>
       );
 
