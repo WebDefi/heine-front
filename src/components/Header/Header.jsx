@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from "react";
 
 import Logo from './components/Logo/Logo';
 import Menu from './components/Menu/Menu';
@@ -21,6 +22,43 @@ import {
 } from "react-router-dom";
 
 export default function Header() {
+  const [menuOpened, setMenuOpened] = useState(false);
+  const [levelsSatate, setLevelsSatate] = useState({
+    catOpened: false,
+    cat: null,
+    subCatOpened: false,
+    subCat: null
+  });
+
+  const menuTree = {
+    "Дерматоскопы и Док": {
+      "Дерматоскопы": {
+        "Модель": "/products",
+        "112": "#"
+      },
+      "12": {
+        "121": "#",
+        "122": "#",
+        "123": "#"
+      },
+      "13": {
+        "131": "#",
+        "132": "#"
+      }
+    },
+    "2": {
+      "21": {
+        "211": "#",
+        "212": "#",
+        "213": "#"
+      },
+      "22": {
+        "221": "#",
+        "222": "#",
+        "223": "#"
+      }
+    }
+  };
     return (
       <div>
        <AppBar color="secondary"  position="fixed" className='header'>
@@ -30,13 +68,18 @@ export default function Header() {
                
                <Grid item>
                 <Grid container justify="center" spacing={2}>
-                  <Router>
-                  <MenuLink link="/products" text="Продукция"/>
+                  <button className="navLink" onClick={() => setMenuOpened(!menuOpened)}>Продукция</button>
+                  <button className="navLink" onClick={() => setMenuOpened(!menuOpened)}>Аксессуары</button>
+                  <button className="navLink" onClick={() => setMenuOpened(!menuOpened)}>Новости</button>
+                  <button className="navLink" onClick={() => setMenuOpened(!menuOpened)}>Сервис</button>
+                  <button className="navLink" onClick={() => setMenuOpened(!menuOpened)}>Контакты</button>
+
+                  {/* <MenuLink onClick={() => setMenuOpened(!menuOpened)} link="/products" text="Продукция"/>
                   <MenuLink link="/" text="Аксессуары"/>
                   <MenuLink link="/news" text="Новости"/>
                   <MenuLink link="/service" text="Сервис"/>
-                  <MenuLink link="/contacts" text="Контакты"/> 
-                  </Router>
+                  <MenuLink link="/contacts" text="Контакты"/>  */}
+                  
     
               
                 </Grid>
@@ -44,6 +87,65 @@ export default function Header() {
                <Social/>
                {/* <Local /> */}
              </Grid>
+             <div
+        className={menuOpened ? "level-menu level-menu_opened" : "level-menu"}
+      >
+        <nav className="level-menu_level">
+          {Object.keys(menuTree).map((cat, key) => (
+            <li
+              onClick={() =>
+                setLevelsSatate({
+                  catOpened: true,
+                  cat,
+                  subCatOpened: false,
+                  subCat: null
+                })
+              }
+              key={key}
+            >
+              {cat}
+            </li>
+          ))}
+        </nav>
+        {levelsSatate.catOpened ? (
+          <nav className="level-menu_level">
+            {Object.keys(menuTree[levelsSatate.cat]).map((subCat, key) => (
+              <li
+                onClick={() =>
+                  setLevelsSatate({
+                    ...levelsSatate,
+                    subCatOpened: true,
+                    subCat
+                  })
+                }
+                key={key}
+              >
+                {subCat}
+              </li>
+            ))}
+          </nav>
+        ) : (
+          ""
+        )}
+        {levelsSatate.subCatOpened ? (
+          <nav className="level-menu_level">
+            {Object.keys(menuTree[levelsSatate.cat][levelsSatate.subCat]).map(
+              (item, key) => (
+                <li>
+                  <a
+                    href={menuTree[levelsSatate.cat][levelsSatate.subCat][item]}
+                    key={key}
+                  >
+                    {item}
+                  </a>
+                </li>
+              )
+            )}
+          </nav>
+        ) : (
+          ""
+        )}
+      </div>
             
          </Toolbar>
        
