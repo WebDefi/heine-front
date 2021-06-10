@@ -1,0 +1,64 @@
+﻿$primary: #ee5f22;
+$contrastText: #fff;
+$white:#fff;
+$local:#393939;
+$secondary: #444;
+$secondaryBorder: 1px solid #444;
+$lightGray: #dfe1e0;
+$mainBg: #f1f1f1;
+$borderMain: 1px solid #c1c4c5;
+$mainBtnBorder: 0.5px solid #ee5f22;
+$outlinedBtnLight: 1px solid #fff;
+$outlinedBtnDatk: 1px solid #444;
+$footerBorder: 1px solid #4d4d4d;
+$headerBorder: 12px solid #f1f1f1;
+$footerLinkHover: #2d2d2d;
+$newsCaption: #f2d1c2;
+$darkerText: #262626;
+$cardBlur: rgba(196, 196, 196, 0.03);
+
+.test1{
+    &:hover {
+        color: $primary;
+        transition: all 0.3s ease;
+    }
+}
+
+.main {
+    border-radius:0 20px 0 0;
+    &:hover {
+        border:$mainBtnBorder;
+        transition: all 0.3s ease;
+    }
+    .categoryBlock {
+        border-radius: 0 20px 0 0;
+        height: 230px;
+        position:relative;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        overflow: hidden;
+         
+        background:$secondary;
+        border-bottom:$borderMain;
+        &:hover {
+            transition: all 0.3s ease;
+            border: 0.5px solid $primary;
+            background: $primary;
+          }
+          
+    };
+    .categoryContent{
+        border:$secondaryBorder;
+        .categoryContentText {
+            margin:10px 20px;
+            @extend .test1;
+    
+        }
+    }
+    
+    
+    
+}
+
+
