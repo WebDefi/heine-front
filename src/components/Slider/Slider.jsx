@@ -9,6 +9,7 @@ import Item from '../TopGrid/components/Item/Item'
 import { TrainRounded } from "@material-ui/icons";
 import "./Slider.css"
 
+
 export default class SimpleSlider extends Component {
   
   render() {
