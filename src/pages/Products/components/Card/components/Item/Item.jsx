@@ -13,6 +13,7 @@ const useStyles = makeStyles(theme => ({
         background: theme.palette.cardBlur.main,
         backdropFilter:' blur(41px)',
         "&:hover": {
+            transition: "all 0.3s ease",
             borderTop:theme.palette.mainBtnBorder.main,
           },
    },
@@ -25,6 +26,7 @@ const useStyles = makeStyles(theme => ({
         marginTop: theme.spacing(1),
         outline:theme.palette.borderMain.main,
         "&:hover": {
+            transition: "all 0.3s ease",
             outline:theme.palette.mainBtnBorder.main,
              
           }
@@ -38,6 +40,11 @@ const useStyles = makeStyles(theme => ({
    },
    categoryContentText: {
         padding:"23px 0 23px 23px",
+   },
+   cardTitle: {
+     "&:hover": {
+       color:theme.palette.primary.main,
+     }
    }
   
 
@@ -64,7 +71,7 @@ export default function Item({
                     <Grid item className={classes.categoryContentText}>
                         <Grid container direction="row" alignItems="center">
                           <Grid item xs={11}>
-                            <Typography variant="subtitle1">{title}</Typography>
+                            <Typography variant="subtitle1" className={classes.cardTitle}>{title}</Typography>
                             <Typography variant="body1">{subtitle}</Typography>
                           </Grid>
                           <Grid item xs>
