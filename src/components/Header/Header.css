@@ -1,4 +1,48 @@
 .header {
     border-bottom: 12px solid #F1F1F1;
-    height:121px;
+    height:7.5em;
 }
+.level-menu {
+    position: absolute;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100vw;
+    background-color: #393939;
+    top: 7.5em;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    transition: 0.4s height;
+  }
+  .level-menu_opened {
+    height: 8em;
+  }
+  .level-menu_level {
+    list-style: none;
+    padding: 0.8em;
+    border-left: 2px solid #212121;
+  }
+  .level-menu_level > li {
+    cursor: pointer;
+    padding: 5px 10px;
+  }
+  li {
+    color:#ECE1E1;
+  }
+  li:hover {
+    transition: all 0.5s ease;
+    border-radius: 7px;
+    background: #2C2C2C;
+    color:#fff;
+  }
+  .navLink {
+    border: none;
+    background: none;
+    color:#fff;
+  }
+  .navLink:hover {
+    color:#111;
+    transition: all 0.3s ease;
+
+  }
+  
