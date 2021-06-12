@@ -18,6 +18,7 @@ function getModalStyle() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
+    zIndex: "1000",
     position: 'fixed',
     width: "60em",
     backgroundColor: theme.palette.background.paper,
