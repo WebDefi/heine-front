@@ -84,6 +84,15 @@ export const theme = createMuiTheme({
         darkerText: {
             main:"#262626"
         },
+        headerBorder: {
+            main: "2px solid #212121"
+        },
+        headerBottom: {
+            main: "12px solid #f1f1f1"
+        },
+        faqBorder: {
+            main: '1px solid rgba(0,0,0,.125)'
+        },
         cardBlur: {
             main:"rgba(196, 196, 196, 0.03)"
         }

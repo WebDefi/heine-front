@@ -3,20 +3,15 @@ import { Grid, Button, Typography, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Palette } from '@material-ui/icons';
 
-
-const useStyles = makeStyles(theme => ({
-
-}));
-
 export default function ProductInfoItem({ 
   size = 12, 
+
   })  {
-  const classes = useStyles();
   return (
     <Grid item xs={size}>
       <Grid container style={{border:'2px solid #C1C4C5',borderRadius:"10px"}} direction="row">
           <Grid item xs={12}>
-              <Typography style={{padding:"3px 10px"}}>asd</Typography>
+              <Typography style={{padding:"3px 10px"}}>asds</Typography>
           </Grid>
           <Grid item xs={12} style={{borderTop:'2px solid #C1C4C5',padding:"3px 10px"}}>
               <ul>

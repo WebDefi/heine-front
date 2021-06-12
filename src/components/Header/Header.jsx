@@ -1,27 +1,65 @@
 import React from 'react';
 import { useState } from "react";
 
-import Logo from './components/Logo/Logo';
-import Menu from './components/Menu/Menu';
-import {AppBar,Grid,Toolbar} from '@material-ui/core';
+import Logo from './components/Logo/Logo'
+import { AppBar,Grid,Toolbar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import logo from '../../assets/images/Logo.svg'
 import Social from './components/Social/Social'
-import Local from './components/Local/Local'
-import MainMenu from '../../common/Menu/MainMenu'
-import MenuLink from '../Header/components/Menu/components/MenuLink'
-
+ 
 import './Header.css'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
-} from "react-router-dom";
+
+
+const useStyles = makeStyles(theme => ({
+  header: {
+    borderBottom: theme.palette.headerBottom.main,
+    height:'7.5em',
+  },
+  levelMenu: {
+    position: 'absolute',
+    display: 'flex',
+    flexFlow: 'row wrap',
+    width: '100vw',
+    backgroundColor: theme.palette.local.main,
+    top: '7.5em',
+    left: 0,
+    height: 0,
+    overflow: 'hidden',
+    transition: '0.4s height',
+  },
+  levelMenuOpened: {
+    height: '8em',
+  },
+  levelMenuLevel: {
+    listStyle: 'none',
+    padding: '0.8em',
+    borderLeft: theme.palette.headerBorder.main,
+  },
+  navLink: {
+    color:theme.palette.lightGray.main,
+    "&:hover": {
+      transition: 'all 0.5s ease',
+      borderRadius: 7,
+      background:theme.palette.footerLinkHover.main,
+      color:'#fff',
+    }
+  },
+  menuLink: {
+    border: 'none',
+    background: 'none',
+    color:'#fff',
+    '&:hover': {
+      color:theme.palette.primary.main,
+      transition: 'all 0.3s ease',
+    }
+  }
+
+
+
+}));
 
 export default function Header() {
+  const classes = useStyles();
+
   const [menuOpened, setMenuOpened] = useState(false);
   const [levelsSatate, setLevelsSatate] = useState({
     catOpened: false,
@@ -61,38 +99,29 @@ export default function Header() {
   };
     return (
       <div>
-       <AppBar color="secondary"  position="fixed" className='header'>
+       <AppBar color="secondary"  position="fixed" className={classes.header}>
          <Toolbar> 
              <Grid container justify="space-around" alignItems="center">
                <Logo />
                
                <Grid item>
                 <Grid container justify="center" spacing={2}>
-                  <button className="navLink" onClick={() => setMenuOpened(!menuOpened)}>Продукция</button>
-                  <button className="navLink" onClick={() => setMenuOpened(!menuOpened)}>Аксессуары</button>
-                  <button className="navLink" onClick={() => setMenuOpened(!menuOpened)}>Новости</button>
-                  <button className="navLink" onClick={() => setMenuOpened(!menuOpened)}>Сервис</button>
-                  <button className="navLink" onClick={() => setMenuOpened(!menuOpened)}>Контакты</button>
-
-                  {/* <MenuLink onClick={() => setMenuOpened(!menuOpened)} link="/products" text="Продукция"/>
-                  <MenuLink link="/" text="Аксессуары"/>
-                  <MenuLink link="/news" text="Новости"/>
-                  <MenuLink link="/service" text="Сервис"/>
-                  <MenuLink link="/contacts" text="Контакты"/>  */}
-                  
-    
-              
+                  <button className={classes.menuLink} onClick={() => setMenuOpened(!menuOpened)}>Продукция</button>
+                  <button className={classes.menuLink} onClick={() => setMenuOpened(!menuOpened)}>Аксессуары</button>
+                  <button className={classes.menuLink} onClick={() => setMenuOpened(!menuOpened)}>Новости</button>
+                  <button className={classes.menuLink} onClick={() => setMenuOpened(!menuOpened)}>Сервис</button>
+                  <button className={classes.menuLink} onClick={() => setMenuOpened(!menuOpened)}>Контакты</button>
                 </Grid>
                </Grid>
                <Social/>
-               {/* <Local /> */}
              </Grid>
              <div
-        className={menuOpened ? "level-menu level-menu_opened" : "level-menu"}
+        className={menuOpened ? "levelMenu levelMenuOpened" : "levelMenu"}
       >
-        <nav className="level-menu_level">
+        <nav className={classes.levelMenuLevel}>
           {Object.keys(menuTree).map((cat, key) => (
-            <li
+            <li 
+              className={classes.navLink}
               onClick={() =>
                 setLevelsSatate({
                   catOpened: true,
@@ -108,9 +137,10 @@ export default function Header() {
           ))}
         </nav>
         {levelsSatate.catOpened ? (
-          <nav className="level-menu_level">
+          <nav className={classes.levelMenuLevel}>
             {Object.keys(menuTree[levelsSatate.cat]).map((subCat, key) => (
               <li
+                className={classes.navLink}
                 onClick={() =>
                   setLevelsSatate({
                     ...levelsSatate,
@@ -128,10 +158,10 @@ export default function Header() {
           ""
         )}
         {levelsSatate.subCatOpened ? (
-          <nav className="level-menu_level">
+          <nav className={classes.levelMenuLevel}>
             {Object.keys(menuTree[levelsSatate.cat][levelsSatate.subCat]).map(
               (item, key) => (
-                <li>
+                <li className={classes.navLink}>
                   <a
                     href={menuTree[levelsSatate.cat][levelsSatate.subCat][item]}
                     key={key}
@@ -159,14 +189,3 @@ export default function Header() {
 
 
 
-
-
-
-// export default function Header()  {
-//   const classes = useStyles();
-//   return (
-//     
-//   )
-// };
-
- 

@@ -10,7 +10,7 @@ import theme from '../../theme';
 const Accordion = withStyles({
   root: {
     marginBottom:20,
-    border: '1px solid rgba(0, 0, 0, .125)',
+    border: theme.palette.faqBorder.main,
     boxShadow: 'none',
     '&:not(:last-child)': {
       borderBottom: 0,
@@ -32,7 +32,7 @@ const Accordion = withStyles({
 const AccordionSummary = withStyles({
   root: {
     backgroundColor: theme.palette.primary.main,
-    borderBottom: '1px solid rgba(0, 0, 0, .125)',
+    borderBottom: theme.palette.faqBorder.main,
     marginBottom: -1,
     minHeight: 56,
     '&$expanded': {
