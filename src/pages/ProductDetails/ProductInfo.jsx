@@ -8,12 +8,12 @@ const useStyles = makeStyles(theme => ({
     
  }));
 
-export default function ProductInfo()  {
+export default function ProductInfo(props)  {
 const classes = useStyles();
   return (
     <Grid item xs={6}>
-        <Typography variant="h5" style={{fontWeight:"600", paddingTop: 50}} >HEINE DELTA 20T Дерматоскоп</Typography>
-        <Typography variant="body1" style={{paddingTop: 10,paddingBottom: 50}}>Класичний</Typography>
+        <Typography variant="h5" style={{fontWeight:"600", paddingTop: 50}}>{props.prodTitle}</Typography>
+        <Typography variant="body1" style={{paddingTop: 10,paddingBottom: 50}}>{props.prodArticle}</Typography>
         <ProductInfoItem />
         <ProductInfoConfiguration/> 
     </Grid>

@@ -18,7 +18,7 @@ const classes = useStyles();
             <Container fluid  >
               <Grid container>
                 <ProductSlider />
-                <ProductInfo/>
+                <ProductInfo prodTitle="prodTitle" prodArticle="prodArticle"/>
           
               </Grid>
             </Container>
