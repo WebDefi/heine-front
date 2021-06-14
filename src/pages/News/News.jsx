@@ -3,6 +3,8 @@ import { Grid, Link, Container } from '@material-ui/core';
 import NewsItem from './components/NewsItem'
 import SubHeader from '../../common/SubHeader/SubHeader'
 
+// http://116.202.243.73:3000/news
+
 export default function News()  {
  
   return (

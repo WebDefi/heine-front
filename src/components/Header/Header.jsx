@@ -9,6 +9,8 @@ import Social from './components/Social/Social'
 import './Header.css'
 
 
+// 
+
 const useStyles = makeStyles(theme => ({
   header: {
     borderBottom: theme.palette.headerBottom.main,
@@ -60,6 +62,8 @@ const useStyles = makeStyles(theme => ({
 export default function Header() {
   const classes = useStyles();
 
+
+
   const [menuOpened, setMenuOpened] = useState(false);
   const [levelsSatate, setLevelsSatate] = useState({
     catOpened: false,
@@ -99,18 +103,18 @@ export default function Header() {
   };
     return (
       <div>
-       <AppBar color="secondary"  position="fixed" className={classes.header}>
+       <AppBar color="secondary"  position="fixed" className='header'>
          <Toolbar> 
              <Grid container justify="space-around" alignItems="center">
                <Logo />
                
                <Grid item>
                 <Grid container justify="center" spacing={2}>
-                  <button className={classes.menuLink} onClick={() => setMenuOpened(!menuOpened)}>Продукция</button>
-                  <button className={classes.menuLink} onClick={() => setMenuOpened(!menuOpened)}>Аксессуары</button>
-                  <button className={classes.menuLink} onClick={() => setMenuOpened(!menuOpened)}>Новости</button>
-                  <button className={classes.menuLink} onClick={() => setMenuOpened(!menuOpened)}>Сервис</button>
-                  <button className={classes.menuLink} onClick={() => setMenuOpened(!menuOpened)}>Контакты</button>
+                  <button className='menuLink' onClick={() => setMenuOpened(!menuOpened)}>Продукция</button>
+                  <button className='menuLink' onClick={() => setMenuOpened(!menuOpened)}>Аксессуары</button>
+                  <button className='menuLink' onClick={() => setMenuOpened(!menuOpened)}>Новости</button>
+                  <button className='menuLink' onClick={() => setMenuOpened(!menuOpened)}>Сервис</button>
+                  <button className='menuLink' onClick={() => setMenuOpened(!menuOpened)}>Контакты</button>
                 </Grid>
                </Grid>
                <Social/>
@@ -118,10 +122,10 @@ export default function Header() {
              <div
         className={menuOpened ? "levelMenu levelMenuOpened" : "levelMenu"}
       >
-        <nav className={classes.levelMenuLevel}>
+        <nav className='levelMenuLevel'>
           {Object.keys(menuTree).map((cat, key) => (
             <li 
-              className={classes.navLink}
+              className='navLink'
               onClick={() =>
                 setLevelsSatate({
                   catOpened: true,
@@ -137,10 +141,10 @@ export default function Header() {
           ))}
         </nav>
         {levelsSatate.catOpened ? (
-          <nav className={classes.levelMenuLevel}>
+          <nav className='levelMenuLevel'>
             {Object.keys(menuTree[levelsSatate.cat]).map((subCat, key) => (
               <li
-                className={classes.navLink}
+                className='navLink'
                 onClick={() =>
                   setLevelsSatate({
                     ...levelsSatate,
@@ -158,10 +162,10 @@ export default function Header() {
           ""
         )}
         {levelsSatate.subCatOpened ? (
-          <nav className={classes.levelMenuLevel}>
+          <nav className='levelMenuLevel'>
             {Object.keys(menuTree[levelsSatate.cat][levelsSatate.subCat]).map(
               (item, key) => (
-                <li className={classes.navLink}>
+                <li className='navLink'>
                   <a
                     href={menuTree[levelsSatate.cat][levelsSatate.subCat][item]}
                     key={key}

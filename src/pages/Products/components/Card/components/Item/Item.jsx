@@ -4,6 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import ArrowRight from  './ArrowRight'
 
 
+// http://116.202.243.73:3000/products/category/1
+// acc
+// accessories/accessoryCategory/
+
 const useStyles = makeStyles(theme => ({
    cardContent: {
         borderTop:theme.palette.borderMain.main,
@@ -62,6 +66,7 @@ export default function Item({
   const classes = useStyles();
   return (
  
+
  
         <Grid item xs={size}>
             <a href={link}>

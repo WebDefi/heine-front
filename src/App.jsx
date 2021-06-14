@@ -26,6 +26,8 @@ import ProductInfo from './pages/ProductDetails/ProductInfo'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
 import MainMenu from './common/Menu/MainMenu'
 
+// стейтлифтинг
+
     const App =()=>  (
         <ThemeProvider theme={theme}>
         

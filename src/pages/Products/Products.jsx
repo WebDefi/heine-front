@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Grid, Link, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Item from './components/Card/components/Item/Item'
@@ -15,8 +15,12 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
+// http://116.202.243.73:3000/products
+// аксессуары
+// http://116.202.243.73:3000/accessories
 export default function Products()  {
   const classes = useStyles();
+  
   return (
     <div>
       <SubHeader /> 

@@ -3,6 +3,9 @@ import { Typography,Grid,Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import newsImg from '../../../assets/images/newsImg.jpg'
 import newImgBg from '../../../assets/images/newsImgBg.svg'
+
+// http://116.202.243.73:3000/news/1
+
 const useStyles = makeStyles(theme => ({
     newsItemImg: {
         padding:"16px 14px",
