@@ -1,25 +1,40 @@
-﻿import React from 'react';
-import { Grid, Link, Container } from '@material-ui/core';
-import NewsItem from './components/NewsItem'
-import SubHeader from '../../common/SubHeader/SubHeader'
+﻿import React, { useState, useEffect } from "react";
+import { Grid, Link, Container } from "@material-ui/core";
+import NewsItem from "./components/NewsItem";
+import SubHeader from "../../common/SubHeader/SubHeader";
 
 // http://116.202.243.73:3000/news
 
-export default function News()  {
- 
+export default function News() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetch("http://116.202.243.73:3000/news");
+      const jsonResponse = await res.json();
+      setData(jsonResponse);
+    };
+
+    getData();
+  }, []);
   return (
-      <div style={{background:"#fff"}}>
+    <div style={{ background: "#fff" }}>
       <SubHeader />
-        <Container style={{padding:"80px 0"}}>
-            <Grid container direction="column" justify="center"  spacing={8} >
-            <NewsItem title="Награда GOOD DESIGN® 2020 за дерматоскопы HEINE" subtitle="Дерматоскопы HEINE DELTA 30 и DELTAone были удостоены награды 2020 GOOD DESIGN® Award в категории «Медицина». Эта программа выбирает самые инновационные и передовые промышленные, товарные и графические дизайны, созданные по всему миру.Мы очень рады этой награде и гордимся тем, что не только предоставляем пользователям дерматоскопов HEINE инструменты, которые соответствуют высочайшим стандартам качества и функций, но также имеют современный и отмеченный наградами дизайн." article="Новости Heine" link="/newsDetail"/>
-            <NewsItem title="Награда GOOD DESIGN® 2020 за дерматоскопы HEINE" subtitle="Дерматоскопы HEINE DELTA 30 и DELTAone были удостоены награды 2020 GOOD DESIGN® Award в категории «Медицина». Эта программа выбирает самые инновационные и передовые промышленные, товарные и графические дизайны, созданные по всему миру.Мы очень рады этой награде и гордимся тем, что не только предоставляем пользователям дерматоскопов HEINE инструменты, которые соответствуют высочайшим стандартам качества и функций, но также имеют современный и отмеченный наградами дизайн." article="Новости Heine" link="/newsDetail"/>
-            <NewsItem title="Награда GOOD DESIGN® 2020 за дерматоскопы HEINE" subtitle="Дерматоскопы HEINE DELTA 30 и DELTAone были удостоены награды 2020 GOOD DESIGN® Award в категории «Медицина». Эта программа выбирает самые инновационные и передовые промышленные, товарные и графические дизайны, созданные по всему миру.Мы очень рады этой награде и гордимся тем, что не только предоставляем пользователям дерматоскопов HEINE инструменты, которые соответствуют высочайшим стандартам качества и функций, но также имеют современный и отмеченный наградами дизайн." article="Новости Heine" link="/newsDetail"/>
-            <NewsItem title="Награда GOOD DESIGN® 2020 за дерматоскопы HEINE" subtitle="Дерматоскопы HEINE DELTA 30 и DELTAone были удостоены награды 2020 GOOD DESIGN® Award в категории «Медицина». Эта программа выбирает самые инновационные и передовые промышленные, товарные и графические дизайны, созданные по всему миру.Мы очень рады этой награде и гордимся тем, что не только предоставляем пользователям дерматоскопов HEINE инструменты, которые соответствуют высочайшим стандартам качества и функций, но также имеют современный и отмеченный наградами дизайн." article="Новости Heine" link="/newsDetail"/>
-            <NewsItem title="Награда GOOD DESIGN® 2020 за дерматоскопы HEINE" subtitle="Дерматоскопы HEINE DELTA 30 и DELTAone были удостоены награды 2020 GOOD DESIGN® Award в категории «Медицина». Эта программа выбирает самые инновационные и передовые промышленные, товарные и графические дизайны, созданные по всему миру.Мы очень рады этой награде и гордимся тем, что не только предоставляем пользователям дерматоскопов HEINE инструменты, которые соответствуют высочайшим стандартам качества и функций, но также имеют современный и отмеченный наградами дизайн." article="Новости Heine" link="/newsDetail"/>
-            <NewsItem title="Награда GOOD DESIGN® 2020 за дерматоскопы HEINE" subtitle="Дерматоскопы HEINE DELTA 30 и DELTAone были удостоены награды 2020 GOOD DESIGN® Award в категории «Медицина». Эта программа выбирает самые инновационные и передовые промышленные, товарные и графические дизайны, созданные по всему миру.Мы очень рады этой награде и гордимся тем, что не только предоставляем пользователям дерматоскопов HEINE инструменты, которые соответствуют высочайшим стандартам качества и функций, но также имеют современный и отмеченный наградами дизайн.Дерматоскопы HEINE DELTA 30 и DELTAone были удостоены награды 2020 GOOD DESIGN® Award в категории «Медицина». Эта программа выбирает самые инновационные и передовые промышленные, товарные и графические дизайны, созданные по всему миру.Мы очень рады этой награде и гордимся тем, что не только предоставляем пользователям дерматоскопов HEINE инструменты, которые соответствуют высочайшим стандартам качества и функций, но также имеют современный и отмеченный наградами дизайн." article="Новости Heine" link="/newsDetail"/>
-            </Grid>
-        </Container>
+      <Container style={{ padding: "80px 0" }}>
+        <Grid container spacing={10}>
+          {data.map((data) => {
+            return (
+              <NewsItem
+                key={data.id}
+                title={data.title}
+                subtitle={data.text}
+                image={data.imageUrl}
+                article="Новости Heine"
+                link="/newsDetail"
+              />
+            );
+          })}
+        </Grid>
+      </Container>
     </div>
   );
-};
+}

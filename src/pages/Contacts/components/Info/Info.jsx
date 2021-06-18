@@ -11,13 +11,15 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Info({ 
-  size = 6,  
+  sizeXs = 6,  
+  sizeSm,
+  sizeMd,
   subtitle1,
   subtitle2,
   })  {
   const classes = useStyles();
   return (
-    <Grid item xs={size} style={{paddingTop:50}}>
+    <Grid item xs={sizeXs} sm={sizeSm} md={sizeMd} style={{paddingTop:50}}>
       <div>
         <Typography variant="body1">{subtitle1}</Typography>
         <Typography variant="body1">{subtitle2}</Typography>

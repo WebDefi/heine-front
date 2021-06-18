@@ -1,5 +1,6 @@
 
 .call-widget {
+    z-index: 1000;
     position: fixed;
     right: 1em;
     bottom: 1em;

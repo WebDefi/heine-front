@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {Modal,TextField,Typography} from '@material-ui/core';
+import {Modal,TextField,Typography, Grid, Container} from '@material-ui/core';
 import OrangeBtn from '../Btns/OrangeBtn'
 import NameForm from '../FooterInput/NameForm'
 import Input from '../Input/Input'
@@ -13,14 +13,15 @@ function getModalStyle() {
     left:"50%",
     marginLeft:"-500px",
     bottom:0,
+    
   };
 }
 
 const useStyles = makeStyles((theme) => ({
   paper: {
+    bottom:0,
     zIndex: "1000",
     position: 'fixed',
-    width: "60em",
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
@@ -45,11 +46,15 @@ export default function SimpleModal(shouldHide) {
   const onClick = () => setShowResults(false)
 
   const Results = () => (
-    <div style={modalStyle} className={classes.paper}>
-    <button onClick={onClick} style={{float:'right',background:"none",border:'none'}}><img src={close} style={{position:"absolute",top:10, right:15}}></img></button>
-     <Typography variant="h6" align="center" style={{textTransform: "uppercase"}}>Связатся <span style={{color:"#EE5F22"}}>с менеджером</span></Typography>
-       <Input />
-    </div>
+    <Container> 
+      <Grid container justify="center">
+      <Grid item xs={12} sm={8} className={classes.paper}>
+        <button onClick={onClick} style={{float:'right',background:"none",border:'none'}}><img src={close} style={{position:"absolute",top:10, right:15}}></img></button>
+        <Typography variant="h6" align="center" style={{textTransform: "uppercase"}}>Связатся <span style={{color:"#EE5F22"}}>с менеджером</span></Typography>
+        <Input />
+      </Grid>
+    </Grid>
+    </Container>
   )
 
   return (

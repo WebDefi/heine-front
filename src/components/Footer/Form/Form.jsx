@@ -6,16 +6,28 @@ import NameForm from '../../../common/FooterInput/NameForm'
  
 
 export default function Form({ 
-  size = 12, 
+  sizeXs = 12,
+  sizeSm = 12, 
+  sizeMd = 3,
   title, 
   children, 
   contrast="#fff",
   })  {
  
   return (
-    <Grid item xs={size}>
-        <Typography variant="h6" style={{color:contrast,marginBottom:"30px"}}>{title}</Typography>
-         <NameForm />
+    <Grid item xs={sizeXs} sm={sizeSm} md={sizeMd}>
+      <Grid container justify="center" alignItems="center">
+        <Grid item>
+          
+            <Grid item>
+              <Typography variant="h6" style={{color:contrast,marginBottom:"30px"}}>{title}</Typography>
+            </Grid>
+            <Grid item style={{display:"flex", justifyContent:"center"}}>
+              <NameForm />
+            </Grid>
+          
+        </Grid>
+      </Grid>
     </Grid>
   );
 };

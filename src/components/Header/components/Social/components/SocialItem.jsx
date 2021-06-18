@@ -10,7 +10,10 @@ const useStyles = makeStyles(theme => ({
         "&:hover": {
             transition: "all 0.3s ease",
             color:theme.palette.primary.main
-        }
+        },
+        [theme.breakpoints.down("sm")]: {
+          display:"none",
+        },
     }
     
   

@@ -37,16 +37,22 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Form({
-  size = 2, 
+  sizeXs = 12, 
+  sizeSm = 6,
+  sizeMd = 2,
   title, 
   children, 
   primary="#F84F06",
   })  {
   const classes = useStyles();
   return (
-    <Grid item xs={size}>
-        <Typography variant="subtitle2" style={{color:primary, fontSize:18}}>{title}</Typography>
-          {children}
+    <Grid item xs={sizeXs} sm={sizeSm} md={sizeMd}>
+        <Grid container justify="center">
+          <Grid item>
+            <Typography variant="subtitle2" style={{color:primary, fontSize:18}}>{title}</Typography>
+              {children}
+          </Grid>
+        </Grid>
     </Grid>
   );
 };

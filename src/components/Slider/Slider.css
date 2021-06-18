@@ -1,10 +1,12 @@
+
 .slick-dots {
   width: 200px;
   top:340px;
   bottom: 40px;
   right: 40px;
-  
   border-bottom: 3px solid #595959;
+
+  
   
 }
 .slick-dots li button:before{
