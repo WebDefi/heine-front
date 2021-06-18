@@ -91,6 +91,9 @@ const useStyles = makeStyles(theme => ({
     background: "rgba(0, 159, 253, 0.5)",
     backdropFilter: "blur(22px)",
     padding:"20px 700px 20px 40px",
+    [theme.breakpoints.down('md')]: {
+      padding:"20px 200px 20px 40px",
+    },
     width:"100vw",
   },
   heineContent: {
@@ -101,6 +104,9 @@ const useStyles = makeStyles(theme => ({
     background: "rgba(238, 95, 34, 0.4)",
     backdropFilter: "blur(22px)",
     width:"100vw",
+    [theme.breakpoints.down('md')]: {
+      padding:"20px 20px 20px 490px",
+    },
   },
   contrast: {
     color:theme.palette.secondary.contrastText
@@ -111,7 +117,7 @@ const useStyles = makeStyles(theme => ({
 export default function MainScreen() {
   const classes = useStyles();
   return (
-    <Grid item  style={{marginTop:120}}>
+    <Grid item xs={12} style={{marginTop:120}}>
       <Grid container className={classes.aboutWrap}>
         <div className={classes.heine}>
           <div className={classes.heineBlock}>
