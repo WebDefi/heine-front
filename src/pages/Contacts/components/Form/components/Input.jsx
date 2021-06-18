@@ -9,7 +9,7 @@ export default function Input({
     })  {
    
     return (
-        <Grid item xs={size}>
+        <Grid item xs={12} sm={6} md={6} xl={6} lg={6}>
         <Typography variant="subtitle2">{article}</Typography>
           <TextField size="small"  variant="outlined" fullWidth placeholder={placeholder}/>
         </Grid>
