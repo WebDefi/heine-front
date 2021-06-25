@@ -5,9 +5,10 @@ import { Grid } from "@material-ui/core";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import DarkOutlineBtn from "../../common/Btns/DarkOutlineBtn";
-import Item from "../TopGrid/components/Item/Item";
+import Slide from "./components/Slide/Slide";
 import { TrainRounded } from "@material-ui/icons";
 import "./Slider.css";
+import Item from '../TopGrid/components/Item/Item'
 
 export default class SimpleSlider extends Component {
   render() {
@@ -39,10 +40,11 @@ export default class SimpleSlider extends Component {
             sizeMd={12}
             gridheight="455px"
             bgcolor="#E2E4E3"
-            title="Title1"
+            title="Title1"  
             subtitle="Subtitle1"
             contrast="#444"
-            imageCenter={slide}
+            image={slide}
+            backgroundPosition="center"
           >
             <DarkOutlineBtn buttonText="something"></DarkOutlineBtn>
           </Item>
@@ -55,7 +57,8 @@ export default class SimpleSlider extends Component {
             title="Title2"
             subtitle="Subtitle2"
             contrast="#444"
-            imageCenter={slide}
+            image={slide}
+            backgroundPosition="center"
           >
             <DarkOutlineBtn buttonText="something"></DarkOutlineBtn>
           </Item>
@@ -68,7 +71,9 @@ export default class SimpleSlider extends Component {
             title="Title3"
             subtitle="Subtitle3"
             contrast="#444"
-            imageCenter={slide}
+            image={slide}
+            backgroundPosition="center"
+
           >
             <DarkOutlineBtn buttonText="something"></DarkOutlineBtn>
           </Item>

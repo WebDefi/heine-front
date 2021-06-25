@@ -1,33 +1,85 @@
 ﻿import React from "react";
-import { Paper, Typography } from "@material-ui/core";
+import { Grid, Button, Typography, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import OrangeBtn from "../../../../common/Btns/OrangeBtn";
+import image from '../../../../assets/images/slide.jpg'
 
 const useStyles = makeStyles((theme) => ({
-  slide: {
+  gridContent: {
+    position: "absolute",
+    top: 45,
+    left: 45,
+    zIndex: 3,
+  },
+  paper: {
     position: "relative",
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "flex-end",
     alignItems: "flex-end",
     overflow: "hidden",
-    height: 500,
+    height: 420,
+    zIndex: 2,
+    backgroundPosition: "center", 
+    
   },
-  imgSlide: {
-    backgroundPosition: "center",
-    display: "block",
+  imgCenter: {
+    position: "relative",
+    
   },
 }));
 
-export default function Slide({ image, title, subtitle, contrast = "#fff" }) {
+export default function Slide({
+  sizeXs = 12,
+  sizeSm,
+  sizeMd,
+  sizeXl,
+  sizeLg,
+  title,
+  children,
+  image,
+  bgcolor = "#DEE1E1",
+  contrast = "#fff",
+  gridheight = 420,
+  subtitle,
+  bigTitle,
+  imageCenter,
+  contrastTitle,
+  sliderImg,
+  justify = "center",
+}) {
   const classes = useStyles();
   return (
-    <Paper className={classes.slide}>
-      <img src={image} className={classes.imgSlide}></img>
-      <div>
-        <Typography variant="h5">{title}</Typography>
-        <Typography variant="body2" style={{ color: contrast, paddingTop: 5 }}>
-          {subtitle}
-        </Typography>
-      </div>
-    </Paper>
+    <Grid
+      item
+      xs={sizeXs}
+      sm={sizeSm}
+      md={sizeMd}
+      xl={sizeXl}
+      lg={sizeLg}
+      style={{ position: "relative", overflow: "hidden",
+}}
+    >
+      <Paper
+        className={classes.paper}
+        style={{ height: gridheight, backgroundImage: `url(${image})`} }
+      >
+        <div className={classes.gridContent}>
+          <Typography variant="h5">{title}</Typography>
+          <Typography variant="h5" style={{ color: contrast }}>
+            {contrastTitle}
+          </Typography>
+          <Typography variant="h2" style={{ color: contrast }}>
+            {bigTitle}
+          </Typography>
+          <Typography
+            variant="body1"
+            style={{ color: contrast, paddingTop: 5 }}
+          >
+            {subtitle}
+          </Typography>
+          {children}
+        </div>
+      </Paper>
+    </Grid>
   );
 }

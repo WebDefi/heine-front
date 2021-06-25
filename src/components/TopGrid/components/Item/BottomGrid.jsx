@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 3,
   },
   imgRight: {
-    maxWidth: "100%",
+
     height: "auto",
     position: "relative",
   },
@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
   },
   imgCenter: {
     position: "relative",
-    maxWidth: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

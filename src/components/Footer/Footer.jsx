@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect }  from "react";
 import { Grid, TextField, Typography, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Col from "./Col/Col";
@@ -36,6 +36,20 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Footer() {
   const classes = useStyles();
+  //http://116.202.243.73:3000/products/menu
+
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetch("http://116.202.243.73:3000/products/menu");
+      const jsonResponse = await res.json();
+      setData(jsonResponse);
+      // console.log(jsonResponse.subcategory)
+    };
+
+    getData();
+  }, [setData]);
+
   return (
     <footer className={classes.footer}>
       <Container>
@@ -48,21 +62,11 @@ export default function Footer() {
           <Form title="Нужна помощь в подборе оборудования?" />
           <Col title="Продукция">
             <ul>
-              <Typography className={classes.link} variant="body2">
-              ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
+               {data.map((item) => {
+              return (
+                <Typography className={classes.link} variant="body2">{item.nameUk}</Typography>
+              );
+            })}
             </ul>
           </Col>
           <Col title="Продукция">
@@ -123,14 +127,14 @@ export default function Footer() {
             </ul>
           </Col>
           <Grid container justify="space-around" style={{ margin: "50px 0 20px 0" }}>
-            <Col sizeXs={12} sizeSm={12} sizeMd={4}>
+            <Col sizeXs={12} sizeSm={12} sizeMd={2}>
               <a href="#">
                 <Typography variant="body2" className={classes.privacyLink}>
                   Terms & Conditions
                 </Typography>
               </a>
             </Col>
-            <Col sizeXs={12} sizeSm={12} sizeMd={4}>
+            <Col sizeXs={12} sizeSm={12} sizeMd={2}>
               <a href="#">
                  
                 <Typography variant="body2" className={classes.privacyLink}>
@@ -138,11 +142,12 @@ export default function Footer() {
                 </Typography>
               </a>
             </Col>
-            <Col sizeXs={12} sizeSm={12} sizeMd={4}>
-              <a href="#">
+            <Col sizeXs={12} sizeSm={12} sizeMd={5}>
+              <a href="https://www.medigran.com/" style={{display:'flex',alignItems:"center"}}>
                 <Typography variant="body2" className={classes.privacyLink}>
                   Официальный представитель Heine в Украине
                 </Typography>
+                <img src={medigranLogo} style={{paddingLeft:20}}></img> 
               </a>
             </Col>
           </Grid>

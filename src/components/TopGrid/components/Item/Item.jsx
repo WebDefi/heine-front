@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Button, Typography, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import OrangeBtn from "../../../../common/Btns/OrangeBtn";
+import image from '../../../../assets/images/slide.jpg'
 
 const useStyles = makeStyles((theme) => ({
   gridContent: {
@@ -9,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     top: 45,
     left: 45,
     zIndex: 3,
+    
   },
   imgRight: {
     maxWidth: "100%",
@@ -23,13 +25,12 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "flex-end",
     overflow: "hidden",
     height: 420,
+    zIndex: 2,
+    
   },
   imgCenter: {
     position: "relative",
-    maxWidth: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    
   },
 }));
 
@@ -49,7 +50,8 @@ export default function Item({
   bigTitle,
   imageCenter,
   contrastTitle,
-  slideImg,
+  sliderImg,
+  bgPosition = "right",
   justify = "center",
 }) {
   const classes = useStyles();
@@ -61,11 +63,12 @@ export default function Item({
       md={sizeMd}
       xl={sizeXl}
       lg={sizeLg}
-      style={{ position: "relative", overflow: "hidden" }}
+      style={{ position: "relative", overflow: "hidden",
+}}
     >
       <Paper
         className={classes.paper}
-        style={{ background: bgcolor, height: gridheight }}
+        style={{ height: gridheight, background: bgcolor}}
       >
         <div className={classes.gridContent}>
           <Typography variant="h5">{title}</Typography>
@@ -84,8 +87,7 @@ export default function Item({
           {children}
         </div>
         <img className={classes.imgRight} src={image} />
-        <img className={classes.imgCenter} src={imageCenter} />
-        <img className={classes.slideContainer} src={slideImg}></img>
+        <img className={classes.imgCenter} src={imageCenter} /> 
       </Paper>
     </Grid>
   );
