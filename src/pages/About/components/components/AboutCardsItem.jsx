@@ -27,37 +27,37 @@ const useStyles = makeStyles(theme => ({
 export default function AboutCardItem({ firstCardText='Професіоналів', secondCardText='Років ми працюємо на ринку ', thirdCardText='Партнерів по всьому світу' }) {
   const classes = useStyles();
   return (
-    <Grid container justify="center" alignItems="center" style={{margin:"40px 0"}} >
-        <Grid item xs={3} className={classes.card}>
-            <Grid container justify='space-between' alignItems='center'>
+    <Grid container justify="center" alignItems="center" spacing={4}  style={{margin:"40px 0"}} >
+        <Grid item xs={12} sm={3} className={classes.card}>
+            <Grid container justify='center' alignItems='center' spacing={4}>
                 <Grid item>
                     <img src={people}></img>
                 </Grid>
-                <Grid item>
+                <Grid item >
                     <Typography variant='h3' style={{color:"#FAC415"}}>40+</Typography>
                     <Typography>{firstCardText}</Typography>
                 </Grid>
             </Grid>
         </Grid>
-        <Grid item xs={3} className={classes.card}>
-            <Grid container justify='space-between'   alignItems='center'>
+        <Grid item xs={12} sm={3} className={classes.card}>
+            <Grid container justify='center'   alignItems='center'>
                 <Grid item>
                     <img src={people}></img>
                 </Grid>
-                <Grid item>
+                <Grid item >
                     <Typography variant='h3' style={{color:"#FAC415"}}>40+</Typography>
-                    <Typography>{firstCardText}</Typography>
+                    <Typography>{secondCardText}</Typography>
                 </Grid>
             </Grid>
         </Grid>
-        <Grid item xs={3} className={classes.card}>
-            <Grid container justify='space-between'   alignItems='center'>
+        <Grid item xs={12} sm={3} className={classes.card}>
+            <Grid container justify='center' alignItems='center'>
                 <Grid item>
                     <img src={people}></img>
                 </Grid>
-                <Grid item>
+                <Grid item >
                     <Typography variant='h3' style={{color:"#FAC415"}}>40+</Typography>
-                    <Typography>{firstCardText}</Typography>
+                    <Typography>{thirdCardText}</Typography>
                 </Grid>
             </Grid>
         </Grid>

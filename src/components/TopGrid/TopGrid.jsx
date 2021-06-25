@@ -99,7 +99,7 @@ export default function TopGrid() {
         sizeSm={6}
         sizeMd={4}
         title="This is fourth item"
-        image={sfigmamometers}
+        image={sfigmamometers}  
         text="some"
       >
         <ul>

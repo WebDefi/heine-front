@@ -11,11 +11,13 @@ const useStyles = makeStyles(theme => ({
   aboutWrap: {
     position: "relative",
     width: "100%",
-    height: "100vh",
     display: "flex",
     flexFlow: "column",
     overflow: "hidden",
     color: "#fff",
+    [theme.breakpoints.down('md')]: {
+      height: "1000px",
+    },
   },
   medigran:{
     position: "relative",
@@ -24,16 +26,23 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     overflow: "hidden",
   },
-  heine: {
+  heine: { 
     position: "absolute",
     width: "100%",
     height: "100%",
     display: "flex",
     overflow: "hidden",
     clipPath: "polygon(100% 100%, 100% 0, 0 0)",
+    [theme.breakpoints.down('md')]: {
+      clipPath:"none",
+      marginTop: 405,
+    },
   },
   medigran: {
     clipPath: "polygon(0 0, 0 100%, 100% 100%)",
+    [theme.breakpoints.down('md')]: {
+      clipPath:"none",
+    },
   },
   medigranBlock: {
     position: "relative",
@@ -50,7 +59,10 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "flex-end",
     backgroundImage: `url(${AboutRight})`,
     backgroundRepeat:"no-repeat",
-    backgroundSize: "100%"
+    backgroundSize: "100%",
+    [theme.breakpoints.down('md')]: {
+      alignItems: "flex-end",
+    },
  
   },
   medigranBlock:{
@@ -62,8 +74,8 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     backgroundImage: `url(${AboutLeft})`,
     backgroundRepeat:"no-repeat",
-    backgroundSize: "100%"
-     
+    backgroundSize: "100%",
+    
      
   },
   
@@ -86,26 +98,42 @@ const useStyles = makeStyles(theme => ({
 
   medigranContent:{
     height:250,
-    position: "relative",
+    position: "absolute",
     zIndex: 3,
     background: "rgba(0, 159, 253, 0.5)",
     backdropFilter: "blur(22px)",
     padding:"20px 700px 20px 40px",
     [theme.breakpoints.down('md')]: {
-      padding:"20px 200px 20px 40px",
+      padding:"40px 20px",
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding:"20px 20px",
+    },
+    [theme.breakpoints.down('xs')]: {
+      paddingTop:0,
+      paddingLeft:20,
+      paddingRight:20,
     },
     width:"100vw",
   },
   heineContent: {
     height:250,
-    position: "relative",
+    position: "absolute",
     zIndex: 4,
     padding:"20px 20px 20px 700px",
     background: "rgba(238, 95, 34, 0.4)",
     backdropFilter: "blur(22px)",
     width:"100vw",
     [theme.breakpoints.down('md')]: {
-      padding:"20px 20px 20px 490px",
+      padding:"40px 20px",
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding:"20px 20px",
+    },
+    [theme.breakpoints.down('xs')]: {
+      paddingTop:0,
+      paddingLeft:20,
+      paddingRight:20,
     },
   },
   contrast: {
@@ -140,7 +168,7 @@ export default function MainScreen() {
       </div>
      
     </Grid>
-    <img style={{position:"absolute",bottom:"-165px",right:0,width:"80vw"}} src={medigranPartner}/> 
+    {/* <img style={{position:"absolute",bottom:"-165px",right:0,width:"80vw"}} src={medigranPartner}/>  */}
     </Grid>
   );
 };

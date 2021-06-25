@@ -36,7 +36,7 @@ export default function AboutCard() {
     <Container>
       <Grid container style={{ marginTop: 120 }}>
         <Grid container alignItems='center' justify="center">
-          <Grid item xs={3}>
+          <Grid item xs={8} sm={5} md={3}>
            <a href="https://medigran.com/"> <img src={medigran} /></a>
           </Grid>
           <Grid xs={12} className={classes.quoteContent} style={{ marginTop: 20 }}>
@@ -45,11 +45,11 @@ export default function AboutCard() {
           </Grid>
         </Grid>
         <Grid container style={{marginTop:'52px'}}>
-          <Grid item xs={2} >
+          <Grid item xs={12} sm={12} md={2} >
             <img src={mission} style={{ margin: '0 auto', display: 'block' }} />
             <Typography variant='h5' align='center' style={{ fontWeight: '500' }}>Миссия:</Typography>
           </Grid>
-          <Grid item xs={10}>
+          <Grid item xs={12} sm={12} md={10}>
             <Typography>В течение многих лет на рынке Украины мы представляем широкий портфель медицинского,
 лабораторного, стоматологического оборудования и расходных материалов от лучших мировых производителей.</Typography>
             <Typography style={{ paddingTop: 10 }}>В течение многих лет на рынке Украины мы представляем широкий портфель медицинского,
