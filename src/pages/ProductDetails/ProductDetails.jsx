@@ -16,6 +16,7 @@ export default function ProductDetails() {
       const res = await fetch("http://116.202.243.73:3000/products/category/1");
       const jsonResponse = await res.json();
       setData(jsonResponse.subcategories);
+      console.log(jsonResponse.subcategories);
     };
 
     getData();
