@@ -23,7 +23,13 @@ const useStyles = makeStyles((theme) => ({
   heineForm: {
     height: 400,
     backgroundColor: theme.palette.primary.main,
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.only("md")]: {
+      height: 410,
+    },
+    [theme.breakpoints.only("sm")]: {
+      height: 750,
+    },
+    [theme.breakpoints.only("xs")]: {
       height: 800,
     },
   },
@@ -45,10 +51,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function HeineForm() {
-  const [age, setAge] = React.useState("");
+
+
+  const [state, setState] = React.useState(0);
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setState({value0: event.target.value});
   };
+  const handleSubmit = (event) => {
+    alert('Отправленное имя: ' + state.value0);
+    event.preventDefault();
+  }
   const classes = useStyles();
 
   return (
@@ -64,8 +76,10 @@ export default function HeineForm() {
               subtitle1="Вы заинтересованы в одном из наших продуктов?"
               subtitle2="Найдите ближайшего к вам дистрибьютора быстро и легко."
             >
-              <form>
+              <form onSubmit={handleSubmit}>
                 <TextField
+                  value={state.value0}
+                  onChange={handleChange}
                   style={{ paddingTop: 20 }}
                   placeholder="Введите свою страну"
                   color="primary"
@@ -85,7 +99,7 @@ export default function HeineForm() {
               </form>
               <OrangeBtn buttonText="Поиск" width="100%" padding="10px" />
             </Form>
-            <Content sizeXs={12} sizeSm={12} sizeMd={6} image={HEINE}>
+            <Content sizeXs={12} sizeSm={12} sizeMd={6} image={HEINE} >
               <Typography
                 variant="body1"
                 component="p"
@@ -100,10 +114,17 @@ export default function HeineForm() {
                 и мастерство с самыми современными производственными
                 технологиями.
               </Typography>
+              
             </Content>
+
+          </Grid>
+          
+        </Container>
+        <Container>
+          <Grid container>
+            <HeinePartner/> 
           </Grid>
         </Container>
-        {/* <HeinePartner/>  */}
       </Paper>
     </Grid>
   );
