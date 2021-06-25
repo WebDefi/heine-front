@@ -15,12 +15,10 @@ const useStyles = makeStyles(theme => ({
             color: theme.palette.secondary.contrastText,
           }
       },
-
 }));
 
 export default function Header(props) {
     const classes = useStyles();
-  
     return (
         <a href={props.link}>
             <Button outlined className={classes.btnControl}>
@@ -29,3 +27,5 @@ export default function Header(props) {
         </a>
     );
   }
+
+ 
