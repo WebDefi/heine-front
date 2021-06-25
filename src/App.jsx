@@ -33,17 +33,17 @@ const App = () => (
     <Router>
       <Switch>
         <Route exact path="/" component={TopGrid} />
-        <Route path="/productCats" component={ProductCats} />
-        <Route path="/acessoriesCats" component={AcessoriesCats} />
-        <Route path="/news" component={News} />
-        <Route path="/contacts" component={Contacts} />
-        <Route path="/newsDetail" component={NewsDetails} />
-        <Route path="/service" component={Service} />
-        <Route path="/listProducts" component={ListProducts} />
-        <Route path="/listAccessories" component={AccessoriesList} />
-        <Route path="/about" component={About} />
+        <Route path="/Категории Продуктов" component={ProductCats} />
+        <Route path="/Категории Аксессуаров" component={AcessoriesCats} />
+        <Route path="/Новости" component={News} />
+        <Route path="/Контакты" component={Contacts} />
+        <Route path="/Пост" component={NewsDetails} />
+        <Route path="/Сервисы" component={Service} />
+        <Route path="/Список Продуктов" component={ListProducts} />
+        <Route path="/Список Аксессуаров" component={AccessoriesList} />
+        <Route path="/О нас" component={About} />
         <Route path="/faq" component={FAQ} />
-        <Route path="/productDetail" component={ProductDetails} />
+        <Route path="/Детали Продукта" component={ProductDetails} />
       </Switch>
     </Router>
     <Footer />
