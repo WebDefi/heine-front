@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
 
     height: 49,
     background: "rgba(0, 159, 253, 0.9)",
-    borderRadius: "40px 0 0 40px",
+    borderRadius: "40px 40px 40px 40px",
+    width:"39rem",
   },
   yellow: {
     right: 3,
@@ -25,43 +26,53 @@ const useStyles = makeStyles((theme) => ({
 
     height: 49,
     background: "rgba(254, 197, 43, 0.9)",
-    borderRadius: "40px 0 0 40px",
+    borderRadius: "40px 40px 40px 40px",
+    width:"39rem",
   },
   white: {
     position: "relative",
 
     height: 49,
     background: "#fff",
-    borderRadius: "40px 0 0 40px",
+    borderRadius: "40px 40px 40px 40px",
+    width:"39rem",
   },
   content: {
     position: "relative",
     top: 5,
   },
+  heinePartnerMobile: {
+    position: "relative",
+    bottom: 125,
+    right: 0,
+    [theme.breakpoints.down("sm")]: {
+      top: 230,
+    },
+    [theme.breakpoints.only("xs")]: {
+      display: "none",
+    },
+  }
 }));
 
 export default function HeinePartner({
-  blueSize = "52rem",
-  whiteSize = "52rem",
-  yellowSize = "51.789rem",
 }) {
   const classes = useStyles();
   return (
-    <Grid item style={{ position: "relative", bottom: 125, right: 0 }}>
+    <Grid item xs={12} className={classes.heinePartnerMobile}>
       <div className={classes.wrapper}>
-        <div className={classes.blue} style={{ width: blueSize }}></div>
-        <div className={classes.yellow} style={{ width: whiteSize }}></div>
-        <div className={classes.white} style={{ width: yellowSize }}>
+        <div className={classes.blue}></div>
+        <div className={classes.yellow}></div>
+        <div className={classes.white}>
           <Grid
             container
             alignItems="center"
             justify="center"
             className={classes.content}
           >
-            <Grid item style={{ paddingRight: 20 }}>
+            <Grid item xs={9}>
               <Typography>Официальный представитель Heine в Украине</Typography>
             </Grid>
-            <Grid item style={{ paddingLeft: 20 }}>
+            <Grid item xs={2}>
               <img src={heinePartner}></img>
             </Grid>
           </Grid>
