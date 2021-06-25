@@ -7,11 +7,17 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.white.main,
     padding: 45,
     textAlign: "center",
+    [theme.breakpoints.only("sm")]: {
+      marginTop: 280,
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginTop: 550,
+    },
   },
 }));
 
 export default function Form({
-  sizeXs = 12,
+  sizeXs,
   sizeSm,
   sizeMd,
   children,
@@ -21,7 +27,7 @@ export default function Form({
 }) {
   const classes = useStyles();
   return (
-    <Grid item xs={12} sm={sizeSm} md={sizeMd}>
+    <Grid item xs={sizeXs} sm={sizeSm} md={sizeMd} className={classes.formFix}>
       <div className={classes.form}>
         <Typography variant="h5" component="h5">
           {title}
