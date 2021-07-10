@@ -1,4 +1,4 @@
-import React, { useState, useEffect }  from "react";
+import React, { useState, useEffect } from "react";
 import { Grid, TextField, Typography, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Col from "./Col/Col";
@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     background: theme.palette.local.main,
   },
   link: {
+    cursor: 'pointer',
     color: theme.palette.secondary.contrastText,
     padding: "5px",
     "&:hover": {
@@ -61,15 +62,6 @@ export default function Footer() {
           <Form title="Нужна помощь в подборе оборудования?" />
           <Col title="Продукция">
             <ul>
-               {data.map((item) => {
-              return (
-                <Typography className={classes.link} variant="body2">{item.nameUk}</Typography>
-              );
-            })}
-            </ul>
-          </Col>
-          <Col title="Продукция">
-            <ul>
               <Typography className={classes.link} variant="body2">
                 ЛОР-инструменты
               </Typography>
@@ -125,7 +117,30 @@ export default function Footer() {
               </Typography>
             </ul>
           </Col>
-          <Grid container justify="space-around" style={{ margin: "50px 0 20px 0" }}>
+          <Col title="Продукция">
+            <ul>
+              <Typography className={classes.link} variant="body2">
+                ЛОР-инструменты
+              </Typography>
+              <Typography className={classes.link} variant="body2">
+                ЛОР-инструменты
+              </Typography>
+              <Typography className={classes.link} variant="body2">
+                ЛОР-инструменты
+              </Typography>
+              <Typography className={classes.link} variant="body2">
+                ЛОР-инструменты
+              </Typography>
+              <Typography className={classes.link} variant="body2">
+                ЛОР-инструменты
+              </Typography>
+            </ul>
+          </Col>
+          <Grid
+            container
+            justify="space-around"
+            style={{ margin: "50px 0 20px 0" }}
+          >
             <Col sizeXs={12} sizeSm={12} sizeMd={2}>
               <a href="#">
                 <Typography variant="body2" className={classes.privacyLink}>
@@ -135,22 +150,28 @@ export default function Footer() {
             </Col>
             <Col sizeXs={12} sizeSm={12} sizeMd={2}>
               <a href="#">
-                 
                 <Typography variant="body2" className={classes.privacyLink}>
                   Privacy Policy
                 </Typography>
               </a>
             </Col>
             <Col sizeXs={12} sizeSm={12} sizeMd={5}>
-              <a href="https://www.medigran.com/" style={{display:'flex',alignItems:"center"}}>
+              <a
+                href="https://www.medigran.com/"
+                style={{ display: "flex", alignItems: "center" }}
+              >
                 <Grid container alignItems="center" justify="center">
                   <Grid item xs={12} sm={9}>
-                    <Typography variant="body2" align="center" className={classes.privacyLink}>
-                    Официальный представитель Heine в Украине
+                    <Typography
+                      variant="body2"
+                      align="center"
+                      className={classes.privacyLink}
+                    >
+                      Официальный представитель Heine в Украине
                     </Typography>
                   </Grid>
                   <Grid item xs={4} sm={3}>
-                    <img src={medigranLogo} style={{paddingLeft:20}}></img> 
+                    <img src={medigranLogo} style={{ paddingLeft: 20 }}></img>
                   </Grid>
                 </Grid>
               </a>

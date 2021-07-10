@@ -29,6 +29,7 @@
   .call-widget i {
     position: fixed;
     right: 1.6em;
+    bottom: 29px;
     color: #fff;
     font-size: 1.4em;
     transition: 0.4s transform;

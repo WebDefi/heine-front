@@ -6,6 +6,7 @@ import { Palette } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
     headerLink: {
+        cursor:'pointer',
         color:theme.palette.secondary.contrastText,
         "&:hover": {
             transition: "all 0.3s ease",

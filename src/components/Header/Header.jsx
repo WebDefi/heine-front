@@ -1,72 +1,80 @@
 import React, { useState, useEffect } from "react";
 import Logo from "./components/Logo/Logo";
 import { AppBar, Grid, Toolbar } from "@material-ui/core";
-// import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Social from "./components/Social/Social";
-import './Header.css'
+// import './Header.css'
 
-// const useStyles = makeStyles((theme) => ({
-//   header: {
-//     background: theme.palette.local.main,
-//     borderBottom: theme.palette.headerBottom.main,
-//     height: "7.5em",
-//     "&button": {
-//       margin: "1em",
-//     },
-//     [theme.breakpoints.down("sm")]: {
-//       height: "5.8em",
-//     },
-//   },
-//   levelMenu: {
-//     position: "absolute",
-//     display: "flex",
-//     flexFlow: "row wrap",
-//     width: "100vw",
-//     backgroundColor: theme.palette.local.main,
-//     top: "7.5em",
-//     height: 0,
-//     left: 0,
-//     overflow: "hidden",
-//     transition: "0.4s height",
-//   },
-//   levelMenuOpened: {
-//     //FIX //////////////////////////////////////////////////////////////////////////////////////
-//     // display: "none",
-//     //FIX //////////////////////////////////////////////////////////////////////////////////////
-//     height: "8em",
-//   },
-//   levelMenuLevel: {
-//     padding: "0.8em",
-//     borderLeft: theme.palette.headerBorder.main,
-//     "& li": {
-//       cursor: "pointer",
-//     },
-//   },
-//   navLink: {
-//     color: theme.palette.lightGray.main,
-//     "&:hover": {
-//       transition: "all 0.5s ease",
-//       borderRadius: 7,
-//       background: theme.palette.footerLinkHover.main,
-//       color: "#fff",
-//     },
-//   },
-//   menuLink: {
-//     border: "none",
-//     background: "none",
-//     color: "#fff",
-//     "&:hover": {
-//       color: theme.palette.primary.main,
-//       transition: "all 0.3s ease",
-//     },
-//     [theme.breakpoints.down("sm")]: {
-//       display: "none",
-//     },
-//   },
-// }));
+const useStyles = makeStyles((theme) => ({
+  header: {
+    background: theme.palette.local.main,
+    borderBottom: theme.palette.headerBottom.main,
+    height: "7.5em",
+    "&button": {
+      margin: "1em",
+    },
+    [theme.breakpoints.down("sm")]: {
+      height: "5.8em",
+      
+    },
+  },
+  levelMenu: {
+    position: "absolute",
+    display: "flex",
+    flexFlow: "row wrap",
+    width: "100vw",
+    backgroundColor: theme.palette.local.main,
+    top: "8em",
+    height: 0,
+    left: 0,
+    overflow: "hidden",
+    transition: "0.4s height",
+  },
+  levelMenuOpened: {
+    position: "absolute",
+    display: "flex",
+    flexFlow: "row wrap",
+    width: "100vw",
+    backgroundColor: theme.palette.local.main,
+    top: "7.5em",
+    
+    left: 0,
+    overflow: "hidden",
+    transition: "0.4s height",
+    height: "8em",
+  },
+  levelMenuLevel: {
+    padding: "0.8em",
+    borderLeft: theme.palette.headerBorder.main,
+    "& li": {
+      cursor: "pointer",
+    },
+  },
+  navLink: {
+    color: theme.palette.lightGray.main,
+    "&:hover": {
+      transition: "all 0.5s ease",
+      borderRadius: 7,
+      background: theme.palette.footerLinkHover.main,
+      color: "#fff",
+    },
+  },
+  menuLink: {
+    border: "none",
+    background: "none",
+    color: "#fff",
+    "&:hover": {
+      color: theme.palette.primary.main,
+      transition: "all 0.3s ease",
+    },
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+}));
 
 export default function Header() {
-  // const classes = useStyles();
+  const classes = useStyles();
   const [menuOpened, setMenuOpened] = useState(false);
   const [menuTree, setMenuTree] = useState({});
   const [levelsSatate, setLevelsSatate] = useState({
@@ -149,15 +157,15 @@ export default function Header() {
 
   return (
     <div>
-      <AppBar color="secondary" position="fixed" className='header'>
+      <AppBar color="secondary" position="fixed" className={classes.header}>
         <Toolbar>
           <Grid container justify="space-around" alignItems="center">
             <Logo />
 
             <Grid item xs={12} sm={6}>
-              <Grid container justify="center" spacing={2}>
+              <Grid container justify="center" alignItems="center">
                 <button
-                  className='menuLink'
+                  className={classes.menuLink}
                   onClick={() => {
                     setMenuOpened(
                       menuOpened &&
@@ -175,10 +183,10 @@ export default function Header() {
                     });
                   }}
                 >
-                  Menu
+                  Продукция
                 </button>
                 <button
-                  className='menuLink'
+                  className={classes.menuLink}
                   onClick={() => {
                     setMenuOpened(
                       menuOpened &&
@@ -195,18 +203,19 @@ export default function Header() {
                     });
                   }}
                 >
-                  Accessories
+                  Аксессуары
                 </button>
+                <a href="/news" className={classes.navigationLink}>Новости</a>
+                <a href="/service" className={classes.navigationLink}>Сервисы</a>
+                <a href="/contacts" className={classes.navigationLink}>Контакты</a>
               </Grid>
             </Grid>
             <Social />
           </Grid>
           <div
-            className={
-              menuOpened ? "level-menu level-menu_opened" : "level-menu"
-            }
+             className={ menuOpened ? classes.levelMenuOpened : classes.levelMenu}
           >
-            <nav className="level-menu_level">
+            <nav className={classes.levelMenuLevel}>
               {Object.keys(menuTree).map((cat, key) => (
                 <li
                   onClick={() =>
@@ -224,7 +233,7 @@ export default function Header() {
               ))}
             </nav>
             {levelsSatate.catOpened ? (
-              <nav className="level-menu_level">
+              <nav className={classes.levelMenuLevel}>
                 {Object.keys(menuTree[levelsSatate.cat]).map((subCat, key) => (
                   <li
                     onClick={() =>
@@ -244,7 +253,7 @@ export default function Header() {
               ""
             )}
             {levelsSatate.subCatOpened ? (
-              <nav className="level-menu_level">
+              <nav className={classes.levelMenuLevel}>
                 {Object.keys(
                   menuTree[levelsSatate.cat][levelsSatate.subCat]
                 ).map((item, key) => (

@@ -1,21 +1,14 @@
 @media screen and (min-width: 600px) {
- .inputs {
-   padding: 0;
- }
+  .inputs {
+    padding: 0;
+  }
 }
 
 .form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  padding:25px;
 }
+ 
+
 
 .form input {
   margin: 0 20px;
@@ -24,16 +17,16 @@
   width: 100%;
   border: 0;
   height: 1.1876em;
-  margin: 0;
+  margin: 0px;
   display: block;
-  padding: 6px 14px;
-  min-width: 0;
+  padding: 6px 0px;
+  max-width: 100%;
   background: none;
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   letter-spacing: inherit;
   -webkit-animation-duration: 10ms;
-          animation-duration: 10ms;
+  animation-duration: 10ms;
   -webkit-tap-highlight-color: transparent;
   outline: 1px solid #111;
 }
@@ -43,6 +36,6 @@
 }
 
 .form input:focus {
-  outline: 2px solid #EE5F22;
+  outline: 2px solid #ee5f22;
 }
 /*# sourceMappingURL=input.css.map */

@@ -26,20 +26,20 @@ class Input extends React.Component {
     render() {
       return (
         <form onSubmit={this.handleSubmit} className='form' style={{paddingTop:"20px"}}>
-        <Grid container justify="center">
-          <Grid item xs={11} sm={4} className='inputs' style={{paddingRight:30}}>
+        <Grid container justify="center" spacing={4}>
+          <Grid item xs={12} md={4} className='inputs'>
             <label>
                 Имя:
                 <input type="text" ref={this.input0} />
             </label>
           </Grid>
-         <Grid item xs={11} sm={4} className='inputs' style={{padding: "0 30px"}}>
+         <Grid item xs={12} md={4} className='inputs'>
          <label>
             Email:
             <input type="text" ref={this.input1} />
           </label>
          </Grid>
-          <Grid item xs={11} sm={4} className='inputs' style={{padding: "0 30px"}}>
+          <Grid item xs={12} md={4} className='inputs'>
           <label>
             Tel:
             <input type="text" ref={this.input2} />

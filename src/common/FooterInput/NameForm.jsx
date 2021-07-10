@@ -27,7 +27,7 @@ class NameForm extends React.Component {
       return (
         <form onSubmit={this.handleSubmit} style={{display:'flex'}}>
           <input type="text" placeholder="Ваш Е-мейл" value={this.state.value0} onChange={this.handleChange} className="textField" />
-          <input type="submit" value=">" style={{fontFamily: "Montserrat", fontWeight: 600}} className="sumbitBtn" />
+          <input type="submit" value=">" style={{fontFamily: "Montserrat", fontWeight: 600, cursor:"pointer"}} className="sumbitBtn" />
         </form>
       );
     }
