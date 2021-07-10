@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Col from "./Col/Col";
 import Form from "./Form/Form";
 import medigranLogo from "../../assets/images/medigranLogo.png";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -146,22 +147,22 @@ export default function Footer() {
             style={{ margin: "50px 0 20px 0" }}
           >
             <Col sizeXs={12} sizeSm={12} sizeMd={2}>
-              <a href="#">
+              <Link to="#">
                 <Typography variant="body2" className={classes.privacyLink}>
                   Terms & Conditions
                 </Typography>
-              </a>
+              </Link>
             </Col>
             <Col sizeXs={12} sizeSm={12} sizeMd={2}>
-              <a href="#">
+              <Link to="#">
                 <Typography variant="body2" className={classes.privacyLink}>
                   Privacy Policy
                 </Typography>
-              </a>
+              </Link>
             </Col>
             <Col sizeXs={12} sizeSm={12} sizeMd={5}>
-              <a
-                href="https://www.medigran.com/"
+              <Link
+                to="https://www.medigran.com/"
                 style={{ display: "flex", alignItems: "center" }}
               >
                 <Grid container alignItems="center" justify="center">
@@ -178,7 +179,7 @@ export default function Footer() {
                     <img src={medigranLogo} style={{ paddingLeft: 20 }}></img>
                   </Grid>
                 </Grid>
-              </a>
+              </Link>
             </Col>
           </Grid>
         </Grid>

@@ -13,8 +13,6 @@ import Phone from "./common/Phone/Phone";
 import PopUp from "./common/PopUp/PopUp";
 import Preloader from "./common/Preloader/Preloader";
 
-// стейтлифтинг
-
 const App = () => {
   const [ showPopup, setShowPopup ] = useState(true); 
   return (

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Container, Typography, Paper, Link } from "@material-ui/core";
+import { Grid, Container, Typography, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import ArrowRight from "./ArrowRight";
+import { Link } from "react-router-dom";
 
 // http://116.202.243.73:3000/products/category/1
 // acc
@@ -63,7 +64,7 @@ export default function Item({
 
   return (
     <Grid item xs={sizeXs} sm={sizeSm} md={sizeMd}>
-      <a href={link}>
+      <Link to={link}>
         <Paper className={classes.categoryBlock}>
           <img className={classes.cardImage} src={image}></img>
           <Grid container className={classes.cardContent}>
@@ -82,7 +83,7 @@ export default function Item({
             </Grid>
           </Grid>
         </Paper>
-      </a>
+      </Link>
     </Grid>
   );
 }

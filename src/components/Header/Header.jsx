@@ -4,6 +4,8 @@ import { AppBar, Grid, Toolbar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Social from "./components/Social/Social";
 // import './Header.css'
+import { Link } from "react-router-dom";
+import arrow from '../../assets/images/arrow.png'
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -29,11 +31,13 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     overflow: "hidden",
     transition: "0.4s height",
+    
   },
   levelMenuOpened: {
     position: "absolute",
     display: "flex",
     flexFlow: "row wrap",
+    padding:"0 10%",
     width: "100vw",
     backgroundColor: theme.palette.local.main,
     top: "7.5em",
@@ -44,13 +48,31 @@ const useStyles = makeStyles((theme) => ({
     height: "8em",
   },
   levelMenuLevel: {
+    width:"33.3%",
     padding: "0.8em",
     borderLeft: theme.palette.headerBorder.main,
     "& li": {
+      
+      color: theme.palette.lightGray.main,
       cursor: "pointer",
+      paddingTop:5,
+      paddingBottom:5,
+      paddingRight:20,
+      paddingLeft:10,
+      "&:hover": {
+        transition: "all 0.5s ease",
+        borderRadius: 7,
+        background: theme.palette.footerLinkHover.main,
+        color: theme.palette.white.main,
+        backgroundImage: `url(${arrow})`,
+        backgroundRepeat:"no-repeat",
+        backgroundPosition: "right",
+      },
     },
   },
   navLink: {
+    
+    cursor:"pointer",
     color: theme.palette.lightGray.main,
     "&:hover": {
       transition: "all 0.5s ease",
@@ -59,7 +81,19 @@ const useStyles = makeStyles((theme) => ({
       color: "#fff",
     },
   },
+  navigationLink: {
+    padding:"0 8px",
+    color:theme.palette.white.main,
+    textTransform:"uppercase",
+    "&:hover": {
+      color:theme.palette.primary.main,
+    }
+  },
   menuLink: {
+    textTransform:"uppercase",
+    fontSize:16,
+    fontFamily:"Montserrat",
+    cursor:"pointer",
     border: "none",
     background: "none",
     color: "#fff",
@@ -85,13 +119,13 @@ export default function Header() {
   });
 
   const prodMenuTree = {
-    1: {
-      11: {
-        111: "#",
-        112: "#",
+    Item1: {
+      Item11: {
+        Item111: "#",
+        Item112: "#",
       },
-      12: {
-        121: "#",
+      Item12: {
+        Item13: "#",
         122: "#",
         123: "#",
       },
@@ -100,7 +134,7 @@ export default function Header() {
         132: "#",
       },
     },
-    2: {
+    Item2: {
       21: {
         211: "#",
         212: "#",
@@ -205,9 +239,9 @@ export default function Header() {
                 >
                   Аксессуары
                 </button>
-                <a href="/news" className={classes.navigationLink}>Новости</a>
-                <a href="/service" className={classes.navigationLink}>Сервисы</a>
-                <a href="/contacts" className={classes.navigationLink}>Контакты</a>
+                <Link to="/news" className={classes.navigationLink}>Новости</Link>
+                <Link to="/service" className={classes.navigationLink}>Сервисы</Link>
+                <Link to="/contacts" className={classes.navigationLink}>Контакты</Link>
               </Grid>
             </Grid>
             <Social />
@@ -258,14 +292,14 @@ export default function Header() {
                   menuTree[levelsSatate.cat][levelsSatate.subCat]
                 ).map((item, key) => (
                   <li>
-                    <a
-                      href={
+                    <Link
+                      to={
                         menuTree[levelsSatate.cat][levelsSatate.subCat][item]
                       }
                       key={key}
                     >
                       {item}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </nav>
