@@ -12,8 +12,6 @@ import { getRoutes } from "./routes";
 import Phone from "./common/Phone/Phone";
 import PopUp from "./common/PopUp/PopUp";
 
-// стейтлифтинг
-
 const App = () => {
   const [ showPopup, setShowPopup ] = useState(true); 
   return (

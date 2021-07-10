@@ -1,7 +1,8 @@
 ﻿import React from "react";
-import { Typography, Grid, Link } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import newsDetail from "../../../../../assets/images/newsDetail.jpg";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({}));
 
@@ -11,9 +12,9 @@ export default function DetailsItem({ image, title, subtitle }) {
     <Grid item xs>
       <Grid container direction="column" justify="center" alignItems="center">
         <Grid item>
-          <a href="/newsDetail">
+          <Link to="/newsDetail">
             <img src={image}></img>
-          </a>
+          </Link>
           <Typography variant="h6">{title}</Typography>
           <Typography variant="body2" style={{ padding: "15px 0 30px 0" }}>
             {subtitle}

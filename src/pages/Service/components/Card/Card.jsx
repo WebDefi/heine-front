@@ -1,7 +1,7 @@
 import React from "react";
-import { Grid, Container, Typography, Paper, Link } from "@material-ui/core";
+import { Grid, Container, Typography, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-
+import { Link } from "react-router-dom";
 import theme from "../../../../theme";
 
 const useStyles = makeStyles((theme) => ({
@@ -57,11 +57,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Card({ title, children, subtitle }) {
+export default function LightOutlineBtn({ title, children, subtitle }) {
   const classes = useStyles();
   return (
     <Grid item xs={12} sm={12} md={4} xl={4} lg={4}>
-      <a href="{link}">
+      <Link to="{link}">
         <div className={classes.main}>
           <Paper className={classes.categoryBlock}>
             {children}
@@ -81,7 +81,7 @@ export default function Card({ title, children, subtitle }) {
             </Typography>
           </div>
         </div>
-      </a>
+      </Link>
     </Grid>
   );
 }

@@ -79,7 +79,7 @@ export default function Products() {
               <img className={classes.rightImg} src={serviceRight}></img>
             </Card>
           </Grid>
-          <a href="https://medigran.com/zayavka-na-viyizd_ua">
+          <Link to="https://medigran.com/zayavka-na-viyizd_ua">
             <Grid container style={{ paddingBottom: 50 }} alignItems="center">
               <Grid
                 item
@@ -114,7 +114,7 @@ export default function Products() {
                 </Typography>
               </Grid>
             </Grid>
-          </a>
+          </Link>
         </Container>
       </div>
     </div>

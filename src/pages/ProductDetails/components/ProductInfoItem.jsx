@@ -2,6 +2,7 @@
 import { Grid, Button, Typography, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Palette } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
 export default function ProductInfoItem({ size = 12 }) {
   return (
@@ -30,9 +31,9 @@ export default function ProductInfoItem({ size = 12 }) {
           xs={12}
           style={{ borderTop: "2px solid #C1C4C5", padding: "3px 10px" }}
         >
-          <a style={{ float: "right", color: "#EE5F22" }} href="/">
+          <Link style={{ float: "right", color: "#EE5F22" }} to="/">
             link
-          </a>
+          </Link>
         </Grid>
       </Grid>
     </Grid>

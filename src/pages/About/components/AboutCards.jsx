@@ -6,6 +6,7 @@ import medigran from '../../../assets/images/logo-blue.png'
 import q from '../../../assets/images/q.svg'
 import mission from '../../../assets/images/mission.svg'
 import AboutCardItem from './components/AboutCardsItem'
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   quoteContent: {
@@ -37,7 +38,7 @@ export default function AboutCard() {
       <Grid container style={{ marginTop: 120 }}>
         <Grid container alignItems='center' justify="center">
           <Grid item xs={8} sm={5} md={3}>
-           <a href="https://medigran.com/"> <img src={medigran} /></a>
+           <Link to="https://medigran.com/"> <img src={medigran} /></Link>
           </Grid>
           <Grid xs={12} className={classes.quoteContent} style={{ marginTop: 20 }}>
             <Typography variant='subtitle1' align='center'>«Будущее зависит от того, что Вы делаете сегодня»</Typography>

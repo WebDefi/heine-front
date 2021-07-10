@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from "react";
 import './components/style.css'
+import { Link } from "react-router-dom";
 
 const MainMenu = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -89,12 +90,12 @@ const MainMenu = () => {
             {Object.keys(menuTree[levelsSatate.cat][levelsSatate.subCat]).map(
               (item, key) => (
                 <li>
-                  <a
-                    href={menuTree[levelsSatate.cat][levelsSatate.subCat][item]}
+                  <Link
+                    to={menuTree[levelsSatate.cat][levelsSatate.subCat][item]}
                     key={key}
                   >
                     {item}
-                  </a>
+                  </Link>
                 </li>
               )
             )}
