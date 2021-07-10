@@ -6,6 +6,7 @@ import Social from "./components/Social/Social";
 // import './Header.css'
 import { Link } from "react-router-dom";
 import arrow from '../../assets/images/arrow.png'
+import MenuCat from "./components/MenuCat";
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -40,13 +41,15 @@ const useStyles = makeStyles((theme) => ({
     width: "100vw",
     backgroundColor: theme.palette.local.main,
     top: "7.5em",
-    
+ 
     left: 0,
     overflow: "hidden",
     transition: "0.4s height",
-    height: "8em",
+    height: "20em",
+   
   },
   levelMenuLevel: {
+    
     width:"33.3%",
     padding: "0.8em",
     borderLeft: theme.palette.headerBorder.main,
@@ -249,6 +252,7 @@ export default function Header() {
              className={ menuOpened ? classes.levelMenuOpened : classes.levelMenu}
           >
             <nav className={classes.levelMenuLevel}>
+              <MenuCat fstCat="Cat1" />
               {Object.keys(menuTree).map((cat, key) => (
                 <li
                   onClick={() =>
@@ -267,6 +271,7 @@ export default function Header() {
             </nav>
             {levelsSatate.catOpened ? (
               <nav className={classes.levelMenuLevel}>
+                <MenuCat fstCat="Cat2" />
                 {Object.keys(menuTree[levelsSatate.cat]).map((subCat, key) => (
                   <li
                     onClick={() =>
@@ -287,6 +292,7 @@ export default function Header() {
             )}
             {levelsSatate.subCatOpened ? (
               <nav className={classes.levelMenuLevel}>
+                <MenuCat fstCat="Cat3" />
                 {Object.keys(
                   menuTree[levelsSatate.cat][levelsSatate.subCat]
                 ).map((item, key) => (

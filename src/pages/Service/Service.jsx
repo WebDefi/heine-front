@@ -79,7 +79,7 @@ export default function Products() {
               <img className={classes.rightImg} src={serviceRight}></img>
             </Card>
           </Grid>
-          <Link to="https://medigran.com/zayavka-na-viyizd_ua">
+          <Link to="https://medigran.com/zayavka-na-viyizd_ua" style={{cursor:"pointer"}}>
             <Grid container style={{ paddingBottom: 50 }} alignItems="center">
               <Grid
                 item

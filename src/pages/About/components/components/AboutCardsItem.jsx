@@ -40,9 +40,9 @@ export default function AboutCardItem({ firstCardText='Професіоналі�
             </Grid>
         </Grid>
         <Grid item xs={12} sm={3} className={classes.card}>
-            <Grid container justify='center'   alignItems='center'>
+            <Grid container justify='space-between' alignItems='center'>
                 <Grid item>
-                    <img src={people}></img>
+                    <img style={{textAlign:"center"}} src={sec}></img>
                 </Grid>
                 <Grid item >
                     <Typography variant='h3' style={{color:"#FAC415"}}>40+</Typography>
@@ -51,9 +51,9 @@ export default function AboutCardItem({ firstCardText='Професіоналі�
             </Grid>
         </Grid>
         <Grid item xs={12} sm={3} className={classes.card}>
-            <Grid container justify='center' alignItems='center'>
+            <Grid container justify='space-between' alignItems='center'>
                 <Grid item>
-                    <img src={people}></img>
+                    <img src={th}></img>
                 </Grid>
                 <Grid item >
                     <Typography variant='h3' style={{color:"#FAC415"}}>40+</Typography>

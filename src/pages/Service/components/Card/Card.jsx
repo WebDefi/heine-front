@@ -4,12 +4,14 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import theme from "../../../../theme";
 
+
+
 const useStyles = makeStyles((theme) => ({
   main: {
     borderRadius: "0 20px 0 0",
     "&:hover": {
-      border: theme.palette.mainBtnBorder.main,
       transition: "all 0.3s ease",
+       
     },
   },
   cardTitile: {
@@ -35,11 +37,9 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: theme.palette.borderMain.main,
     "&:hover": {
       transition: "all 0.3s ease",
-      border: theme.palette.mainBtnBorder.main,
+
       background: theme.palette.primary.main,
-      categoryContent: {
-        border: theme.palette.secondary.secondaryBorder,
-      },
+
       categoryContentText: {
         color: theme.palette.primary.main,
       },
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LightOutlineBtn({ title, children, subtitle }) {
+export default function Card({ title, children, subtitle }) {
   const classes = useStyles();
   return (
     <Grid item xs={12} sm={12} md={4} xl={4} lg={4}>
