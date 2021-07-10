@@ -1,5 +1,10 @@
+import preloader from "../../assets/images/preloader.svg";
+import "./preloader.css";
+
 const Preloader = () => {
-  return (<h2>Loading...</h2>)
+  return (
+    <div className={'preloader'} style={{backgroundImage: `url(${preloader})`}}></div>
+  )
 }
 
 export default Preloader;
