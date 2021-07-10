@@ -42,9 +42,13 @@ export default function Footer() {
   const [data, setData] = useState([]);
   useEffect(() => {
     const getData = async () => {
-      const res = await fetch("http://116.202.243.73:3000/products/menu");
+      const res = await fetch("http://116.202.243.73:3000/products/menu");      
       const jsonResponse = await res.json();
-      setData(jsonResponse);
+      if(!res.ok) {
+        console.log(`Error while fetching data`);
+      } else {
+        setData(jsonResponse);
+      }
       // console.log(jsonResponse.subcategory)
     };
     getData();

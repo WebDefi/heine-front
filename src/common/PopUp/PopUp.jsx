@@ -29,27 +29,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleModal(shouldHide) {
+export default function SimpleModal({show, closePopup}) {
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
-  const [open, setOpen] = React.useState(true);
+  // const [open, setOpen] = React.useState(true);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
+  // const handleOpen = () => {
+  //   setOpen(true);
+  // };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const [showResults, setShowResults] = React.useState(true)
-  const onClick = () => setShowResults(false)
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
+  // const [showResults, setShowResults] = React.useState(true)
+  // const onClick = () => setShowResults(false)
 
   const Results = () => (
     <Container> 
       <Grid container justify="center">
       <Grid item xs={12} sm={8} className={classes.paper}>
-        <button onClick={onClick} style={{float:'right',background:"none",border:'none'}}><img src={close} style={{position:"absolute",top:10, right:15}}></img></button>
+        <button onClick={closePopup} style={{float:'right',background:"none",border:'none'}}><img src={close} style={{position:"absolute",top:10, right:15}}></img></button>
         <Typography variant="h6" align="center" style={{textTransform: "uppercase"}}>Связатся <span style={{color:"#EE5F22"}}>с менеджером</span></Typography>
         <Input />
       </Grid>
@@ -59,7 +59,7 @@ export default function SimpleModal(shouldHide) {
 
   return (
     <div>
-      { showResults ? <Results /> : null }
+      { show ? <Results /> : null }
     </div>
      
      

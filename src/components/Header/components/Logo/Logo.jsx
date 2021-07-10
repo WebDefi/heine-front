@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../../../assets/images/Logo.svg'
-import { Link } from '@material-ui/core';
+import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -25,5 +25,5 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Logo () {
     const classes = useStyles();
-      return <a href="/"><img className={classes.logoStyles} src={logo}></img></a>
+      return <Link to="/"><img className={classes.logoStyles} src={logo}></img></Link>
 } 
