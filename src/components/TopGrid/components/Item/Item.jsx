@@ -10,6 +10,11 @@ const useStyles = makeStyles((theme) => ({
     top: 45,
     left: 45,
     zIndex: 3,
+    [theme.breakpoints.down('sm')]: {
+      top: 10,
+      left: 15,
+    },
+
     
   },
   imgRight: {
@@ -20,12 +25,13 @@ const useStyles = makeStyles((theme) => ({
 
   paper: {
     position: "relative",
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "flex-end",
-    overflow: "hidden",
     height: 420,
-    zIndex: 2,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "right",
+    [theme.breakpoints.down('xs')]: {
+      backgroundPosition: "center",
+      
+    },
     
   },
   imgCenter: {
@@ -34,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// 
 export default function Item({
   sizeXs = 12,
   sizeSm,
@@ -63,32 +70,34 @@ export default function Item({
       md={sizeMd}
       xl={sizeXl}
       lg={sizeLg}
-      style={{ position: "relative", overflow: "hidden",
+      style={{ position: "relative", overflow: "hidden"
 }}
     >
-      <Paper
-        className={classes.paper}
-        style={{ height: gridheight, background: bgcolor}}
-      >
-        <div className={classes.gridContent}>
-          <Typography variant="h5">{title}</Typography>
-          <Typography variant="h5" style={{ color: contrast }}>
-            {contrastTitle}
-          </Typography>
-          <Typography variant="h2" style={{ color: contrast }}>
-            {bigTitle}
-          </Typography>
-          <Typography
-            variant="body1"
-            style={{ color: contrast, paddingTop: 5 }}
-          >
-            {subtitle}
-          </Typography>
-          {children}
-        </div>
-        <img className={classes.imgRight} src={image} />
-        <img className={classes.imgCenter} src={imageCenter} /> 
-      </Paper>
+      {/* <div style={{    width: '100%',height: "100%",position: 'absolute',backgroundColor: "rgba(223,224,225,.75)", zIndex: 2}}> */}
+        <Paper
+          className={classes.paper}
+          style={{ height: gridheight,backgroundColor:bgcolor, backgroundImage: `url(${image})`}}
+        >
+          <div className={classes.gridContent}>
+            <Typography variant="h5">{title}</Typography>
+            <Typography variant="h5" style={{ color: contrast }}>
+              {contrastTitle}
+            </Typography>
+            <Typography variant="h2" style={{ color: contrast }}>
+              {bigTitle}
+            </Typography>
+            <Typography
+              variant="body1"
+              style={{ color: contrast, paddingTop: 5 }}
+            >
+              {subtitle}
+            </Typography>
+            {children}
+          </div>
+          {/* <img className={classes.imgRight} src={image} />
+          <img className={classes.imgCenter} src={imageCenter} />  */}
+        </Paper>
+      {/* </div> */}
     </Grid>
   );
 }

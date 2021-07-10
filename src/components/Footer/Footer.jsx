@@ -46,7 +46,6 @@ export default function Footer() {
       setData(jsonResponse);
       // console.log(jsonResponse.subcategory)
     };
-
     getData();
   }, [setData]);
 
@@ -144,10 +143,16 @@ export default function Footer() {
             </Col>
             <Col sizeXs={12} sizeSm={12} sizeMd={5}>
               <a href="https://www.medigran.com/" style={{display:'flex',alignItems:"center"}}>
-                <Typography variant="body2" className={classes.privacyLink}>
-                  Официальный представитель Heine в Украине
-                </Typography>
-                <img src={medigranLogo} style={{paddingLeft:20}}></img> 
+                <Grid container alignItems="center" justify="center">
+                  <Grid item xs={12} sm={9}>
+                    <Typography variant="body2" align="center" className={classes.privacyLink}>
+                    Официальный представитель Heine в Украине
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={4} sm={3}>
+                    <img src={medigranLogo} style={{paddingLeft:20}}></img> 
+                  </Grid>
+                </Grid>
               </a>
             </Col>
           </Grid>

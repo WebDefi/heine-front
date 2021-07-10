@@ -8,7 +8,6 @@ import DarkOutlineBtn from "../../common/Btns/DarkOutlineBtn";
 import Slide from "./components/Slide/Slide";
 import { TrainRounded } from "@material-ui/icons";
 import "./Slider.css";
-import Item from '../TopGrid/components/Item/Item'
 
 export default class SimpleSlider extends Component {
   render() {
@@ -21,20 +20,12 @@ export default class SimpleSlider extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       adaptiveHeight: true,
-      // responsive: [
-      //   {
-      //     breakpoint: 960,
-      //     settings: {
-
-      //     }
-      //   }
-      // ]
     };
 
     return (
       <Grid item xs={12} style={{ marginTop: 45 }}>
         <Slider {...settings}>
-          <Item
+          <Slide
             sizeXs={12}
             sizeSm={12}
             sizeMd={12}
@@ -47,8 +38,8 @@ export default class SimpleSlider extends Component {
             backgroundPosition="center"
           >
             <DarkOutlineBtn buttonText="something"></DarkOutlineBtn>
-          </Item>
-          <Item
+          </Slide>
+          <Slide
             sizeXs={12}
             sizeSm={12}
             sizeMd={12}
@@ -61,8 +52,8 @@ export default class SimpleSlider extends Component {
             backgroundPosition="center"
           >
             <DarkOutlineBtn buttonText="something"></DarkOutlineBtn>
-          </Item>
-          <Item
+          </Slide>
+          <Slide
             sizeXs={12}
             sizeSm={12}
             sizeMd={12}
@@ -76,7 +67,7 @@ export default class SimpleSlider extends Component {
 
           >
             <DarkOutlineBtn buttonText="something"></DarkOutlineBtn>
-          </Item>
+          </Slide>
         </Slider>
       </Grid>
     );

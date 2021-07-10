@@ -10,6 +10,14 @@ const useStyles = makeStyles((theme) => ({
     left: 45,
     right: 10,
     zIndex: 3,
+    [theme.breakpoints.down('sm')]: {
+      bottom: 15,
+      left: 15,
+    },
+    [theme.breakpoints.down('md')]: {
+      bottom: 15,
+      left: 15,
+    },
   },
   imgRight: {
 

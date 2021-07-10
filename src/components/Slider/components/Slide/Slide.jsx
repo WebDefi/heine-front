@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     height: 420,
     zIndex: 2,
     backgroundPosition: "center", 
+    backgroundSize: "cover",
     
   },
   imgCenter: {

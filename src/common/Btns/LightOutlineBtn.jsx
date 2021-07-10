@@ -23,9 +23,9 @@ export default function Header(props) {
   
     return (
         <a href={props.link}>
-        <Button outlined className={classes.btnControl}>
-            {props.buttonText}
-        </Button>
+            <Button outlined className={classes.btnControl}>
+                {props.buttonText}
+            </Button>
         </a>
     );
   }

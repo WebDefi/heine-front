@@ -18,6 +18,15 @@ const useStyles = makeStyles((theme) => ({
     background: "rgba(0, 159, 253, 0.9)",
     borderRadius: "40px 40px 40px 40px",
     width:"39rem",
+    [theme.breakpoints.only("sm")]: {
+      width:"55rem"
+    },
+    [theme.breakpoints.only("xs")]: {
+      width:"35rem"
+    },
+    [theme.breakpoints.only("md")]: {
+      width:"35rem"
+    },
   },
   yellow: {
     right: 3,
@@ -28,6 +37,12 @@ const useStyles = makeStyles((theme) => ({
     background: "rgba(254, 197, 43, 0.9)",
     borderRadius: "40px 40px 40px 40px",
     width:"39rem",
+    [theme.breakpoints.only("sm")]: {
+      width:"55rem"
+    },
+    [theme.breakpoints.only("md")]: {
+      width:"35rem"
+    },
   },
   white: {
     position: "relative",
@@ -36,6 +51,15 @@ const useStyles = makeStyles((theme) => ({
     background: "#fff",
     borderRadius: "40px 40px 40px 40px",
     width:"39rem",
+    [theme.breakpoints.only("sm")]: {
+      width:"45rem"
+    },
+    [theme.breakpoints.only("sm")]: {
+      width:"55rem"
+    },
+    [theme.breakpoints.only("md")]: {
+      width:"35rem"
+    },
   },
   content: {
     position: "relative",

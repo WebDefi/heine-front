@@ -37,7 +37,8 @@ export default function TopGrid() {
       <Item
         sizeXs={12}
         sizeSm={6}
-        sizeMd={8}
+        sizeMd={6}
+        sizeLg={8}
         title="1111"
         image={dermatoscopes}
         text="some"
@@ -52,7 +53,8 @@ export default function TopGrid() {
       <Item
         sizeXs={12}
         sizeSm={6}
-        sizeMd={4}
+        sizeMd={6}
+        sizeLg={4}
         title="This is fourth item"
         image={oftalmolog}
         text="some"
@@ -67,7 +69,8 @@ export default function TopGrid() {
       <Item
         sizeXs={12}
         sizeSm={6}
-        sizeMd={4}
+        sizeMd={6}
+        sizeLg={4}
         title="This is fourth item"
         image={laryngoscopes}
         text="some"
@@ -82,7 +85,8 @@ export default function TopGrid() {
       <Item
         sizeXs={12}
         sizeSm={6}
-        sizeMd={4}
+        sizeMd={6}
+        sizeLg={4}
         title="This is fourth item"
         image={light}
         text="some"
@@ -97,7 +101,8 @@ export default function TopGrid() {
       <Item
         sizeXs={12}
         sizeSm={6}
-        sizeMd={4}
+        sizeMd={6}
+        sizeLg={4}
         title="This is fourth item"
         image={sfigmamometers}  
         text="some"
@@ -142,7 +147,8 @@ export default function TopGrid() {
       <Item
         sizeXs={12}
         sizeSm={6}
-        sizeMd={4}
+        sizeMd={6}
+        sizeLg={4}
         title="This is fourth item"
         image={vet}
         text="some"
@@ -157,7 +163,8 @@ export default function TopGrid() {
       <Item
         sizeXs={12}
         sizeSm={6}
-        sizeMd={4}
+        sizeMd={6}
+        sizeLg={4}
         title="This is fourth item"
         image={stetoskops}
         text="some"
@@ -172,7 +179,8 @@ export default function TopGrid() {
       <Item
         sizeXs={12}
         sizeSm={6}
-        sizeMd={4}
+        sizeMd={6}
+        sizeLg={4}
         title="This is fourth item"
         image={diagnostic}
         text="some"
@@ -188,7 +196,8 @@ export default function TopGrid() {
       <Item
         sizeXs={12}
         sizeSm={6}
-        sizeMd={4}
+        sizeMd={6}
+        sizeLg={4}
         bigTitle="Новости"
         subtitle="Новинки и интересные факты от HEINE."
         image={map}
@@ -200,7 +209,8 @@ export default function TopGrid() {
       <Item
         sizeXs={12}
         sizeSm={6}
-        sizeMd={4}
+        sizeMd={6}
+        sizeLg={4}
         title="О НАС"
         imageCenter={aboutUs}
         text="some"
@@ -212,7 +222,8 @@ export default function TopGrid() {
       <Item
         sizeXs={12}
         sizeSm={12}
-        sizeMd={4}
+        sizeMd={12}
+        sizeLg={4}
         bigTitle="HEINE"
         subtitle="Станьте частью нас!"
         image={heine}
@@ -224,7 +235,8 @@ export default function TopGrid() {
       <BottomGrid
         sizeXs={12}
         sizeSm={6}
-        sizeMd={4}
+        sizeMd={6}
+        sizeLg={4}
         title="СЕРВИСЫ"
         image={services}
         text="some"
@@ -235,7 +247,8 @@ export default function TopGrid() {
       <BottomGrid
         sizeXs={12}
         sizeSm={6}
-        sizeMd={4}
+        sizeMd={6}
+        sizeLg={4}
         image={warrantyBg}
         contrastTitle="Гарантия 5 лет"
         text="some"
@@ -249,7 +262,8 @@ export default function TopGrid() {
       <BottomGrid
         sizeXs={12}
         sizeSm={12}
-        sizeMd={4}
+        sizeMd={12}
+        sizeLg={4}
         title="Свяжитесь с нами"
         image={contacts}
         text="some"

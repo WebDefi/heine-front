@@ -19,9 +19,8 @@ export default function NewsDetails()  {
       <SubHeader />
         <Container style={{paddingTop:"40px"}}>
             <Grid container justify="center" >
-                {data.map((data) =>{
-                  return <DetailsItem title={data.title} subtitle={data.text} image={data.imageUrl}/>
-                })}
+    
+              <DetailsItem title={data.title} subtitle={data.text} image={data.imageUrl}/>
             </Grid>
         </Container>
     </div>

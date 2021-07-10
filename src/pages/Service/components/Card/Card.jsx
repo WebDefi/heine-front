@@ -37,6 +37,12 @@ const useStyles = makeStyles((theme) => ({
       transition: "all 0.3s ease",
       border: theme.palette.mainBtnBorder.main,
       background: theme.palette.primary.main,
+      categoryContent: {
+        border: theme.palette.secondary.secondaryBorder,
+      },
+      categoryContentText: {
+        color: theme.palette.primary.main,
+      },
     },
   },
   categoryContent: {
@@ -44,10 +50,10 @@ const useStyles = makeStyles((theme) => ({
   },
   categoryContentText: {
     margin: "10px 20px",
-    "&:hover": {
-      color: theme.palette.primary.main,
-      transition: "all 0.3s ease",
-    },
+    // "&:hover": {
+    //   color: theme.palette.primary.main,
+    //   transition: "all 0.3s ease",
+    // },
   },
 }));
 
