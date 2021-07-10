@@ -41,7 +41,7 @@ export default function TopGrid() {
         console.log('Error while fetching data');
       } else {
         const categories = await resCategories.json();
-        for ( const { id: catId, name_ru: catName, pictureUrl } of categories) {          
+        for ( const { id: catId, name: catName, pictureUrl } of categories) {          
           const resSubCategories = await fetch(`http://116.202.243.73:3000/products/category/${catId}`);
           if(!resSubCategories.status === 200) {
             console.log('Error while fetching data');
@@ -49,7 +49,7 @@ export default function TopGrid() {
             const subCategories = await resSubCategories.json();
             catTree.push({
               id: catId, name: catName, pictureUrl,
-              subCategories: subCategories.subcategories.map(({ subcategory }) => ({id: subcategory.id, name: subcategory.name_ru}))
+              subCategories: subCategories.subcategories.map(({ subcategory }) => ({id: subcategory.id, name: subcategory.name}))
             });
             setCategoryTree(catTree);
           }
