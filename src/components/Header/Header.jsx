@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       height: "5.8em",
-      
     },
   },
   levelMenu: {
