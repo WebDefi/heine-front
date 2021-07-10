@@ -11,6 +11,7 @@ import { withRouter } from "react-router-dom";
 import { getRoutes } from "./routes";
 import Phone from "./common/Phone/Phone";
 import PopUp from "./common/PopUp/PopUp";
+import Preloader from "./common/Preloader/Preloader";
 
 const App = () => {
   const [ showPopup, setShowPopup ] = useState(true); 
@@ -20,7 +21,7 @@ const App = () => {
   }}>
   <ThemeProvider theme={theme}>
     <CssBaseline />
-    <Header />    
+    <Header />        
     { getRoutes() }    
     <Footer />
     <Phone />
