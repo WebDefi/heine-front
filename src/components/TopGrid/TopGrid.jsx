@@ -1,32 +1,67 @@
-import React from "react";
-import { Grid, Button, Paper, Box } from "@material-ui/core";
+import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
+import { Grid } from "@material-ui/core";
 import Item from "./components/Item/Item";
-import { makeStyles } from "@material-ui/core/styles";
 import OrangeBtn from "../../common/Btns/OrangeBtn";
 import LightOutlineBtn from "../../common/Btns/LightOutlineBtn";
 import DarkOutlineBtn from "../../common/Btns/DarkOutlineBtn";
 import HeineForm from "../../common/HeineForm/HeineForm";
-import dermatoscopes from "../../assets/images/dermatoscopes.png";
-import diagnostic from "../../assets/images/diagnostic.png";
-import laryngoscopes from "../../assets/images/laryngoscopes.jpg";
-import lor from "../../assets/images/lor.png";
-import oftalmolog from "../../assets/images/oftalmolog.png";
-import light from "../../assets/images/light.jpg";
-import sfigmamometers from "../../assets/images/sfigmamometers.png";
-import stetoskops from "../../assets/images/stetoskops.png";
-import vet from "../../assets/images/vet.png";
-import binocular from "../../assets/images/binocular.png";
 import services from "../../assets/images/services.png";
 import heine from "../../assets/images/heine.png";
 import warrantyBg from "../../assets/images/garant.png";
 import contacts from "../../assets/images/contacts.png";
 import map from "../../assets/images/MAP.svg";
 import aboutUs from "../../assets/images/aboutUs.png";
-import liDecoration from "../../assets/images/liPolygon.png";
 import Slider from "../Slider/Slider";
 import BottomGrid from "../TopGrid/components/Item/BottomGrid";
 
+
 export default function TopGrid() {
+
+  const [categoryTree, setCategoryTree] = useState([]);
+
+  const gridSizes = [
+    {sizeXs: 12, sizeSm: 6, sizeMd: 6, sizeLg: 8},
+    {sizeXs: 12, sizeSm: 6, sizeMd: 6, sizeLg: 4},
+    {sizeXs: 12, sizeSm: 6, sizeMd: 6, sizeLg: 4},
+    {sizeXs: 12, sizeSm: 6, sizeMd: 6, sizeLg: 4},
+    {sizeXs: 12, sizeSm: 6, sizeMd: 6, sizeLg: 4},
+    {sizeXs: 12, sizeSm: 6, sizeMd: 6, sizeLg: 6},
+    {sizeXs: 12, sizeSm: 6, sizeMd: 6, sizeLg: 6},
+    {sizeXs: 12, sizeSm: 6, sizeMd: 6, sizeLg: 4},
+    {sizeXs: 12, sizeSm: 6, sizeMd: 6, sizeLg: 4},
+    {sizeXs: 12, sizeSm: 6, sizeMd: 6, sizeLg: 4}
+  ];
+
+  useEffect(() => {
+    const getData = async () => {      
+      let catTree = [];
+      const resCategories = await fetch(`http://116.202.243.73:3000/products/`);            
+      if(!resCategories.status === 200) {
+        console.log('Error while fetching data');
+      } else {
+        const categories = await resCategories.json();
+        for ( const { id: catId, name_ru: catName, pictureUrl } of categories) {          
+          const resSubCategories = await fetch(`http://116.202.243.73:3000/products/category/${catId}`);
+          if(!resSubCategories.status === 200) {
+            console.log('Error while fetching data');
+          } else {
+            const subCategories = await resSubCategories.json();
+            catTree.push({
+              id: catId, name: catName, pictureUrl,
+              subCategories: subCategories.subcategories.map(({ subcategory }) => ({id: subcategory.id, name: subcategory.name_ru}))
+            });
+            setCategoryTree(catTree);
+          }
+        }
+      }
+    };
+
+    getData();    
+  }, []);  
+
+  console.log(categoryTree);
+
   return (
     <Grid
       container
@@ -34,164 +69,25 @@ export default function TopGrid() {
       style={{ marginTop: "70px", marginBottom: "6px" }}
     >
       <Slider />
+      {categoryTree.map((category, key) => (
       <Item
-        sizeXs={12}
-        sizeSm={6}
-        sizeMd={6}
-        sizeLg={8}
-        title="1111"
-        image={dermatoscopes}
-        text="some"
+        sizeXs={gridSizes[key].sizeXs}
+        sizeSm={gridSizes[key].sizeSm}
+        sizeMd={gridSizes[key].sizeMd}
+        sizeLg={gridSizes[key].sizeLg}
+        title={category.name}
+        image={category.pictureUrl}        
+        key={key}
       >
         <ul>
-          <li>Item 1.1</li>
-          <li>Item 1.2</li>
-          <li>Item 1.3</li>
+          {category.subCategories.map((subCat, key) => (
+            <li><Link to={`/listProducts/${subCat.id}`}>{subCat.name}</Link></li>  
+          ))}
         </ul>
-        <OrangeBtn link="/products" buttonText="Подробнее"></OrangeBtn>
+        <OrangeBtn link={`/productCats/${category.id}`} buttonText="Подробнее"></OrangeBtn>
       </Item>
-      <Item
-        sizeXs={12}
-        sizeSm={6}
-        sizeMd={6}
-        sizeLg={4}
-        title="This is fourth item"
-        image={oftalmolog}
-        text="some"
-      >
-        <ul>
-          <li>Item 1.1</li>
-          <li>Item 1.2</li>
-          <li>Item 1.3</li>
-        </ul>
-        <OrangeBtn buttonText="Подробнее"></OrangeBtn>
-      </Item>
-      <Item
-        sizeXs={12}
-        sizeSm={6}
-        sizeMd={6}
-        sizeLg={4}
-        title="This is fourth item"
-        image={laryngoscopes}
-        text="some"
-      >
-        <ul>
-          <li>Item 1.1</li>
-          <li>Item 1.2</li>
-          <li>Item 1.3</li>
-        </ul>
-        <OrangeBtn buttonText="Подробнее"></OrangeBtn>
-      </Item>
-      <Item
-        sizeXs={12}
-        sizeSm={6}
-        sizeMd={6}
-        sizeLg={4}
-        title="This is fourth item"
-        image={light}
-        text="some"
-      >
-        <ul>
-          <li>Item 1.1</li>
-          <li>Item 1.2</li>
-          <li>Item 1.3</li>
-        </ul>
-        <OrangeBtn buttonText="Подробнее"></OrangeBtn>
-      </Item>
-      <Item
-        sizeXs={12}
-        sizeSm={6}
-        sizeMd={6}
-        sizeLg={4}
-        title="This is fourth item"
-        image={sfigmamometers}  
-        text="some"
-      >
-        <ul>
-          <li>Item 1.111</li>
-          <li>Item 1.2</li>
-          <li>Item 1.3</li>
-        </ul>
-        <OrangeBtn buttonText="Подробнее"></OrangeBtn>
-      </Item>
-      <Item
-        sizeXs={12}
-        sizeSm={6}
-        sizeMd={6}
-        title="This is fourth item"
-        image={binocular}
-        text="some"
-      >
-        <ul>
-          <li>Item 1.1</li>
-          <li>Item 1.2</li>
-          <li>Item 1.3</li>
-        </ul>
-        <OrangeBtn buttonText="Подробнее"></OrangeBtn>
-      </Item>
-      <Item
-        sizeXs={12}
-        sizeSm={6}
-        sizeMd={6}
-        title="This is fourth item"
-        image={lor}
-        text="some"
-      >
-        <ul>
-          <li>Item 1.1111</li>
-          <li>Item 1.2</li>
-          <li>Item 1.3</li>
-        </ul>
-        <OrangeBtn buttonText="Подробнее"></OrangeBtn>
-      </Item>
-      <Item
-        sizeXs={12}
-        sizeSm={6}
-        sizeMd={6}
-        sizeLg={4}
-        title="This is fourth item"
-        image={vet}
-        text="some"
-      >
-        <ul>
-          <li>Item 1.1</li>
-          <li>Item 1.2</li>
-          <li>Item 1.3</li>
-        </ul>
-        <OrangeBtn buttonText="Подробнее"></OrangeBtn>
-      </Item>
-      <Item
-        sizeXs={12}
-        sizeSm={6}
-        sizeMd={6}
-        sizeLg={4}
-        title="This is fourth item"
-        image={stetoskops}
-        text="some"
-      >
-        <ul>
-          <li>Item 1.1</li>
-          <li>Item 1.2</li>
-          <li>Item 1.3</li>
-        </ul>
-        <OrangeBtn buttonText="Подробнее"></OrangeBtn>
-      </Item>
-      <Item
-        sizeXs={12}
-        sizeSm={6}
-        sizeMd={6}
-        sizeLg={4}
-        title="This is fourth item"
-        image={diagnostic}
-        text="some"
-      >
-        <ul>
-          <li>Item 1.1</li>
-          <li>Item 1.2</li>
-          <li>Item 1.3</li>
-        </ul>
-        <OrangeBtn buttonText="Подробнее"></OrangeBtn>
-      </Item>
+      ))}
+      
       <HeineForm />
       <Item
         sizeXs={12}

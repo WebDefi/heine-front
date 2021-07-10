@@ -21,7 +21,7 @@ export const getRoutes = () => {
   <Suspense fallback={<Preloader />}>  
   <Switch>
     <Route exact path="/" component={TopGrid} />
-    <Route path="/productCats" component={ProductCats} />
+    <Route path="/productCats/" component={ProductCats} />
     <Route path="/acessoriesCats" component={AcessoriesCats} />
     <Route path="/news" component={News} />
     <Route path="/contacts" component={Contacts} />

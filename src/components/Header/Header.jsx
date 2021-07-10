@@ -113,83 +113,32 @@ export default function Header() {
   const classes = useStyles();
   const [menuOpened, setMenuOpened] = useState(false);
   const [menuTree, setMenuTree] = useState({});
-  const [levelsSatate, setLevelsSatate] = useState({
-    catOpened: false,
+  const [levelsState, setlevelsState] = useState({
+    catOpened: false,    
     cat: null,
     subCatOpened: false,
     subCat: null,
-  });
+  });  
+  
 
-  const prodMenuTree = {
-    Item1: {
-      Item11: {
-        Item111: "#",
-        Item112: "#",
-      },
-      Item12: {
-        Item13: "#",
-        122: "#",
-        123: "#",
-      },
-      13: {
-        131: "#",
-        132: "#",
-      },
-    },
-    Item2: {
-      21: {
-        211: "#",
-        212: "#",
-        213: "#",
-      },
-      22: {
-        221: "#",
-        222: "#",
-        223: "#",
-      },
-    },
-  };
+  const [prodMenuTree, setProdMenuTree] = useState([]);
+  const [accMenuTree, setAccMenuTree] = useState([]);
+  useEffect(() => {
+    const getData = async (type) => {
+      const res = await fetch(`http://116.202.243.73:3000/${type}/menu`);
+      const jsonResponse = await res.json();      
+      if(!res.status === 200) {
+        console.log('Error while fetching data');
+      } else {
+        if(type === 'products') setProdMenuTree(jsonResponse);  
+        if(type === 'accessories') setAccMenuTree(jsonResponse);
+      }            
+    };
 
-  const accMenuTree = {
-    a1: {
-      a11: {
-        a111: "#",
-        a112: "#",
-      },
-      a12: {
-        a121: "#",
-        a122: "#",
-        a123: "#",
-      },
-      a13: {
-        a131: "#",
-        a132: "#",
-      },
-    },
-    a2: {
-      a21: {
-        a211: "#",
-        a212: "#",
-        a213: "#",
-      },
-      a22: {
-        a221: "#",
-        a222: "#",
-        a223: "#",
-      },
-    },
-  };
-
-  // const [data, setData] = useState([]);
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const res = await fetch('http://116.202.243.73:3000/products/menu');
-  //     const jsonResponse = await res.json();
-  //     setData(jsonResponse);
-  //   };
-
-  //   getData();
-  // }, [setData]);
+    getData('products');
+    getData('accessories');
+  }, []);
+  
 
   return (
     <div>
@@ -211,7 +160,7 @@ export default function Header() {
                         : true
                     );
                     setMenuTree(prodMenuTree);
-                    setLevelsSatate({
+                    setlevelsState({
                       catOpened: false,
                       cat: null,
                       subCatOpened: false,
@@ -231,7 +180,7 @@ export default function Header() {
                         : true
                     );
                     setMenuTree(accMenuTree);
-                    setLevelsSatate({
+                    setlevelsState({
                       catOpened: false,
                       cat: null,
                       subCatOpened: false,
@@ -252,31 +201,31 @@ export default function Header() {
              className={ menuOpened ? classes.levelMenuOpened : classes.levelMenu}
           >
             <nav className={classes.levelMenuLevel}>
-              <MenuCat fstCat="Cat1" />
+              <MenuCat fstCat={JSON.stringify(menuTree) === JSON.stringify(prodMenuTree) ? 'Продукция' : 'Аксессуры'} />
               {Object.keys(menuTree).map((cat, key) => (
                 <li
                   onClick={() =>
-                    setLevelsSatate({
+                    setlevelsState({
                       catOpened: true,
                       cat,
                       subCatOpened: false,
                       subCat: null,
                     })
-                  }
+                  } 
                   key={key}
                 >
                   {cat}
                 </li>
               ))}
             </nav>
-            {levelsSatate.catOpened ? (
+            {levelsState.catOpened ? (
               <nav className={classes.levelMenuLevel}>
-                <MenuCat fstCat="Cat2" />
-                {Object.keys(menuTree[levelsSatate.cat]).map((subCat, key) => (
+                <MenuCat fstCat={levelsState.cat} />
+                {Object.keys(menuTree[levelsState.cat]).map((subCat, key) => (
                   <li
                     onClick={() =>
-                      setLevelsSatate({
-                        ...levelsSatate,
+                      setlevelsState({
+                        ...levelsState,
                         subCatOpened: true,
                         subCat,
                       })
@@ -290,16 +239,16 @@ export default function Header() {
             ) : (
               ""
             )}
-            {levelsSatate.subCatOpened ? (
+            {levelsState.subCatOpened ? (
               <nav className={classes.levelMenuLevel}>
-                <MenuCat fstCat="Cat3" />
+                <MenuCat fstCat={levelsState.subCat} />
                 {Object.keys(
-                  menuTree[levelsSatate.cat][levelsSatate.subCat]
+                  menuTree[levelsState.cat][levelsState.subCat]
                 ).map((item, key) => (
                   <li>
                     <Link
                       to={
-                        menuTree[levelsSatate.cat][levelsSatate.subCat][item]
+                        menuTree[levelsState.cat][levelsState.subCat][item]
                       }
                       key={key}
                     >

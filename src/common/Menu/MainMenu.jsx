@@ -50,7 +50,7 @@ const MainMenu = () => {
       >
         <nav className="level-menu_level">
           {Object.keys(menuTree).map((cat, key) => (
-            <li
+            <li 
               onClick={() =>
                 setLevelsSatate({
                   catOpened: true,
