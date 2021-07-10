@@ -1,0 +1,16 @@
+.notFound-wrap {
+  width: 100vw;
+  height: 80vh;
+  padding-top: 7em;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.notFound-icon {
+  width: 4em;
+  height: 4em;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}

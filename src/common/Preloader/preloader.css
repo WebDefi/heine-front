@@ -1,7 +1,5 @@
 .preloader {
-  top: 0;
-  left: 0;
-  position: fixed;
+  position: relative;
   width: 100vw;
   height: 100vh;
   background-color: rgb(238 95 34 / 30%);

@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Preloader from "./common/Preloader/Preloader";
+import NotFound from "./common/notFound/notFound";
 
 const TopGrid = lazy(() => import('./components/TopGrid/TopGrid'));
 const ProductCats = lazy(() => import('./pages/Products/ProductCats'));
@@ -31,7 +32,7 @@ export const getRoutes = () => {
     <Route path="/about" component={About} />
     <Route path="/faq" component={FAQ} />
     <Route path="/productDetail" component={ProductDetails} />
-    <Route path="/404" component={() => (<h2>404: Nothing was found</h2>)} />
+    <Route path="/404" component={NotFound} />
     <Redirect to="/404" />
   </Switch>
   </Suspense>
