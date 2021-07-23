@@ -26,21 +26,22 @@ const useStyles = makeStyles((theme) => ({
     flexFlow: "row wrap",
     width: "100vw",
     backgroundColor: theme.palette.local.main,
-    top: "8em",
+    top: "7.4em",
     height: 0,
     left: 0,
     overflow: "hidden",
     transition: "0.4s height",
+    
     
   },
   levelMenuOpened: {
     position: "absolute",
     display: "flex",
     flexFlow: "row wrap",
-    padding:"0 10%",
+    padding: "0.8em",
     width: "100vw",
     backgroundColor: theme.palette.local.main,
-    top: "7.5em",
+    top: "7.4em",
  
     left: 0,
     overflow: "hidden",
