@@ -50,15 +50,15 @@ export default function TopGrid() {
             catTree.push({
               id: catId, name: catName, pictureUrl,
               subCategories: subCategories.subcategories.map(({ subcategory }) => ({id: subcategory.id, name: subcategory.name}))
-            });
-            setCategoryTree(catTree);
+            });            
           }
         }
+        setCategoryTree(catTree);
       }
     };
 
     getData();    
-  }, []);  
+  }, [setCategoryTree]);  
 
   console.log(categoryTree);
 
@@ -81,7 +81,7 @@ export default function TopGrid() {
       >
         <ul>
           {category.subCategories.map((subCat, key) => (
-            <li><Link to={`/listProducts/${subCat.id}`}>{subCat.name}</Link></li>  
+            <li key={key}><Link to={`/listProducts/${subCat.id}`}>{subCat.name}</Link></li>  
           ))}
         </ul>
         <OrangeBtn link={`/productCats/${category.id}`} buttonText="Подробнее"></OrangeBtn>
