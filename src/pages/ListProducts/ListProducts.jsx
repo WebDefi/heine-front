@@ -1,8 +1,7 @@
 ﻿import React, { useState, useEffect } from "react";
 import { Container, Grid, Link, Typography } from "@material-ui/core";
-import Item from "../Products/components/Card/components/Item/Item";
 import SubHeader from "../../common/SubHeader/SubHeader";
-
+import ProductItem from './ProductItem'
 export default function ListProducts() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -28,7 +27,7 @@ export default function ListProducts() {
         >
           {data.map((item) => {
             return (
-              <Item
+              <ProductItem
                 key={item.subcategory.id}
                 link="/productDetail"
                 sizeXs={12}
