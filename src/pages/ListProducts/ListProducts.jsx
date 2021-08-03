@@ -10,6 +10,7 @@ export default function ListProducts() {
       const res = await fetch("http://116.202.243.73:3000/products/category/1");
       const jsonResponse = await res.json();
       setData(jsonResponse.subcategories);
+      console.log(jsonResponse);
     };
 
     getData();
@@ -34,8 +35,8 @@ export default function ListProducts() {
                 sizeSm={6}
                 suzeMd={4}
                 image={item.subcategory.pictureUrl}
-                title={item.subcategory.nameRu}
-                subtitle={item.subcategory.titleRu}
+                title={item.subcategory.name}
+                subtitle={item.subcategory.title}
               />
             );
           })}

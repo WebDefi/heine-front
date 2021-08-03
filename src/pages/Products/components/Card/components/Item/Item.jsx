@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Item({
   sizeXs = 12,
   sizeSm = 6,
-  sizeMd = 4,
+  sizeMd = 6,
   title,
   subtitle,
   image,
