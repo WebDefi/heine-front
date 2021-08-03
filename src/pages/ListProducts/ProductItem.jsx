@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Grid, Container, Typography, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ArrowRight from "./ArrowRight";
+import ArrowRight from "../Products/components/Card/components/Item/ArrowRight"
 import { Link } from "react-router-dom";
 
 // http://116.202.243.73:3000/products/category/1
@@ -52,8 +52,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Item({
   sizeXs = 12,
-  sizeSm = 6,
-  sizeMd = 6,
+  sizeSm = 4,
+  sizeMd = 4,
   title,
   subtitle,
   image,

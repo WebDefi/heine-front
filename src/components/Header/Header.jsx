@@ -74,7 +74,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   navLink: {
-    
     cursor:"pointer",
     color: theme.palette.lightGray.main,
     "&:hover": {
@@ -84,14 +83,19 @@ const useStyles = makeStyles((theme) => ({
       color: "#fff",
     },
   },
+
   navigationLink: {
     padding:"0 8px",
     color:theme.palette.white.main,
     textTransform:"uppercase",
     "&:hover": {
       color:theme.palette.primary.main,
-    }
+    },
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
   },
+
   menuLink: {
     textTransform:"uppercase",
     fontSize:16,
@@ -104,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.primary.main,
       transition: "all 0.3s ease",
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       display: "none",
     },
   },
