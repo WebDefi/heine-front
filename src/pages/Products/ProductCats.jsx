@@ -44,8 +44,8 @@ export default function ProductCats() {
                   link="/listProducts"
                   size={6}
                   image={data.pictureUrl}
-                  title={data.nameRu}
-                  subtitle={data.titleRu}
+                  title={data.name}
+                  subtitle={data.title}
                 />
               );
             })}
