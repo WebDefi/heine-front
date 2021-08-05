@@ -103,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
     cursor:"pointer",
     border: "none",
     background: "none",
-    color: "#fff",
+    color: theme.palette.white.main,
     "&:hover": {
       color: theme.palette.primary.main,
       transition: "all 0.3s ease",
@@ -252,6 +252,7 @@ export default function Header() {
                 ).map((item, key) => (
                   <li>
                     <Link
+                      style={{color:"#fff"}}
                       to={
                         menuTree[levelsState.cat][levelsState.subCat][item]
                       }

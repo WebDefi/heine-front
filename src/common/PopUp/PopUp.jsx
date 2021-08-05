@@ -49,8 +49,8 @@ export default function SimpleModal({show, closePopup}) {
     <Container> 
       <Grid container justify="center">
       <Grid item xs={12} sm={8} className={classes.paper}>
-        <button onClick={closePopup} style={{float:'right',background:"none",border:'none'}}><img src={close} style={{position:"absolute",top:10, right:15}}></img></button>
-        <Typography variant="h6" align="center" style={{textTransform: "uppercase"}}>Связатся <span style={{color:"#EE5F22"}}>с менеджером</span></Typography>
+        <button onClick={closePopup} style={{float:'right',background:"none",border:'none'}}><img src={close} style={{position:"absolute",top:7, right:15}}></img></button>
+        <Typography variant="h6" align="center" style={{textTransform: "uppercase", fontWeight:"600", paddingTop:5}}>Связатся <span style={{color:"#EE5F22"}}>с менеджером</span></Typography>
         <Input />
       </Grid>
     </Grid>

@@ -76,7 +76,7 @@ export default function Item({
       {/* <div style={{    width: '100%',height: "100%",position: 'absolute',backgroundColor: "rgba(223,224,225,.75)", zIndex: 2}}> */}
         <Paper
           className={classes.paper}
-          style={{ height: gridheight,backgroundColor:bgcolor, backgroundImage: `url(${image})`}}
+          style={{ height: gridheight,backgroundColor:bgcolor, backgroundImage: `url(${image})`, backgroundPosition:"left",backgroundSize:"cover"}}
         >
           <div className={classes.gridContent}>
             <Typography variant="h5">{title}</Typography>

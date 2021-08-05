@@ -12,7 +12,7 @@ export default function ProductInfoConfiguration({ size = 12 }) {
     <Grid item xs={size} style={{ marginTop: 20 }}>
       <Grid
         container
-        style={{ border: "2px solid #C1C4C5", borderRadius: "10px" }}
+        style={{ border: "1px solid #C1C4C5", borderRadius: "10px" }}
         direction="row"
       >
         <Grid item xs={12}>

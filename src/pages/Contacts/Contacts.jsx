@@ -11,6 +11,11 @@ import Info from "./components/Info/Info";
 import Adress from "./components/Info/components/Adress/Adress";
 import SubHeader from "../../common/SubHeader/SubHeader";
 import Form from "../Contacts/components/Form/Form";
+import mapp from "../../assets/images/mapp.svg";
+import faks from "../../assets/images/faks.svg";
+import phone from "../../assets/images/phone.svg";
+import plane from "../../assets/images/plane.svg";
+
 
 export default function Contacts() {
   return (
@@ -23,12 +28,15 @@ export default function Contacts() {
             subtitle1="У вас есть вопросы, предложения, хотите что-то заказать или отправить нам предложение? Тогда напишите нам!"
             subtitle2="sadasdasd"
           ></Info>
-          <Adress size={6}>
-            <ul>
-              <li>HEINE Optotechnik GmbH & Co. KG</li>
-              <li>Тел.: +49 8105 7728 0</li>
-            </ul>
-          </Adress>
+          <Grid item xs={6}>
+            <Grid container>
+              <Adress size={6} title="Адрес:" article="03035, г. Киев, ул. Льва Толстого, 63" img={mapp} />
+              <Adress size={6} title="E-Mail:" article="office@medigran.com" img={faks} />
+              <Adress size={6} title="Телефон:" article="+38 (067) 824-85-04" img={phone} />
+              <Adress size={6} title="Факс:" article="+38 (097) 064-73-52" img={plane} />
+            </Grid>
+          </Grid>
+
           <Form title="Adasdasdasd" size={12} />
         </Grid>
       </Container>

@@ -6,7 +6,7 @@
     bottom: 1em;
     display: flex;
     flex-flow: row-reverse;
-    width: 4em;
+    width: 14em;
     height: 4em;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,7 @@
   }
   .call-widget > strong {
     margin-right: 2em;
-    opacity: 0;
+     
   }
   .call-widget i {
     position: fixed;

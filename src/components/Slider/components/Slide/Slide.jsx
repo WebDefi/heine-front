@@ -2,7 +2,7 @@
 import { Grid, Button, Typography, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import OrangeBtn from "../../../../common/Btns/OrangeBtn";
-import image from '../../../../assets/images/slide.jpg'
+import image from "../../../../assets/images/slide.jpg";
 
 const useStyles = makeStyles((theme) => ({
   gridContent: {
@@ -19,13 +19,11 @@ const useStyles = makeStyles((theme) => ({
     overflow: "hidden",
     height: 420,
     zIndex: 2,
-    backgroundPosition: "center", 
+    backgroundPosition: "center",
     backgroundSize: "cover",
-    
   },
   imgCenter: {
     position: "relative",
-    
   },
 }));
 
@@ -57,12 +55,11 @@ export default function Slide({
       md={sizeMd}
       xl={sizeXl}
       lg={sizeLg}
-      style={{ position: "relative", overflow: "hidden",
-}}
+      style={{ position: "relative", overflow: "hidden" }}
     >
       <Paper
         className={classes.paper}
-        style={{ height: gridheight, backgroundImage: `url(${image})`} }
+        style={{ height: gridheight, backgroundImage: `url(${image})` }}
       >
         <div className={classes.gridContent}>
           <Typography variant="h5">{title}</Typography>

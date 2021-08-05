@@ -1,12 +1,14 @@
 import React from "react";
-import { Grid, Link, Container, Typography } from "@material-ui/core";
+import { Grid, Container, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "./components/Card/Card";
 import serviceLeft from "../../assets/images/serviceLeft.svg";
 import serviceRight from "../../assets/images/serviceRight.svg";
 import Icon from "./components/svg/Icon";
 import SubHeader from "../../common/SubHeader/SubHeader";
-
+import {
+  Link
+} from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   leftImg: {
     position: "absolute",
@@ -20,6 +22,15 @@ const useStyles = makeStyles((theme) => ({
   },
   serviceSection: {
     background: theme.palette.white.main,
+  },
+  serviceRequestTitle: {
+    "&:hover": {
+      color: theme.palette.primary.main,
+    },
+    [theme.breakpoints.down("xs")]: {
+      textAlign: "center",
+      fontSize: 13,
+    },
   },
   serviceRequest: {
     [theme.breakpoints.down("xs")]: {
@@ -103,7 +114,7 @@ export default function Products() {
               >
                 <Typography
                   variant="subtitle1"
-                  className={classes.serviceRequest}
+                  className={classes.serviceRequestTitle}
                 >
                   Залиште заявку на виїзд нашого фахівця
                 </Typography>

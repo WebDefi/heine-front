@@ -18,8 +18,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     height: "auto",
+    borderRadius: 10,
     "&:hover": {
-      border: "1px solid #111",
+      border: theme.palette.mainBtnBorder.main,
     },
   },
   slide: {
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid #C1C4C5",
     borderRadius: 8,
     "&:hover": {
-      border: "1px solid #111",
+      border: theme.palette.mainBtnBorder.main,
     },
   },
 }));

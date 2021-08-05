@@ -14,10 +14,33 @@ import map from "../../assets/images/MAP.svg";
 import aboutUs from "../../assets/images/aboutUs.png";
 import Slider from "../Slider/Slider";
 import BottomGrid from "../TopGrid/components/Item/BottomGrid";
+import { makeStyles } from "@material-ui/core/styles";
+import triangle from "../../assets/images/triangle.svg"
 
+const useStyles = makeStyles((theme) => ({
+  subCatLink: {
+    color: theme.palette.secondary.main,
+    paddingLeft:12,
+    "&:hover": {
+      color: theme.palette.primary.main,
+    }
+  },
+  subCatItem:{
+    "&::after": {
+      content:" ' ' ",
+      width:7,
+      height:26,
+      backgroundImage:`url(${triangle})`,
+      backgroundPosition:"center",
+      backgroundRepeat:"no-repeat",
+      position:'absolute',
+      left:0,
+    }
+  }
+}));
 
 export default function TopGrid() {
-
+  const classes = useStyles();
   const [categoryTree, setCategoryTree] = useState([]);
 
   const gridSizes = [
@@ -81,7 +104,7 @@ export default function TopGrid() {
       >
         <ul>
           {category.subCategories.map((subCat, key) => (
-            <li><Link to={`/listProducts/${subCat.id}`}>{subCat.name}</Link></li>  
+            <li className={classes.subCatItem}><Link className={classes.subCatLink} to={`/listProducts/${subCat.id}`}>{subCat.name}</Link></li>  
           ))}
         </ul>
         <OrangeBtn link={`/productCats/${category.id}`} buttonText="Подробнее"></OrangeBtn>
@@ -170,3 +193,6 @@ export default function TopGrid() {
     </Grid>
   );
 }
+
+
+// subCatLink
