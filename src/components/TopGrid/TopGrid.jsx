@@ -73,15 +73,15 @@ export default function TopGrid() {
             catTree.push({
               id: catId, name: catName, pictureUrl,
               subCategories: subCategories.subcategories.map(({ subcategory }) => ({id: subcategory.id, name: subcategory.name}))
-            });
-            setCategoryTree(catTree);
+            });            
           }
         }
+        setCategoryTree(catTree);
       }
     };
 
     getData();    
-  }, []);  
+  }, [setCategoryTree]);  
 
   console.log(categoryTree);
 
