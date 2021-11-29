@@ -1,4 +1,5 @@
 import React from "react";
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Breadcrumbs as MUIBreadcrumbs,
   Link,
@@ -6,7 +7,14 @@ import {
 } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
 
+const useStyles = makeStyles((theme) => ({
+  new: {
+    cursor: "pointer"
+
+  }}));
+
 const Breadcrumbs = props => {
+  const classes = useStyles();
   const {
     history,
     location: { pathname }
@@ -15,17 +23,17 @@ const Breadcrumbs = props => {
   return (
     <MUIBreadcrumbs aria-label="breadcrumb">
       {pathnames.length > 0 ? (
-        <Link onClick={() => history.push("/")}>Главная</Link>
+        <Link className={classes.new} onClick={() => history.push("/")}>Главная</Link>
       ) : (
-        <Typography> Главная </Typography>
+        <Typography className={classes.new}> Главная </Typography>
       )}
       {pathnames.map((name, index) => {
         const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
         const isLast = index === pathnames.length - 1;
         return isLast ? (
-          <Typography key={name}>{name}</Typography>
+          <Typography className={classes.new} key={name}>{name}</Typography>
         ) : (
-          <Link key={name} onClick={() => history.push(routeTo)}>
+          <Link className={classes.new} key={name} onClick={() => history.push(routeTo)}>
             {name}
           </Link>
         );

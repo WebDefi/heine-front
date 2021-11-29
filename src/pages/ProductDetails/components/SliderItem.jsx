@@ -1,9 +1,10 @@
 ﻿import React from "react";
-import { Grid, Button, Typography, Paper } from "@material-ui/core";
+import { Grid, Button, Typography, Paper, Hidden } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
+    marginTop:50,
     position: "relative",
     display: "flex",
     justifyContent: "flex-end",
@@ -14,6 +15,8 @@ const useStyles = makeStyles((theme) => ({
   imgCenter: {
     position: "relative",
     maxWidth: "100%",
+    marginRight:20,
+    
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -24,13 +27,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   slide: {
-    width: "auto",
-    height: 78,
-  },
-  slideBox: {
-    background: "#fff",
-    width: 80,
-    height: 80,
+    width: "100%",
+    height: 62,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -38,10 +36,9 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 8,
     "&:hover": {
       border: theme.palette.mainBtnBorder.main,
+      },
     },
-  },
-}));
-
+}))
 export default function SliderItem({
   size = 12,
   bgcolor = "#DEE1E1",
@@ -52,15 +49,15 @@ export default function SliderItem({
 }) {
   const classes = useStyles();
   return (
-    <Grid item xs={size} style={{ position: "relative", overflow: "hidden" }}>
+    <Grid item xs={size} className={classes.slideOverflow}>
       <Paper
         className={classes.paper}
         style={{ background: "none", height: gridheight }}
       >
         <img className={classes.imgCenter} src={imageCenter} />
-        <div className={classes.slideBox}>
+        
           <img className={classes.slide} src={slide} />
-        </div>
+       
       </Paper>
     </Grid>
   );

@@ -24,22 +24,24 @@ export default function RadioBtn({}) {
 
   return (
     <FormControl component="fieldset">
-      <RadioGroup
-        aria-label="val1"
-        name="val1"
-        value={value}
-        onChange={handleChange}
-      >
+      
         {data.map((item) => {
           return (
+            <RadioGroup
+            aria-label={item.subcategory.id}
+            name={item.subcategory.name}
+            value={value}
+            onChange={handleChange}
+          >
             <FormControlLabel
-              value={item.subcategory.nameRu}
+              value={item.subcategory.name}
               control={<Radio />}
-              label={item.products.configuration}
+              label={item.subcategory.name}
             />
+             </RadioGroup>
           );
         })}
-      </RadioGroup>
+     
     </FormControl>
   );
 }

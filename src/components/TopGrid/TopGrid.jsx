@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Grid } from "@material-ui/core";
 import Item from "./components/Item/Item";
 import OrangeBtn from "../../common/Btns/OrangeBtn";
+import LinkLightOutlineBtn from "../../common/Btns/LinkLightOutlineBtn";
 import LightOutlineBtn from "../../common/Btns/LightOutlineBtn";
 import DarkOutlineBtn from "../../common/Btns/DarkOutlineBtn";
 import HeineForm from "../../common/HeineForm/HeineForm";
@@ -107,7 +108,7 @@ export default function TopGrid() {
             <li className={classes.subCatItem}><Link className={classes.subCatLink} to={`/listProducts/${subCat.id}`}>{subCat.name}</Link></li>  
           ))}
         </ul>
-        <OrangeBtn link={`/productCats/${category.id}`} buttonText="Подробнее"></OrangeBtn>
+        <OrangeBtn link={`/listProducts/${category.id}`} buttonText="Подробнее"></OrangeBtn>
       </Item>
       ))}
       
@@ -123,7 +124,7 @@ export default function TopGrid() {
         text="some"
         bgcolor="#EE5F22"
       >
-        <LightOutlineBtn link="/news" buttonText="something" />
+        <LightOutlineBtn link="/news" buttonText="Подробнее" />
       </Item>
       <Item
         sizeXs={12}
@@ -131,12 +132,12 @@ export default function TopGrid() {
         sizeMd={6}
         sizeLg={4}
         title="О НАС"
-        imageCenter={aboutUs}
+        image={aboutUs}
         text="some"
         subtitle="Кое-что интересное о прошлом, настоящем и будущем."
         contrast="#444"
       >
-        <DarkOutlineBtn link="/about" buttonText="something" />
+        <DarkOutlineBtn link="/about" buttonText="Подробнее" />
       </Item>
       <Item
         sizeXs={12}
@@ -149,7 +150,7 @@ export default function TopGrid() {
         text="some"
         bgcolor="#EE5F22"
       >
-        <LightOutlineBtn buttonText="something" />
+        <LightOutlineBtn buttonText="Подробнее" />
       </Item>
       <BottomGrid
         sizeXs={12}
@@ -161,7 +162,7 @@ export default function TopGrid() {
         text="some"
         gridheight="300px"
       >
-        <DarkOutlineBtn link="/service" buttonText="something" />
+        <DarkOutlineBtn link="/service" buttonText="Подробнее" />
       </BottomGrid>
       <BottomGrid
         sizeXs={12}
@@ -176,7 +177,7 @@ export default function TopGrid() {
         subtitle="HEINE является мировым лидером в производстве инструментов для первичной диагностики с более чем 500 сотрудниками.
 Более 70 лет компания находится в 100% семейном владении и управлении"
       >
-        <LightOutlineBtn buttonText="something" />
+        <LinkLightOutlineBtn link="https://medigran.com/pravila-garantiyi-ru" buttonText="Подробнее" />
       </BottomGrid>
       <BottomGrid
         sizeXs={12}
@@ -188,7 +189,7 @@ export default function TopGrid() {
         text="some"
         gridheight="300px"
       >
-        <DarkOutlineBtn link="/contacts" buttonText="something" />
+        <DarkOutlineBtn link="/contacts" buttonText="Подробнее" />
       </BottomGrid>
     </Grid>
   );

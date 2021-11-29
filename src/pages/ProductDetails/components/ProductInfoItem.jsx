@@ -1,10 +1,24 @@
-﻿import React from "react";
+﻿import React, { useState, useEffect } from "react";
 import { Grid, Button, Typography, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Palette } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
 export default function ProductInfoItem({ size = 12 }) {
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetch("http://116.202.243.73:3000/products/category/1");
+      const jsonResponse = await res.json();
+      if (!res.ok) {
+        console.log(`Error while fetching data`);
+      } else {
+        setData(jsonResponse.subcategories);
+      }
+    };
+    getData();
+  }, [setData]);
   return (
     <Grid item xs={size}>
       <Grid
@@ -13,18 +27,14 @@ export default function ProductInfoItem({ size = 12 }) {
         direction="row"
       >
         <Grid item xs={12}>
-          <Typography style={{ padding: "3px 10px" }}>asds</Typography>
+          <Typography style={{ padding: "3px 10px" }}>#1</Typography>
         </Grid>
         <Grid
           item
           xs={12}
           style={{ borderTop: "2px solid #C1C4C5", padding: "3px 10px" }}
         >
-          <ul>
-            <li>asdss</li>
-            <li>asdss</li>
-            <li>asdss</li>
-          </ul>
+          <Typography>#2</Typography>
         </Grid>
         <Grid
           item

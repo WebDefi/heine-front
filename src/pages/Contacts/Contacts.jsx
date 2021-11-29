@@ -26,7 +26,7 @@ export default function Contacts() {
           <Info
             size={6}
             subtitle1="У вас есть вопросы, предложения, хотите что-то заказать или отправить нам предложение? Тогда напишите нам!"
-            subtitle2="sadasdasd"
+            //subtitle2="sadasdasd"
           ></Info>
           <Grid item xs={6}>
             <Grid container>
@@ -37,7 +37,7 @@ export default function Contacts() {
             </Grid>
           </Grid>
 
-          <Form title="Adasdasdasd" size={12} />
+          <Form title="Заполните форму" size={12} />
         </Grid>
       </Container>
       <iframe
