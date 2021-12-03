@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   serviceRequestTitle: {
     "&:hover": {
       color: theme.palette.primary.main,
+      textDecoration: "underline",
     },
     [theme.breakpoints.down("xs")]: {
       textAlign: "center",

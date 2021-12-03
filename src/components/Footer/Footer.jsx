@@ -5,6 +5,8 @@ import Col from "./Col/Col";
 import Form from "./Form/Form";
 import medigranLogo from "../../assets/images/medigranLogo.png";
 import { Link } from "react-router-dom";
+import { Instagram, Facebook, YouTube} from '@material-ui/icons';
+import SocialItem from "../Header/components/Social/components/SocialItem";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -12,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     background: theme.palette.local.main,
   },
   link: {
-    cursor: 'pointer',
+    cursor: "pointer",
     color: theme.palette.secondary.contrastText,
     padding: "5px",
     "&:hover": {
@@ -41,11 +43,12 @@ export default function Footer() {
   //http://116.202.243.73:3000/products/menu
 
   const [data, setData] = useState([]);
+  const [acc, setAcc] = useState([]);
   useEffect(() => {
     const getData = async () => {
-      const res = await fetch("http://116.202.243.73:3000/products/menu");      
+      const res = await fetch("http://116.202.243.73:3000/products");
       const jsonResponse = await res.json();
-      if(!res.ok) {
+      if (!res.ok) {
         console.log(`Error while fetching data`);
       } else {
         setData(jsonResponse);
@@ -54,6 +57,20 @@ export default function Footer() {
     };
     getData();
   }, [setData]);
+
+  useEffect(() => {
+    const getAcc = async () => {
+      const res = await fetch("http://116.202.243.73:3000/accessories");
+      const jsonResponse = await res.json();
+      if (!res.ok) {
+        console.log(`Error while fetching data`);
+      } else {
+        setAcc(jsonResponse);
+      }
+      // console.log(jsonResponse.subcategory)
+    };
+    getAcc();
+  }, [setAcc]);
 
   return (
     <footer className={classes.footer}>
@@ -67,78 +84,59 @@ export default function Footer() {
           <Form title="Нужна помощь в подборе оборудования?" />
           <Col title="Продукция">
             <ul>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
+              {data.map((item, key) => (
+                <Link to={`/listProducts/${item.id}`}>
+                  <Typography className={classes.link} variant="body2">
+                    {item.name}
+                  </Typography>
+                </Link>
+              ))}
             </ul>
           </Col>
-          <Col title="Продукция">
+          <Col title="Аксессуары">
+            {/* нужно будет поменять ссылку когда будет ссылка на лист аксессуаров */}
             <ul>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
+              {acc.map((item, key) => (
+                <Link to={`/listProducts/${item.id}`}>
+                  <Typography className={classes.link} variant="body2">
+                    {item.name}
+                  </Typography>
+                </Link>
+              ))}
             </ul>
           </Col>
-          <Col title="Продукция">
+          <Col title="Ссылки">
             <ul>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
+              <Link to="/news">
+                <Typography className={classes.link} variant="body2">
+                  Новости
+                </Typography>
+              </Link>
+              <Link to="/service">
+                <Typography className={classes.link} variant="body2">
+                  Сервисы
+                </Typography>
+              </Link>
+              <Link to="/contacts">
+                <Typography className={classes.link} variant="body2">
+                  Контакты
+                </Typography>
+              </Link>
             </ul>
           </Col>
-          <Col title="Продукция">
+          <Col title="Социальные сети">
             <ul>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
-              <Typography className={classes.link} variant="body2">
-                ЛОР-инструменты
-              </Typography>
+            <Grid container alignItems="center" justify="center">
+              <SocialItem height="23px">
+                <Instagram style={{ fontSize: 23 }} />
+              </SocialItem>
+              <SocialItem height="23px">
+                <Facebook style={{ fontSize: 23, margin: "0 5px" }} />
+              </SocialItem>
+              <SocialItem height="30px">
+                <YouTube style={{ fontSize: 30 }} />
+              </SocialItem>
+              </Grid>
             </ul>
           </Col>
           <Grid

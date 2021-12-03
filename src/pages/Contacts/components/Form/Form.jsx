@@ -20,8 +20,8 @@ export default function Form({
         <Grid container justify="space-between" direction="row" spacing={5}>
           <Input placeholder="Имя" article="Имя"/> 
           <Input placeholder="E-Мейл" article="Е-Мейл*"/> 
-          
-          <Multiline size='12' article="Сообщение" />
+          <Input placeholder="Номер телефона" article="Номер телефона*"/> 
+          <Multiline size='6' article="Сообщение" />
           
         </Grid>
       </form> 

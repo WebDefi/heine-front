@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "23px 0 23px 23px",
   },
   cardTitle: {
+    color:"#000",
     "&:hover": {
       color: theme.palette.primary.main,
     },

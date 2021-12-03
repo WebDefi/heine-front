@@ -19,7 +19,7 @@ export default function Info({
   })  {
   const classes = useStyles();
   return (
-    <Grid item xs={sizeXs} sm={sizeSm} md={sizeMd} style={{paddingTop:50}}>
+    <Grid item xs={sizeXs} sm={sizeSm} md={sizeMd} style={{paddingTop:130}}>
       <div>
         <Typography variant="body1">{subtitle1}</Typography>
         <Typography variant="body1">{subtitle2}</Typography>
