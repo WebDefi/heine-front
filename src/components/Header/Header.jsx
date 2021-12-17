@@ -10,6 +10,7 @@ import MenuCat from "./components/MenuCat";
 
 const useStyles = makeStyles((theme) => ({
   header: {
+    position: "relative",
     background: theme.palette.local.main,
     borderBottom: theme.palette.headerBottom.main,
     height: "7.5em",
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       height: "5.8em",
     },
+    zIndex: 15
   },
   levelMenu: {
     position: "absolute",
@@ -112,6 +114,17 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  tranparentLayer: {
+    display: "flex",
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100vw",
+    height: "100vh",
+    opacity: 0.2,
+    background: "#ee5f22",
+    zIndex: 10,
+  }
 }));
 
 export default function Header() {
@@ -147,6 +160,7 @@ export default function Header() {
 
   return (
     <div>
+      <div className={classes.transparentLayer} onClick={() => setMenuOpened(false)} style={{display: menuOpened ? 'flex' : 'none'}} />
       <AppBar color="secondary" position="fixed" className={classes.header}>
         <Toolbar>
           <Grid container justify="space-around" alignItems="center">

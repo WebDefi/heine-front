@@ -1,58 +1,68 @@
 .header {
-    border-bottom: 12px solid #F1F1F1;
-    height:7.8em;
-    background: #393939;
+  border-bottom: 12px solid #f1f1f1;
+  height: 7.8em;
+  background: #393939;
 }
 .level-menu {
-    position: absolute;
-    display: flex;
-    flex-flow: row wrap;
-    width: 100vw;
-    background-color: #393939;
-    top: 7.7em;
-    left: 0;
-    height: 0;
-    overflow: hidden;
-    transition: 0.4s height;
-  }
-  .level-menu_opened {
-    height: 8em;
-  }
-  .level-menu_level {
-    list-style: none;
-    padding: 0.8em;
-    border-left: 2px solid #212121;
-  }
-  .level-menu_level > li {
-    cursor: pointer;
-    padding: 5px 10px;
-  }
-  .navLink {
-    color:#ECE1E1;
-    
-  }
-  .navLink:hover {
-    transition: all 0.5s ease;
-    border-radius: 7px;
-    background: #2C2C2C;
-    width: 100%;
-    height: 20px;
-    color:#fff;
-  }
-  .menuLink {
-    font-size: 16px;
-    font-family: 'Montserrat';
-    border: none;
-    background: none;
-    color:#fff;
-  }
-  .menuLink:hover {
-    color:#EE5F22;
-    transition: all 0.3s ease;
+  position: absolute;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100vw;
+  background-color: #393939;
+  top: 7.7em;
+  left: 0;
+  height: 0;
+  overflow: hidden;
+  transition: 0.4s height;
+}
+.level-menu_opened {
+  height: 8em;
+}
+.level-menu_level {
+  list-style: none;
+  padding: 0.8em;
+  border-left: 2px solid #212121;
+}
+.level-menu_level > li {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+.navLink {
+  color: #ece1e1;
+}
+.navLink:hover {
+  transition: all 0.5s ease;
+  border-radius: 7px;
+  background: #2c2c2c;
+  width: 100%;
+  height: 20px;
+  color: #fff;
+}
+.menuLink {
+  font-size: 16px;
+  font-family: "Montserrat";
+  border: none;
+  background: none;
+  color: #fff;
+}
+.menuLink:hover {
+  color: #ee5f22;
+  transition: all 0.3s ease;
+}
 
-  }
-  
-  .navigationLink {
-    padding: 5px 10px;
-    color:#fff;
-  }
+.navigationLink {
+  padding: 5px 10px;
+  color: #fff;
+}
+
+.tranparentLayer {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.2;
+  background: #ee5f22;
+  z-index: 10;
+}
