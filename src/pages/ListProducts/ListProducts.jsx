@@ -6,7 +6,7 @@ export default function ListProducts() {
   const [data, setData] = useState([]);
   useEffect(() => {
     const getData = async () => {
-      const res = await fetch("http://116.202.243.73:3000/products/category/1");
+      const res = await fetch("http://116.202.243.73:3000/products");
       const jsonResponse = await res.json();
       setData(jsonResponse.subcategories);
       console.log(jsonResponse);
