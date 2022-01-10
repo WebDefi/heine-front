@@ -34,8 +34,8 @@ const useStyles = makeStyles(theme => ({
 export default function AboutCard() {
   const classes = useStyles();
   return (
-    <Container>
-      <Grid container style={{ marginTop: 120 }}>
+      <Grid container style={{ paddingTop: 120,background: "linear-gradient(to bottom, #5ab6f3f7, transparent)"  }}>
+        <Container>
         <Grid container alignItems='center' justify="center">
           <Grid item xs={8} sm={5} md={3}>
            <Link to="https://medigran.com/"> <img src={medigran} /></Link>
@@ -58,8 +58,9 @@ export default function AboutCard() {
           </Grid>
         </Grid>
         <AboutCardItem />
+        </Container>
       </Grid>
-    </Container>
+    
 
   );
 };
