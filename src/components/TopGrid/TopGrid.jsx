@@ -84,7 +84,7 @@ export default function TopGrid() {
     getData();    
   }, [setCategoryTree]);  
 
-  console.log(categoryTree);
+  console.log("TOPGRID:",categoryTree);
 
   return (
     <Grid
@@ -108,7 +108,7 @@ export default function TopGrid() {
             <li className={classes.subCatItem}><Link className={classes.subCatLink} to={`/listProducts/${subCat.id}`}>{subCat.name}</Link></li>  
           ))}
         </ul>
-        <OrangeBtn link={`/listProducts/${category.id}`} buttonText="Подробнее"></OrangeBtn>
+        <OrangeBtn link={`/listAllProducts/${category.id}`} buttonText="Подробнее"></OrangeBtn>
       </Item>
       ))}
       

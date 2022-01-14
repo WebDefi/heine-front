@@ -160,7 +160,7 @@ export default function MainScreen() {
           <div className={classes.medigranBlock}>
             <div className={classes.medigranFilter}></div>
             <div className={classes.medigranContent}>
-              <img src={medigranAbout} style={{paddingBottom:10}}/>
+              <Typography variant="h5" className={classes.contrast} style={{paddingBottom:10,fontWeight:700,fontSize:44}}>Медігран</Typography>
               <Typography variant="body2" className={classes.contrast}>В течение многих лет на рынке Украины мы представляем широкий портфельмедицинского,лабораторного, стоматологического оборудования и расходных материалов от лучших мировых производителей.Наша Компания стремится, чтобы в медицинских учреждениях использовалось исключительно современное и надежное оборудование.</Typography>
             </div>
         </div>

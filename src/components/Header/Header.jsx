@@ -267,9 +267,7 @@ export default function Header() {
                   <li>
                     <Link
                       style={{color:"#fff"}}
-                      to={
-                        menuTree[levelsState.cat][levelsState.subCat][item]
-                      }
+                      to={`/productDetail/${menuTree[levelsState.cat][levelsState.subCat][item]}`}
                       key={key}
                     >
                       {item}

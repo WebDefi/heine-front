@@ -23,6 +23,7 @@ const FAQ = lazy(() => import("./pages/FAQ/FAQ"));
 const ProductDetails = lazy(() =>
   import("./pages/ProductDetails/ProductDetails")
 );
+const ListAllProducts = lazy(() => import("./pages/ListProducts/ListAllProducts"));
 
 export const getRoutes = () => {
   return (
@@ -36,6 +37,7 @@ export const getRoutes = () => {
         <Route path="/newsDetail" component={NewsDetails} />
         <Route path="/service" component={Service} />
         <Route path="/listProducts" component={ListProducts} />
+        <Route path="/listAllProducts" component={ListAllProducts} />
         <Route path="/listAccessories" component={AccessoriesList} />
         <Route path="/about" component={About} />
         <Route path="/faq" component={FAQ} />

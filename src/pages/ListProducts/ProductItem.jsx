@@ -10,6 +10,9 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   cardContent: {
+    height: '8em',
+    display: 'flex',
+    alignItems: 'center',
     borderTop: theme.palette.borderMain.main,
     position: "absolute",
     bottom: 0,
