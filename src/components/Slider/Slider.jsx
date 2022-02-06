@@ -23,7 +23,7 @@ export default class SimpleSlider extends Component {
     };
 
     return (
-      <Grid item xs={12} style={{ marginTop: 45 }}>
+      <Grid item xs={12}>
         <Slider {...settings}>
           <Slide
             sizeXs={12}

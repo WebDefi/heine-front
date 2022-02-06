@@ -114,7 +114,7 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
-  tranparentLayer: {
+  transparentLayer: {
     display: "flex",
     position: "fixed",
     top: 0,
