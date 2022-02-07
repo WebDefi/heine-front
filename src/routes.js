@@ -36,8 +36,8 @@ export const getRoutes = () => {
         <Route path="/contacts" component={Contacts} />
         <Route path="/newsDetail" component={NewsDetails} />
         <Route path="/service" component={Service} />
-        <Route path="/listProducts" component={ListProducts} />
-        <Route path="/listAllProducts" component={ListAllProducts} />
+        <Route path="/listProducts/category/:categoryId/subCategory/:subCatId" component={ListAllProducts} />
+        <Route path="/listProducts/category/:categoryId" component={ListAllProducts} />
         <Route path="/listAccessories" component={AccessoriesList} />
         <Route path="/about" component={About} />
         <Route path="/faq" component={FAQ} />
@@ -48,3 +48,5 @@ export const getRoutes = () => {
     </Suspense>
   );
 };
+
+export const HOST = 'http://116.202.243.73:3000';

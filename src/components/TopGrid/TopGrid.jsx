@@ -105,10 +105,10 @@ export default function TopGrid() {
       >
         <ul>
           {category.subCategories.map((subCat, key) => (
-            <li className={classes.subCatItem}><Link className={classes.subCatLink} to={`/listProducts/${subCat.id}`}>{subCat.name}</Link></li>  
+            <li className={classes.subCatItem}><Link className={classes.subCatLink} to={`/listProducts/category/${category.id}/subCategory/${subCat.id}`}>{subCat.name}</Link></li>  
           ))}
         </ul>
-        <OrangeBtn link={`/listAllProducts/${category.id}`} buttonText="Подробнее"></OrangeBtn>
+        <OrangeBtn link={`/listProducts/category/${category.id}`} buttonText="Подробнее"></OrangeBtn>
       </Item>
       ))}
       

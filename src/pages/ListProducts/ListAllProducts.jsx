@@ -3,20 +3,26 @@ import { Container, Grid, Link, Typography } from "@material-ui/core";
 import SubHeader from "../../common/SubHeader/SubHeader";
 import ProductItem from './ProductItem'
 import { useParams } from "react-router-dom";
+import { HOST } from "../../routes";
 export default function ListProducts() {
   const [data, setData] = useState([]);
 
+  const { categoryId, subCatId } = useParams();
+  console.log('LIST PRODUCTS', categoryId, subCatId);
+
   useEffect(() => {
     const getData = async () => {
-      const res = await fetch("http://116.202.243.73:3000/products/category/1");
+      const url = subCatId ? `${HOST}/products/subcategory/${subCatId}` : `${HOST}/products/category/${categoryId}`;
+      const res = await fetch(url);
       console.log("res:", res);
       const jsonResponse = await res.json();
-      setData(jsonResponse.subcategories);
+      setData(jsonResponse.subcategories ? jsonResponse.subcategories : [jsonResponse]);
     };
 
     getData();
-  }, [setData]);
+  }, [categoryId, subCatId]);
    console.log("productsdata:", data);
+
 
   return (
     <div>
@@ -33,11 +39,12 @@ export default function ListProducts() {
             return (
               <ProductItem
                 key={item.id}
+                productId={item.id}
                 link={`/productDetail/${item.name}`}
                 sizeXs={12}
                 sizeSm={6}
                 suzeMd={4}
-                image={item.pictureUrl}
+                image={item.documents[0]}
                 title={item.name}
                 subtitle={item.title}
               />

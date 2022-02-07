@@ -1,4 +1,5 @@
 ﻿﻿import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { Container, Grid, Link, Typography } from "@material-ui/core";
 import SubHeader from "../../common/SubHeader/SubHeader";
 import ProductItem from './ProductItem'
@@ -14,6 +15,9 @@ export default function ListProducts() {
 
     getData();
   }, [setData]);
+
+  const { categoryId, subCatId } = useParams();
+  console.log('LIST PRODUCTS', categoryId, subCatId);
 
   return (
     <div>

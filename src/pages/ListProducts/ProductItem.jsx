@@ -3,7 +3,7 @@ import { Grid, Container, Typography, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import ArrowRight from "../Products/components/Card/components/Item/ArrowRight"
 import { Link } from "react-router-dom";
-
+import { HOST } from "../../routes";
 // http://116.202.243.73:3000/products/category/1
 // acc
 // accessories/accessoryCategory/
@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Item({
+  productId,
   sizeXs = 12,
   sizeSm = 4,
   sizeMd = 4,
@@ -69,7 +70,7 @@ export default function Item({
     <Grid item xs={sizeXs} sm={sizeSm} md={sizeMd}>
       <Link to={link}>
         <Paper className={classes.categoryBlock}>
-          <img className={classes.cardImage} src={image}></img>
+          <img className={classes.cardImage} src={`${HOST}/img/product/${productId}/${image}`} alt={image}></img>
           <Grid container className={classes.cardContent}>
             <Grid item className={classes.categoryContentText}>
               <Grid container alignItems="center">
