@@ -90,7 +90,7 @@ export default function TopGrid() {
     <Grid
       container
       spacing={2}
-      style={{ marginTop: "3px", marginBottom: "6px" }}
+      style={{ marginTop: "120px", marginBottom: "6px" }}
     >
       <Slider />
       {categoryTree.map((category, key) => (

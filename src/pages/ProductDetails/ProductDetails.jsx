@@ -30,7 +30,7 @@ export default function ProductDetails() {
   }, [setData]);
   return (
     <div>
-      <SubHeader />
+      <SubHeader pathItems={[data.name]} />
       
       <div style={{ background: "#fff" }}>
         <Container>

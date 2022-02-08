@@ -10,7 +10,6 @@ import MenuCat from "./components/MenuCat";
 
 const useStyles = makeStyles((theme) => ({
   header: {
-    position: "relative",
     background: theme.palette.local.main,
     borderBottom: theme.palette.headerBottom.main,
     height: "7.5em",

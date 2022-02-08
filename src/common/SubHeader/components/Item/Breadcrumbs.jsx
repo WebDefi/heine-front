@@ -17,17 +17,18 @@ const Breadcrumbs = props => {
   const classes = useStyles();
   const {
     history,
-    location: { pathname }
+    location: { pathname },
+    pathItems
   } = props;
   const pathnames = pathname.split("/").filter(x => x);
   return (
     <MUIBreadcrumbs aria-label="breadcrumb">
       {pathnames.length > 0 ? (
-        <Link className={classes.new} onClick={() => history.push("/")}>Главная</Link>
+        <Link className={classes.new} onClick={() => history.push("/")}>Головна</Link>
       ) : (
-        <Typography className={classes.new}> Главная </Typography>
+        <Typography className={classes.new}> Головна </Typography>
       )}
-      {pathnames.map((name, index) => {
+      {pathItems?.map((name, index) => {
         const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
         const isLast = index === pathnames.length - 1;
         return isLast ? (

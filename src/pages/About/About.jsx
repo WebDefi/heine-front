@@ -2,7 +2,7 @@
 import { Grid, TextField, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Item from './components/MainScreen'
-import AboutImg from '../../assets/images/About.png'
+import AboutImg from '../../assets/images/About.png';
 
 import MainScreen from './components/MainScreen'
 import AboutCards from './components/AboutCards'

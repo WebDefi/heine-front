@@ -45,7 +45,7 @@ export default function Products() {
   const classes = useStyles();
   return (
     <div>
-      <SubHeader />
+      <SubHeader pathItems={['Сервіси']} />
       <div className={classes.serviceSection}>
         <Container fluid>
           <Typography

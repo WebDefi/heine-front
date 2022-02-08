@@ -18,7 +18,7 @@ export default function News() {
   }, []);
   return (
     <div style={{ background: "#fff" }}>
-      <SubHeader />
+      <SubHeader pathItems={['Новини']}/>
       <Container style={{ padding: "80px 0" }}>
         <Grid container spacing={10}>
           {data.map((data) => {

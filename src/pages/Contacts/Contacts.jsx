@@ -20,7 +20,7 @@ import plane from "../../assets/images/plane.svg";
 export default function Contacts() {
   return (
     <div>
-      <SubHeader />
+      <SubHeader pathItems={['Контакти']}/>
       <Container fluid>
         <Grid container justify="space-around" spacing={6}>
           <Info
